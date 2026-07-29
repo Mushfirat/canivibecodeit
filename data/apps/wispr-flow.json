@@ -1,6 +1,6 @@
 {
   "subcategory": null,
-  "tagline": "Hotkey → record → Whisper → paste at cursor",
+  "tagline": "Hotkey \u2192 record \u2192 Whisper \u2192 paste at cursor",
   "pricing": {
     "plan": null,
     "basis": "monthly",
@@ -11,7 +11,7 @@
     "notes": null
   },
   "verdictConfidence": "high",
-  "verdictSummary": "Hotkey → record → Whisper → paste at cursor. One of the most-cloned apps of the trend for a reason.",
+  "verdictSummary": "Hotkey \u2192 record \u2192 Whisper \u2192 paste at cursor. One of the most-cloned apps of the trend for a reason.",
   "coreLoopDIY": null,
   "diyTimeEstimate": "one sitting",
   "requirements": [],
@@ -27,7 +27,7 @@
   "category": "voice-dictation",
   "priceMonthly": 15,
   "verdict": "yes",
-  "notes": "Hotkey → record → Whisper → paste at cursor. One of the most-cloned apps of the trend for a reason.",
+  "notes": "Hotkey \u2192 record \u2192 Whisper \u2192 paste at cursor. One of the most-cloned apps of the trend for a reason.",
   "whatYouLose": [
     "their tuned auto-editing voice model",
     "per-app tone formatting",
@@ -46,5 +46,5 @@
       "desc": "open-source macOS dictation app"
     }
   ],
-  "prompt": "Build me a system-wide AI dictation tool like Wispr Flow for macOS. Requirements:\n\n- A background app with a global hotkey (hold-to-talk fn key or a chosen shortcut).\n  While held: record the mic. On release: transcribe and paste.\n- Transcribe with whisper.cpp locally (small or medium model), or the Groq/OpenAI\n  Whisper API if a key exists in .env — pick per a config flag.\n- Pipe the raw transcript through an LLM (key in .env) with a short prompt that\n  removes filler words, fixes punctuation, and matches casing to dictation style.\n- Insert the result at the current cursor position in whatever app has focus\n  (simulate keystrokes or use the pasteboard + Cmd-V approach, restoring the\n  previous clipboard afterwards).\n- Show a tiny floating pill while recording so I know it's live.\n- Menu bar toggle for on/off, launch at login, and a settings file for the hotkey.\n- No accounts, no telemetry, works offline with the local model.\n- README with the Accessibility/Input Monitoring permissions I need to grant."
+  "prompt": "Build me a system-wide AI dictation tool like Wispr Flow for macOS. Requirements:\n\n- A background app with a global hotkey (hold-to-talk fn key or a chosen shortcut).\n  While held: record the mic. On release: transcribe and paste.\n- Transcribe with whisper.cpp locally (small or medium model), or the Groq/OpenAI\n  Whisper API if a key exists in .env \u00b7 pick per a config flag.\n- Pipe the raw transcript through an LLM (key in .env) with a short prompt that\n  removes filler words, fixes punctuation, and matches casing to dictation style.\n- Insert the result at the current cursor position in whatever app has focus\n  (simulate keystrokes or use the pasteboard + Cmd-V approach, restoring the\n  previous clipboard afterwards).\n- Show a tiny floating pill while recording so I know it's live.\n- Menu bar toggle for on/off, launch at login, and a settings file for the hotkey.\n- No accounts, no telemetry, works offline with the local model.\n- README with the Accessibility/Input Monitoring permissions I need to grant."
 }

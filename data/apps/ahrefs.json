@@ -55,6 +55,6 @@
   "pagePriority": 5,
   "verifiedOneShot": false,
   "notes": "One of the best no examples: data moat is obvious once stated.",
-  "prompt": null,
+  "prompt": "Honest answer: don't. Ahrefs is a dataset: a crawler that has indexed the web\nfor years, plus keyword and clickstream data you cannot collect from a desk.\nNo prompt gets you a backlink index.\n\nThe buildable piece is monitoring your own site:\n\n- A daily rank tracker: Python + httpx, keywords.txt with up to 50 terms,\n  positions fetched from a SERP API (Serper.dev or SerpAPI, key in .env, free\n  tiers cover a small list). Do not scrape Google directly, you will just get\n  blocked.\n- Store keyword, position, ranking URL, and date in SQLite; run from cron.\n- A localhost dashboard (Flask + Chart.js): a sparkline per keyword and a\n  biggest-movers-this-week list.\n- A technical audit crawler for my own domain: follow internal links, flag\n  broken links, missing or duplicate titles and descriptions, redirect\n  chains, and pages under 200 words; write findings to audit.md.\n- Pull real query data free from the Google Search Console API, clicks and\n  impressions per query, shown beside the rank data. Budget an hour for the\n  Google Cloud console OAuth setup, it is the painful step.\n- Local only, no accounts, no telemetry.\n- What you will NOT have: backlink data, keyword volume and difficulty, and\n  competitor research. That data is the subscription.\n- README: API keys and the Search Console connection steps.",
   "promptCurated": false
 }

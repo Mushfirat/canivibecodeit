@@ -56,6 +56,6 @@
   "pagePriority": 5,
   "verifiedOneShot": false,
   "notes": "A valuable no: the app is not just product pages and a cart.",
-  "prompt": null,
+  "prompt": "Honest answer: don't. Shopify's product is a checkout shoppers trust, payment risk\nhandling, tax and shipping integrations, and an app ecosystem. One sale lost to a broken\ncart costs more than the $39.\n\nIf you sell a handful of items and want out anyway, the honest small-shop version:\n\n- Node + Express + better-sqlite3 on a VPS; products in products.json (slug, name,\n  price, images, stock count), server-rendered catalog and product pages.\n- Cart in a session cookie; checkout hands off entirely to Stripe Checkout (keys in\n  .env). Never touch card data yourself.\n- Stripe webhook records the order, decrements stock, and emails you and the buyer via\n  Resend (key in .env).\n- An /admin page behind basic auth: order list and a mark-shipped button that emails the\n  buyer with an optional tracking number.\n- Flat shipping rates per region in config; sold-out products stay visible but cannot be\n  bought.\n- No customer accounts, no telemetry; orders stay in your SQLite file.\n- Out of scope: discount engines, multi-currency, POS, and tax automation, Stripe Tax or\n  an accountant covers tax. If volume grows, move to Shopify or Medusa rather than\n  growing this.\n- README: Stripe webhook setup and a plain warning that you are now the fraud\n  department.",
   "promptCurated": false
 }

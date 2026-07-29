@@ -83,7 +83,9 @@ export function rateLimit(key, max, windowMs) {
   return true;
 }
 
+// The headline number: total monthly cost of every subscription on the death
+// list — the full pool of MRR the list puts at risk. (Was votes × price, but
+// the sum of the whole list is the honest "here's what's on the table" stat.)
 export function mrrDestroyed(apps) {
-  const votes = voteCounts();
-  return apps.reduce((sum, a) => sum + (a.priceMonthly ?? 0) * votes(a.slug), 0);
+  return Math.round(apps.reduce((sum, a) => sum + (a.priceMonthly ?? 0), 0));
 }

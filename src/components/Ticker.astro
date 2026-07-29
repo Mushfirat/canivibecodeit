@@ -8,7 +8,6 @@ const chars = [...('$' + total.toLocaleString('en-US'))];
 const tapeItems = apps
   .filter((a) => a.priceMonthly != null)
   .sort((a, b) => (b.pagePriority ?? 3) - (a.pagePriority ?? 3) || b.priceMonthly - a.priceMonthly)
-  .slice(0, 14)
   .map((a) => `${a.name.toUpperCase()} −$${a.priceMonthly}/mo`)
   .join(' · ');
 const reel = [...Array(10).keys()];
@@ -20,7 +19,7 @@ const reel = [...Array(10).keys()];
     <span>{tapeItems} · </span>
   </div>
   <div class="main">
-    <span class="label">collective mrr<br />destroyed</span>
+    <span class="label">collective MRR<br />destroyed</span>
     <span class="odometer" aria-label={`$${total.toLocaleString('en-US')} per month`}>
       {
         chars.map((ch) =>
@@ -39,6 +38,14 @@ const reel = [...Array(10).keys()];
       }
     </span>
     <span class="permo">/mo</span>
-    <span class="live-pill"><i></i>live</span>
+    <span class="mrr-info" tabindex="0" aria-label="How this number is calculated">
+      ?
+      <span class="mrr-tip" role="tooltip">
+        <span class="tip-comment">// how this is calculated</span>
+        <span>mrr = sum(app.price/mo</span>
+        <span>&nbsp;&nbsp;for app of deathList)</span>
+        <span class="tip-result">= {apps.filter((a) => a.priceMonthly != null).length} apps · ${total.toLocaleString('en-US')}/mo</span>
+      </span>
+    </span>
   </div>
 </div>

@@ -147,6 +147,8 @@ h3 {
   justify-content: space-between;
   padding: 14px 24px;
   gap: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .brand {
@@ -356,11 +358,12 @@ h3 {
 
 /* ---------- ticker ---------- */
 
+/* no overflow:hidden here — the MRR tooltip must escape the band; the tape
+   clips itself */
 .ticker {
   background: var(--ticker-bg);
   border-top: 2px solid var(--ticker);
   border-bottom: 2px solid var(--ticker);
-  overflow: hidden;
 }
 
 .tape {
@@ -370,6 +373,9 @@ h3 {
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--ticker-dim);
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
@@ -448,31 +454,64 @@ h3 {
   color: var(--ticker-dim);
 }
 
-.live-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  border: 1px solid color-mix(in srgb, var(--primary) 35%, var(--border));
+.mrr-info {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ticker-cell-border);
   border-radius: 100px;
-  padding: 6px 13px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ticker-dim);
+  cursor: help;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.mrr-info:hover,
+.mrr-info:focus-visible {
+  color: var(--ticker);
+  border-color: var(--ticker);
+}
+
+.mrr-tip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: -8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--fg);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.2s var(--ease-out);
+  z-index: 60;
+}
+
+.mrr-info:hover .mrr-tip,
+.mrr-info:focus-visible .mrr-tip {
+  opacity: 1;
+  transform: none;
+}
+
+.mrr-tip .tip-comment {
+  color: var(--muted);
+}
+
+.mrr-tip .tip-result {
   color: var(--primary);
-}
-
-.live-pill i {
-  width: 7px;
-  height: 7px;
-  border-radius: 100px;
-  background: var(--primary);
-  animation: pulse 2s ease infinite;
-}
-
-@keyframes pulse {
-  50% {
-    opacity: 0.3;
-  }
+  padding-top: 4px;
 }
 
 /* ---------- death list ---------- */
@@ -492,6 +531,65 @@ h3 {
 .list-head .note {
   font-size: 12px;
   color: var(--muted);
+}
+
+.verdict-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 18px;
+  flex-wrap: wrap;
+}
+
+.vchip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 6px 13px;
+  color: var(--muted);
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease,
+    transform 0.12s var(--ease-snap);
+}
+
+.vchip:hover {
+  color: var(--fg);
+  border-color: var(--muted);
+  transform: translateY(-1px);
+}
+
+.vchip:active {
+  transform: scale(0.94);
+}
+
+.vchip.all.active {
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--bg);
+}
+
+.vchip.yes.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.vchip.kinda.active {
+  background: var(--kinda-bg);
+  border-color: var(--kinda-bg);
+  color: var(--kinda-fg);
+}
+
+.vchip.no.active {
+  background: var(--no-bg);
+  border-color: var(--no-bg);
+  color: var(--no-fg);
+}
+
+#filter-count {
+  margin-left: auto;
 }
 
 .thead {
@@ -1061,13 +1159,18 @@ a.row:hover .badge {
   margin-top: 72px;
   border-top: 1px solid var(--border);
   padding: 26px 24px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.site-footer .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
-  font-size: 12.5px;
-  color: var(--muted);
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .site-footer a {

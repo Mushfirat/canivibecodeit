@@ -51,7 +51,7 @@ const jsonld = [
 <Base {title} {description} {jsonld}>
   <section class="hero">
     <h1>Can I vibecode <span class="blank">___</span>?</h1>
-    <p class="sub">Some subscriptions are businesses. Some are a prompt. We sort them.</p>
+    <p class="sub">Some subscriptions are businesses.<br />Some are just a prompt.</p>
     <div class="search">
       <span class="chevron">&gt;</span>
       <input
@@ -83,6 +83,14 @@ const jsonld = [
       <h2>The Death List</h2>
       <span class="note">ranked by "I replaced this" votes</span>
     </div>
+    <div class="verdict-filter" id="verdict-filter" role="group" aria-label="Filter by verdict">
+      <span class="microlabel">verdict</span>
+      <button class="vchip all active" data-verdict="">all</button>
+      <button class="vchip yes" data-verdict="yes">YES</button>
+      <button class="vchip kinda" data-verdict="kinda">KINDA</button>
+      <button class="vchip no" data-verdict="no">NOT REALLY</button>
+      <span class="note" id="filter-count"></span>
+    </div>
     <div class="thead microlabel">
       <span class="c-app">app</span>
       <span class="c-cat">category</span>
@@ -94,7 +102,7 @@ const jsonld = [
       {apps.map((app, i) => <AppRow {app} rank={i + 1} votes={votes(app.slug)} />)}
     </div>
     <p class="note" id="no-results" hidden style="padding: 24px 14px; color: var(--muted); font-size: 13px;">
-      Nothing here. <a href="https://github.com/robj3d3/canivibecodeit/blob/main/CONTRIBUTING.md" style="color: var(--primary);">Submit it as a PR</a> and give it a verdict.
+      Nothing here. <a href="https://github.com/canivibecodeit/canivibecodeit/blob/main/CONTRIBUTING.md" style="color: var(--primary);">Submit it as a PR</a> and give it a verdict.
     </p>
   </main>
 

@@ -146,21 +146,8 @@ const apps = readdirSync(path.join(root, 'data/apps'))
   .filter((f) => f.endsWith('.json'))
   .map((f) => JSON.parse(readFileSync(path.join(root, 'data/apps', f), 'utf8')));
 
-// MRR on the static home OG uses a placeholder sum at build time; the live
-// number lives on the page itself. Rebuild before big screenshot moments.
-let mrr = 0;
-try {
-  const { default: Database } = await import('better-sqlite3');
-  const dbPath = path.join(process.env.DATA_DIR || path.join(root, 'data/private'), 'site.db');
-  if (existsSync(dbPath)) {
-    const db = new Database(dbPath, { readonly: true });
-    const rows = db.prepare('SELECT slug, count FROM votes').all();
-    const bySlug = Object.fromEntries(rows.map((r) => [r.slug, r.count]));
-    mrr = apps.reduce((s, a) => s + (a.priceMonthly ?? 0) * (bySlug[a.slug] ?? 0), 0);
-  }
-} catch {
-  /* no db at build time is fine */
-}
+// Headline stat = total monthly cost of every app on the list (matches src/lib/db.js).
+const mrr = Math.round(apps.reduce((s, a) => s + (a.priceMonthly ?? 0), 0));
 
 await render(homeCard(mrr), 'home.png');
 for (const app of apps) await render(appCard(app), `${app.slug}.png`);

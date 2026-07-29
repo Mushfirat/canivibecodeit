@@ -53,6 +53,6 @@
   "pagePriority": 5,
   "verifiedOneShot": false,
   "notes": "Good no that still points technical readers to usable wrappers.",
-  "prompt": null,
+  "prompt": "Honest answer: you cannot rebuild Claude. The model is the product and the\nwrapper is the easy part. What you can build is your own wrapper: a thin\nclient on the Anthropic API where you pay per token instead of a flat $20,\nwhich for light and medium chat use is often cheaper:\n\n- A local web app: Node + Express + better-sqlite3, streaming replies over\n  SSE, a conversation sidebar, Markdown rendering with marked.\n- Anthropic API key in .env; model picker with Sonnet as the default and\n  Opus on demand; system prompt editable and saved per project.\n- Projects: a project groups conversations and holds a few reference docs\n  (plain text or PDF via pdf-parse) prepended as context for every chat\n  inside it.\n- Use prompt caching on the project docs to cut token costs, the API\n  supports it directly.\n- SQLite FTS5 search across all conversations; export any thread to\n  Markdown.\n- A cost meter per conversation plus a monthly total from the API usage\n  fields, so the keep-paying-or-not decision is a number, not a feeling.\n- Localhost only, no accounts, no telemetry.\n- What you will NOT have: artifacts, the mobile apps, and flat-rate pricing\n  for heavy agent use. If the meter shows heavy use, Pro or Max wins, switch\n  back.\n- README: key setup and a link to current per-token prices.",
   "promptCurated": false
 }

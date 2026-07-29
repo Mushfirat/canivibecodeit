@@ -28,6 +28,7 @@
   const search = $('#search');
   const rows = $$('#rows .row');
   let activeCat = '';
+  let activeVerdict = '';
 
   const applyFilter = () => {
     const q = (search?.value || '').trim().toLowerCase();
@@ -35,13 +36,25 @@
     rows.forEach((r) => {
       const hit =
         (!q || r.dataset.name.includes(q)) &&
-        (!activeCat || r.dataset.category === activeCat);
+        (!activeCat || r.dataset.category === activeCat) &&
+        (!activeVerdict || r.dataset.verdict === activeVerdict);
       r.style.display = hit ? '' : 'none';
       if (hit) shown++;
     });
     const empty = $('#no-results');
     if (empty) empty.hidden = shown > 0;
+    const count = $('#filter-count');
+    if (count) count.textContent = shown === rows.length ? '' : `${shown} of ${rows.length}`;
   };
+
+  $('#verdict-filter')?.addEventListener('click', (e) => {
+    const chip = e.target.closest('.vchip');
+    if (!chip) return;
+    activeVerdict = chip.dataset.verdict || '';
+    $$('.vchip').forEach((c) => c.classList.toggle('active', c === chip));
+    applyFilter();
+    track('verdict_filter', { verdict: activeVerdict || 'all' });
+  });
 
   search?.addEventListener('input', applyFilter);
   search?.addEventListener('keydown', (e) => {
@@ -85,17 +98,43 @@
     });
   };
 
-  // Roll the odometer in from zero on first view, once.
+  // Roll the odometer in from zero on first view. Reset data-digit too, or
+  // setOdometer sees the target value already "set" and skips the animation.
   const ticker = $('#ticker');
   if (ticker && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const total = Number(ticker.dataset.total || 0);
     if (total > 0) {
-      $$('.digit .reel', ticker).forEach((r) => (r.style.transform = 'translateY(0)'));
-      requestAnimationFrame(() =>
-        setTimeout(() => setOdometer(total), 250)
-      );
+      $$('.digit', ticker).forEach((d) => {
+        d.dataset.digit = '0';
+        const reel = $('.reel', d);
+        if (reel) {
+          reel.style.transition = 'none';
+          reel.style.transform = 'translateY(0)';
+          void reel.offsetHeight; // flush so the roll animates from 0
+          reel.style.transition = '';
+        }
+      });
+      // Stagger per digit so the roll sweeps left to right.
+      setTimeout(() => {
+        $$('.digit', ticker).forEach((d, i) => {
+          const reel = $('.reel', d);
+          if (reel) reel.style.transitionDelay = `${i * 90}ms`;
+        });
+        setOdometer(total);
+        setTimeout(
+          () => $$('.digit .reel', ticker).forEach((r) => (r.style.transitionDelay = '')),
+          2000
+        );
+      }, 350);
     }
   }
+
+  // Tape speed: constant px/s regardless of how long the tape content is —
+  // a fixed-duration animation over 109 apps scrolls comically fast.
+  $$('.tape > span').forEach((span) => {
+    const secs = Math.max(40, Math.round(span.scrollWidth / 55));
+    span.style.animationDuration = `${secs}s`;
+  });
 
   /* ---------- live stats poll ---------- */
   const refreshStats = async () => {
@@ -128,6 +167,29 @@
     },
   };
 
+  // Clipboard API needs a secure context (https / localhost); the textarea +
+  // execCommand path covers plain-http previews and older browsers.
+  const copyText = async (text) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {}
+    }
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;left:-9999px;top:0';
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try {
+      ok = document.execCommand('copy');
+    } catch {}
+    ta.remove();
+    return ok;
+  };
+
   $$('.copy-group').forEach((group) => {
     const slug = group.dataset.slug;
     group.addEventListener('click', async (e) => {
@@ -135,10 +197,8 @@
       if (!btn) return;
       const agent = AGENTS[btn.dataset.agent];
       const prompt = $('#prompt-text')?.textContent || '';
-      try {
-        await navigator.clipboard.writeText(agent.header + prompt);
-      } catch {
-        toast('copy failed — select the text manually');
+      if (!(await copyText(agent.header + prompt))) {
+        toast('copy failed · select the text manually');
         return;
       }
       const label = $('span:last-child', btn);
