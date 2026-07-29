@@ -175,9 +175,11 @@
       newTab: true,
     },
     cursor: {
+      // Official https launcher: fires the cursor:// scheme and shows a
+      // download fallback when the app isn't installed.
       name: 'Cursor',
-      link: (p) => `cursor://anysphere.cursor-deeplink/prompt?text=${encodeURIComponent(p)}&mode=agent`,
-      newTab: false,
+      link: (p) => `https://cursor.com/link/prompt?text=${encodeURIComponent(p)}`,
+      newTab: true,
     },
   };
 
