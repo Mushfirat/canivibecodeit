@@ -9,12 +9,12 @@ export async function POST({ params, request, clientAddress }) {
   const ip = clientIp(request, clientAddress);
   // One vote per app per IP per day, and a burst cap across all apps.
   if (
-    !rateLimit(`vote:${ip}:${params.slug}`, 1, 24 * 60 * 60 * 1000) ||
-    !rateLimit(`vote-burst:${ip}`, 10, 60 * 60 * 1000)
+    !(await rateLimit(`vote:${ip}:${params.slug}`, 1, 24 * 60 * 60 * 1000)) ||
+    !(await rateLimit(`vote-burst:${ip}`, 10, 60 * 60 * 1000))
   ) {
     return json({ error: 'already counted' }, 429);
   }
 
-  const count = addVote(params.slug);
+  const count = await addVote(params.slug);
   return json({ count, mrr: mrrDestroyed(allApps()) });
 }

@@ -6,7 +6,7 @@ import Waitlist from '../components/Waitlist.astro';
 import { allApps, topCategories } from '../lib/apps.js';
 import { voteCounts } from '../lib/db.js';
 
-const votes = voteCounts();
+const votes = await voteCounts();
 const apps = allApps().sort(
   (a, b) =>
     votes(b.slug) - votes(a.slug) ||

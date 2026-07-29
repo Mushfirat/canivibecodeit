@@ -9,7 +9,7 @@ const { cat } = Astro.params;
 const meta = CATEGORIES[cat];
 if (!meta) return new Response(null, { status: 404 });
 
-const votes = voteCounts();
+const votes = await voteCounts();
 const apps = appsByCategory(cat).sort((a, b) => votes(b.slug) - votes(a.slug));
 if (apps.length === 0) return new Response(null, { status: 404 });
 

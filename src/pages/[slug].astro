@@ -9,8 +9,8 @@ const { slug } = Astro.params;
 const app = getApp(slug);
 if (!app) return new Response(null, { status: 404 });
 
-const votes = voteCount(app.slug);
-const related = relatedApps(app, voteCounts());
+const votes = await voteCount(app.slug);
+const related = relatedApps(app, await voteCounts());
 const cat = CATEGORIES[app.category];
 const v = VERDICTS[app.verdict];
 const saving = yearlySaving(app);

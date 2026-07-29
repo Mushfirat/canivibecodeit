@@ -3,7 +3,7 @@ import { clientIp, json, readBody, validEmail } from '../../lib/request.js';
 
 export async function POST({ request, clientAddress }) {
   const ip = clientIp(request, clientAddress);
-  if (!rateLimit(`waitlist:${ip}`, 5, 60 * 60 * 1000)) {
+  if (!(await rateLimit(`waitlist:${ip}`, 5, 60 * 60 * 1000))) {
     return json({ error: 'slow down' }, 429);
   }
 
@@ -20,7 +20,7 @@ export async function POST({ request, clientAddress }) {
   const email = body.email?.trim().toLowerCase();
   if (!validEmail(email)) return json({ error: 'invalid email' }, 400);
 
-  addToWaitlist(email);
+  await addToWaitlist(email);
   // Dedupe silently — "you're on the list" either way, no email enumeration.
   return json({ ok: true });
 }
