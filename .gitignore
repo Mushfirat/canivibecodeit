@@ -1,0 +1,25 @@
+# secrets — never committed, ever
+.env
+.env.*
+!.env.example
+HANDOFF.md
+*HANDOFF*
+
+# private user data (also lives outside the repo tree on the server)
+data/private/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# deps & build output
+node_modules/
+dist/
+.astro/
+
+# editor / OS junk
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
