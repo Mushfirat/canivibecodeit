@@ -149,9 +149,31 @@ const apps = readdirSync(path.join(root, 'data/apps'))
 // Headline stat = total monthly cost of every app on the list (matches src/lib/db.js).
 const mrr = Math.round(apps.reduce((s, a) => s + (a.priceMonthly ?? 0), 0));
 
+// The meta card: the site is its own death-list entry.
+function siteCard() {
+  return page([
+    logoRow,
+    el('div', { display: 'flex', flexDirection: 'column', gap: 26, marginTop: 62 }, [
+      el('div', {
+        fontFamily: 'Space Grotesk', fontSize: 76, fontWeight: 700,
+        color: COLORS.fg, letterSpacing: '-0.02em', lineHeight: 1.05,
+      }, 'Can I vibecode canivibecodeit.com?'),
+      el('div', { display: 'flex', alignItems: 'center', gap: 22 }, [
+        el('div', {
+          ...mono(30, COLORS.onGreen, 700), backgroundColor: COLORS.green,
+          padding: '14px 28px', borderRadius: 10,
+        }, 'YES · obviously'),
+        el('div', mono(28, COLORS.muted), '$0/mo · this site is also just a prompt'),
+      ]),
+    ]),
+    el('div', { display: 'flex', marginTop: 'auto', justifyContent: 'space-between' }, [
+      el('div', mono(22, COLORS.muted), 'canivibecodeit.com/vibecode-this-site'),
+      el('div', mono(22, COLORS.muted), 'the rebuild prompt inside →'),
+    ]),
+  ]);
+}
+
 await render(homeCard(mrr), 'home.png');
 for (const app of apps) await render(appCard(app), `${app.slug}.png`);
-
-// vibecode-this-site shares the home card
-await render(homeCard(mrr), 'vibecode-this-site.png');
+await render(siteCard(), 'vibecode-this-site.png');
 console.log('done:', apps.length + 2, 'images');
