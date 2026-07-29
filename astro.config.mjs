@@ -12,4 +12,8 @@ export default defineConfig({
   output: 'server',
   adapter: node({ mode: 'standalone' }),
   server: { host: '127.0.0.1', port: 8095 },
+  // Astro's CSRF origin check misfires behind a reverse proxy (it compares the
+  // browser Origin against the internal listener origin). The POST endpoints
+  // carry their own abuse controls: IP rate limits, honeypot, dedupe.
+  security: { checkOrigin: false },
 });
