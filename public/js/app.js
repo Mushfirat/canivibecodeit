@@ -5,6 +5,14 @@
 
   const track = (event, props) => window.posthog?.capture(event, props);
 
+  /* ---------- external links open in a new tab ---------- */
+  $$('a[href]').forEach((a) => {
+    if (/^https?:/.test(a.href) && a.hostname !== location.hostname) {
+      a.target = '_blank';
+      a.rel = 'noopener';
+    }
+  });
+
   /* ---------- toast ---------- */
   let toastTimer;
   const toast = (msg) => {
