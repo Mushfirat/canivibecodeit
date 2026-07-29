@@ -151,19 +151,25 @@
   };
   if ($('#ticker')) setInterval(refreshStats, 30000);
 
-  /* ---------- per-agent prompt copy ---------- */
+  /* ---------- open-in-agent deeplinks + raw copy ----------
+     Each agent registers a URL scheme that opens its harness with the prompt
+     prefilled (never auto-sent). The prompt is also copied as a fallback for
+     machines without the handler installed. */
   const AGENTS = {
     'claude-code': {
       name: 'Claude Code',
-      header: '# Run `claude` in an empty folder and paste this prompt.\n# Claude Code will scaffold, write, and run everything itself.\n\n',
+      link: (p) => `claude-cli://open?q=${encodeURIComponent(p)}`,
+      newTab: false,
     },
     codex: {
       name: 'Codex',
-      header: '# Run `codex` in an empty folder and paste this prompt.\n# Approve the plan, then let it build.\n\n',
+      link: (p) => `https://chatgpt.com/codex/deeplink?prompt=${encodeURIComponent(p)}`,
+      newTab: true,
     },
     cursor: {
       name: 'Cursor',
-      header: '# Open an empty folder in Cursor, press Cmd+I (agent), paste this prompt.\n\n',
+      link: (p) => `cursor://anysphere.cursor-deeplink/prompt?text=${encodeURIComponent(p)}&mode=agent`,
+      newTab: false,
     },
   };
 
@@ -190,26 +196,42 @@
     return ok;
   };
 
+  const flashCopied = (btn, text = 'copied ✓') => {
+    const label = $('span:last-child', btn);
+    const original = label.textContent;
+    label.textContent = text;
+    btn.classList.add('copied');
+    setTimeout(() => {
+      label.textContent = original;
+      btn.classList.remove('copied');
+    }, 1800);
+  };
+
   $$('.copy-group').forEach((group) => {
     const slug = group.dataset.slug;
     group.addEventListener('click', async (e) => {
       const btn = e.target.closest('.copy-btn');
       if (!btn) return;
-      const agent = AGENTS[btn.dataset.agent];
       const prompt = $('#prompt-text')?.textContent || '';
-      if (!(await copyText(agent.header + prompt))) {
-        toast('copy failed · select the text manually');
+
+      if (btn.dataset.agent === 'raw') {
+        if (await copyText(prompt)) {
+          flashCopied(btn);
+          toast('prompt copied · paste it into any agent');
+        } else {
+          toast('copy failed · select the text manually');
+        }
+        track('copy_prompt', { app: slug, agent: 'raw' });
         return;
       }
-      const label = $('span:last-child', btn);
-      const original = label.textContent;
-      label.textContent = 'copied ✓';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        label.textContent = original;
-        btn.classList.remove('copied');
-      }, 1800);
-      toast(`prompt ready for ${agent.name} — go one-shot it`);
+
+      const agent = AGENTS[btn.dataset.agent];
+      copyText(prompt); // best-effort backup; don't block the deeplink on it
+      flashCopied(btn, 'opening…');
+      toast(`opening ${agent.name} · prompt prefilled (and copied, just in case)`);
+      const url = agent.link(prompt);
+      if (agent.newTab) window.open(url, '_blank', 'noopener');
+      else window.location.href = url;
       track('copy_prompt', { app: slug, agent: btn.dataset.agent });
     });
   });
