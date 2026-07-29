@@ -1,0 +1,58 @@
+{
+  "slug": "sunsama",
+  "name": "Sunsama",
+  "domain": "sunsama.com",
+  "category": "tasks-calendar",
+  "subcategory": "daily planner",
+  "tagline": "Daily planner that pulls tasks and calendar into a focused schedule",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Personal",
+    "basis": "monthly per person",
+    "native": "25 USD",
+    "source": "https://sunsama.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; listed at $25/month per person monthly and $20/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A daily planning dashboard is not hard, but Sunsama's value is many integrations, careful UX, calendar sync, and habit-forming workflow.",
+  "coreLoopDIY": "Pull tasks/calendar events, let the user drag tasks into a day plan, track estimates/completion, and run a daily shutdown prompt.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google/Microsoft calendar OAuth",
+    "task-tool APIs",
+    "hosted backend",
+    "auth",
+    "notification/email channel"
+  ],
+  "whatYouLose": [
+    "integration breadth",
+    "calendar two-way sync",
+    "daily ritual design",
+    "mobile apps",
+    "analytics",
+    "reliability"
+  ],
+  "moatType": "integrations/workflow design",
+  "whyPeopleStillPay": "They pay for a planning habit that survives across tools, not a new to-do list.",
+  "priorArt": [
+    {
+      "name": "Super Productivity",
+      "url": "https://github.com/johannesjo/super-productivity",
+      "desc": "Open-source task/time-planning app with local-first workflows.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "akiflow",
+    "motion",
+    "reclaim-ai"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good high-price target where the answer is not trivially yes because integrations matter.",
+  "prompt": "Build me a personal replacement for Sunsama (Daily planner that pulls tasks and calendar into a focused schedule). Requirements:\n\n- Core loop: Pull tasks/calendar events, let the user drag tasks into a day plan, track estimates/completion, and run a daily shutdown prompt.\n- Needs: Google/Microsoft calendar OAuth.\n- Needs: task-tool APIs.\n- Needs: hosted backend.\n- Needs: auth.\n- Needs: notification/email channel.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: integration breadth; calendar two-way sync; daily ritual design.",
+  "promptCurated": false
+}

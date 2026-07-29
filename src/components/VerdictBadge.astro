@@ -1,0 +1,16 @@
+---
+import { VERDICTS } from '../lib/apps.js';
+
+const { verdict, big = false } = Astro.props;
+const v = VERDICTS[verdict];
+---
+
+{
+  big ? (
+    <span class={`verdict-big badge ${v.color}`}>
+      {v.label} · {v.sub}
+    </span>
+  ) : (
+    <span class={`badge ${v.color}`}>{v.label}</span>
+  )
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "otter-ai",
+  "name": "Otter.ai",
+  "domain": "otter.ai",
+  "category": "meeting-notes",
+  "subcategory": "meeting transcription + assistant",
+  "tagline": "Meeting transcription, summaries, and AI chat over conversations",
+  "priceMonthly": 16.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "16.99 USD",
+    "source": "https://otter.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page URL checked; public secondary coverage in 2026 lists Pro at $16.99/month and about $100/year."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build transcription and summaries, but Otter's value includes live meeting assistant behavior, account sync, speaker workflow, integrations, and mobile/web reliability.",
+  "coreLoopDIY": "Use a meeting bot or local recorder, run transcription, diarize speakers, summarize, then expose search/chat over transcripts.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "speech-to-text API or local Whisper",
+    "storage/search index",
+    "calendar/video-call integration if bot-style capture is desired"
+  ],
+  "whatYouLose": [
+    "live bot joining meetings",
+    "speaker diarization quality",
+    "mobile apps",
+    "team/admin controls",
+    "searchable account history",
+    "integrations"
+  ],
+  "moatType": "integrations/sync/collaboration",
+  "whyPeopleStillPay": "They pay for capture reliability and shared searchable meeting memory, not just the transcript file.",
+  "priorArt": [
+    {
+      "name": "whisperX",
+      "url": "https://github.com/m-bain/whisperX",
+      "desc": "Open-source transcription alignment and diarization tooling useful for DIY Otter-like work",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "fireflies-ai",
+    "fathom-ai",
+    "tldv"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Recognizable but not trivial; good example of transcription being easy while production capture is not.",
+  "prompt": "Build me a personal replacement for Otter.ai (Meeting transcription, summaries, and AI chat over conversations). Requirements:\n\n- Core loop: Use a meeting bot or local recorder, run transcription, diarize speakers, summarize, then expose search/chat over transcripts.\n- Needs: speech-to-text API or local Whisper.\n- Needs: storage/search index.\n- Needs: calendar/video-call integration if bot-style capture is desired.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: live bot joining meetings; speaker diarization quality; mobile apps.",
+  "promptCurated": false
+}

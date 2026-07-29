@@ -1,0 +1,57 @@
+{
+  "slug": "fathom-ai",
+  "name": "Fathom",
+  "domain": "fathom.ai",
+  "category": "meeting-notes",
+  "subcategory": "meeting assistant",
+  "tagline": "AI meeting recorder that summarizes calls and syncs notes to tools",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "monthly per user",
+    "native": "20 USD",
+    "source": "https://www.fathom.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Premium is listed at $20/user/month, annual price lower."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A solo clone can handle recordings, transcripts, and summaries, but the product's paid value is automated capture plus CRM/workflow sync and team sharing.",
+  "coreLoopDIY": "Record or import calls, transcribe, summarize by template, clip moments, and push notes to a CRM or docs destination.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "speech-to-text API",
+    "LLM API",
+    "calendar/Zoom/Meet/Teams integration",
+    "hosted database",
+    "optional CRM API keys"
+  ],
+  "whatYouLose": [
+    "automatic call capture",
+    "integrations",
+    "searchable team library",
+    "polished clips",
+    "permissions and admin"
+  ],
+  "moatType": "integrations/collaboration",
+  "whyPeopleStillPay": "They pay for workflow certainty: after every call, the right people and systems have the notes without manual effort.",
+  "priorArt": [
+    {
+      "name": "whisperX",
+      "url": "https://github.com/m-bain/whisperX",
+      "desc": "Useful for transcript alignment and speaker-labeled call records.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "tldv",
+    "krisp",
+    "superwhisper"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Strong 'kinda' because the core is obvious but the workflow moat is real.",
+  "prompt": "Build me a personal replacement for Fathom (AI meeting recorder that summarizes calls and syncs notes to tools). Requirements:\n\n- Core loop: Record or import calls, transcribe, summarize by template, clip moments, and push notes to a CRM or docs destination.\n- Needs: speech-to-text API.\n- Needs: LLM API.\n- Needs: calendar/Zoom/Meet/Teams integration.\n- Needs: hosted database.\n- Needs: optional CRM API keys.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: automatic call capture; integrations; searchable team library.",
+  "promptCurated": false
+}

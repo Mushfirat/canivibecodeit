@@ -1,0 +1,58 @@
+{
+  "slug": "motion",
+  "name": "Motion",
+  "domain": "usemotion.com",
+  "category": "tasks-calendar",
+  "subcategory": "AI scheduling",
+  "tagline": "AI calendar and task scheduler that auto-plans your workday",
+  "priceMonthly": 34,
+  "pricing": {
+    "plan": "Individual",
+    "basis": "monthly",
+    "native": "34 USD",
+    "source": "https://www.usemotion.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; public 2026 references list Individual at $34/month monthly and lower annual pricing."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build an auto-scheduler for your own tasks, but robust calendar conflict handling, integrations, and productized rescheduling take real engineering.",
+  "coreLoopDIY": "Create tasks with duration/deadline/priority, read calendar availability, solve a schedule, and write time blocks back.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google/Microsoft calendar OAuth",
+    "scheduling algorithm",
+    "hosted backend",
+    "notifications",
+    "task database"
+  ],
+  "whatYouLose": [
+    "multi-calendar sync",
+    "recurring work rules",
+    "mobile apps",
+    "team scheduling",
+    "polished rescheduling",
+    "support"
+  ],
+  "moatType": "algorithm/integrations",
+  "whyPeopleStillPay": "They pay because the calendar stays organized without manual drag-and-drop.",
+  "priorArt": [
+    {
+      "name": "No maintained direct clone found",
+      "url": "not found",
+      "desc": "There are scheduling libraries, but no obvious maintained open-source Motion-equivalent co",
+      "status": "not found"
+    }
+  ],
+  "relatedSlugs": [
+    "reclaim-ai",
+    "calendly",
+    "savvycal"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "A good 'kinda' because the core algorithm is doable but the product promise is ongoing automation.",
+  "prompt": "Build me a personal replacement for Motion (AI calendar and task scheduler that auto-plans your workday). Requirements:\n\n- Core loop: Create tasks with duration/deadline/priority, read calendar availability, solve a schedule, and write time blocks back.\n- Needs: Google/Microsoft calendar OAuth.\n- Needs: scheduling algorithm.\n- Needs: hosted backend.\n- Needs: notifications.\n- Needs: task database.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: multi-calendar sync; recurring work rules; mobile apps.",
+  "promptCurated": false
+}

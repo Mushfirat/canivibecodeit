@@ -1,0 +1,61 @@
+{
+  "slug": "vercel",
+  "name": "Vercel",
+  "domain": "vercel.com",
+  "category": "hosting",
+  "subcategory": "frontend hosting + deployment",
+  "tagline": "Frontend cloud for deploying Next.js and web apps from Git",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per member",
+    "native": "20 USD",
+    "source": "https://vercel.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $20/month with usage-based components."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can deploy to a VPS or self-host PaaS, but Vercel's edge network, preview deployments, CI/CD, observability, and Next.js integration are the paid value.",
+  "coreLoopDIY": "Use a VPS/PaaS, connect git webhooks, build/deploy branches, provision HTTPS, and add preview URLs.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "VPS/cloud account",
+    "domain/DNS",
+    "CI/CD",
+    "reverse proxy",
+    "SSL",
+    "monitoring",
+    "backups"
+  ],
+  "whatYouLose": [
+    "edge/CDN performance",
+    "preview deployments",
+    "scaling",
+    "observability",
+    "image functions",
+    "team workflows",
+    "Next.js integration"
+  ],
+  "moatType": "hosting/infrastructure",
+  "whyPeopleStillPay": "They pay because deploys and previews are boring infrastructure that must not break.",
+  "priorArt": [
+    {
+      "name": "Coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "desc": "Open-source self-hosted Heroku/Vercel-like deployment platform.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "netlify",
+    "webflow",
+    "framer"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A core infra page: DIY is real, but not 'free' once maintenance is counted.",
+  "prompt": "Build me a personal replacement for Vercel (Frontend cloud for deploying Next.js and web apps from Git). Requirements:\n\n- Core loop: Use a VPS/PaaS, connect git webhooks, build/deploy branches, provision HTTPS, and add preview URLs.\n- Needs: VPS/cloud account.\n- Needs: domain/DNS.\n- Needs: CI/CD.\n- Needs: reverse proxy.\n- Needs: SSL.\n- Needs: monitoring.\n- Needs: backups.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: edge/CDN performance; preview deployments; scaling.",
+  "promptCurated": false
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "notion",
+  "name": "Notion",
+  "domain": "notion.com",
+  "category": "notes-knowledge",
+  "subcategory": "workspace/docs/database",
+  "tagline": "Flexible docs, databases, wikis, and lightweight project workspace",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Plus",
+    "basis": "monthly per seat",
+    "native": "12 USD",
+    "source": "https://www.notion.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page checked 2026-07-30; public plan pages show Plus around $12/month monthly and lower annual price."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A solo notes-and-database workspace is buildable, but Notion's block editor, permissions, sync, templates, AI, integrations, and collaboration take real product work.",
+  "coreLoopDIY": "Build a block-based notes app with markdown-ish editor, simple databases, backlinks, templates, and local/cloud sync.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "web app framework",
+    "database",
+    "auth",
+    "rich-text/block editor",
+    "optional LLM API",
+    "hosting"
+  ],
+  "whatYouLose": [
+    "mature block editor",
+    "cross-device sync",
+    "permissions",
+    "database views",
+    "templates marketplace",
+    "integrations",
+    "AI workspace context"
+  ],
+  "moatType": "collaboration/sync/editor depth",
+  "whyPeopleStillPay": "They pay for a shared workspace that nontechnical teammates can trust and understand.",
+  "priorArt": [
+    {
+      "name": "AppFlowy",
+      "url": "https://github.com/AppFlowy-IO/AppFlowy",
+      "desc": "Open-source Notion-like workspace with databases and docs.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "evernote",
+    "obsidian-sync",
+    "readwise-reader"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Famous enough to be obvious, but its hidden editor/collaboration surface makes for an honest kinda.",
+  "prompt": "Build me a personal replacement for Notion (Flexible docs, databases, wikis, and lightweight project workspace). Requirements:\n\n- Core loop: Build a block-based notes app with markdown-ish editor, simple databases, backlinks, templates, and local/cloud sync.\n- Needs: web app framework.\n- Needs: database.\n- Needs: auth.\n- Needs: rich-text/block editor.\n- Needs: optional LLM API.\n- Needs: hosting.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: mature block editor; cross-device sync; permissions.",
+  "promptCurated": false
+}

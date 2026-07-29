@@ -1,0 +1,58 @@
+{
+  "slug": "savvycal",
+  "name": "SavvyCal",
+  "domain": "savvycal.com",
+  "category": "scheduling",
+  "subcategory": "booking links",
+  "tagline": "Scheduling links with overlay calendars and nicer booking UX",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "native": "12 USD",
+    "source": "https://savvycal.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Basic listed at $12/month monthly and $10/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core booking-link loop can be cloned, but calendar reliability, time-zone correctness, reminders, and polished link UX make it more than a trivial script.",
+  "coreLoopDIY": "Read availability, generate shareable scheduling pages, write booked events, and email confirmations.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "calendar OAuth",
+    "hosted backend",
+    "email service",
+    "timezone library",
+    "auth"
+  ],
+  "whatYouLose": [
+    "overlay-calendar UX",
+    "team links",
+    "routing",
+    "payments",
+    "reminders",
+    "support"
+  ],
+  "moatType": "calendar integration/polish",
+  "whyPeopleStillPay": "They pay for a nicer, reliable scheduling experience that avoids friction with guests.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.com",
+      "desc": "Open-source scheduling platform covering the main booking-link mechanics.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "raycast-pro",
+    "notion",
+    "evernote"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Good smaller-brand page; open-source prior art makes the verdict nuanced.",
+  "prompt": "Build me a personal replacement for SavvyCal (Scheduling links with overlay calendars and nicer booking UX). Requirements:\n\n- Core loop: Read availability, generate shareable scheduling pages, write booked events, and email confirmations.\n- Needs: calendar OAuth.\n- Needs: hosted backend.\n- Needs: email service.\n- Needs: timezone library.\n- Needs: auth.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: overlay-calendar UX; team links; routing.",
+  "promptCurated": false
+}

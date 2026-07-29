@@ -1,0 +1,59 @@
+{
+  "slug": "buffer",
+  "name": "Buffer",
+  "domain": "buffer.com",
+  "category": "social-media",
+  "subcategory": "social scheduling",
+  "tagline": "Social media scheduler for publishing posts across channels",
+  "priceMonthly": 6,
+  "pricing": {
+    "plan": "Essentials",
+    "basis": "monthly per channel",
+    "native": "6 USD",
+    "source": "https://buffer.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing/help checked 2026-07-30; Essentials listed at $6/channel/month monthly and $5/channel/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "Posting to one or two APIs is easy, but maintaining social platform auth, queues, previews, analytics, and API-policy compliance is real ongoing work.",
+  "coreLoopDIY": "Create a post queue, connect one social API, schedule jobs, publish posts, and log outcomes.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "OAuth/API access for each social network",
+    "hosted scheduler",
+    "database",
+    "media storage",
+    "retry/logging"
+  ],
+  "whatYouLose": [
+    "multi-network API maintenance",
+    "post previews",
+    "analytics",
+    "approvals",
+    "mobile apps",
+    "team queues",
+    "platform policy changes"
+  ],
+  "moatType": "social API/integration upkeep",
+  "whyPeopleStillPay": "They pay because social APIs break and scheduling must be reliable.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Open-source social media scheduling tool and strong Buffer-like prior art.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "later",
+    "typefully",
+    "beehiiv"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Great social example: one channel is easy; social-platform maintenance is not.",
+  "prompt": "Build me a personal replacement for Buffer (Social media scheduler for publishing posts across channels). Requirements:\n\n- Core loop: Create a post queue, connect one social API, schedule jobs, publish posts, and log outcomes.\n- Needs: OAuth/API access for each social network.\n- Needs: hosted scheduler.\n- Needs: database.\n- Needs: media storage.\n- Needs: retry/logging.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: multi-network API maintenance; post previews; analytics.",
+  "promptCurated": false
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "xero",
+  "name": "Xero",
+  "domain": "xero.com",
+  "category": "finance-accounting",
+  "subcategory": "small-business accounting",
+  "tagline": "Cloud accounting, invoicing, bank reconciliation, payroll add-ons, and reporting",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Early",
+    "basis": "monthly",
+    "native": "25 USD",
+    "source": "https://www.xero.com/us/pricing-plans/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official US pricing checked 2026-07-30; Early listed at $25/month after promotional discounts, with higher Growing/Established tiers."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Invoices and reports are buildable, but Xero's real product is bank feeds, accounting workflows, accountant collaboration, compliance expectations, integrations, and trust.",
+  "coreLoopDIY": "Build simple bookkeeping with invoices, expenses, CSV imports, chart of accounts, and reports for personal/internal use.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "accounting model",
+    "bank import/API",
+    "secure hosted database",
+    "backups",
+    "accountant/tax review",
+    "payment integrations"
+  ],
+  "whatYouLose": [
+    "bank reconciliation",
+    "accountant workflows",
+    "payroll/tax integrations",
+    "app marketplace",
+    "audit history",
+    "compliance support"
+  ],
+  "moatType": "banking/compliance/accounting ecosystem",
+  "whyPeopleStillPay": "They pay because businesses need dependable books, not just a ledger UI.",
+  "priorArt": [
+    {
+      "name": "Odoo",
+      "url": "https://github.com/odoo/odoo",
+      "desc": "Open-source business suite with accounting modules; heavier than a solo DIY clone.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "freshbooks",
+    "invoice-ninja",
+    "ynab"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Another structural no due regulatory/financial integrations.",
+  "prompt": null,
+  "promptCurated": false
+}

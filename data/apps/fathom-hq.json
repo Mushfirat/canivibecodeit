@@ -1,0 +1,60 @@
+{
+  "slug": "fathom-hq",
+  "name": "Fathom HQ",
+  "domain": "fathomhq.com",
+  "category": "finance-accounting",
+  "subcategory": "management reporting",
+  "tagline": "Financial reporting, KPI dashboards, consolidations, and forecasting for businesses",
+  "priceMonthly": 53,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "53 USD",
+    "source": "https://www.fathomhq.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked 2026-07-30; Starter shown around $53/month in crawler output, with plan/currency display potentially varying."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A KPI dashboard over accounting exports is buildable, but Fathom's value is accounting integrations, consolidation, forecasting, polished board reports, and accountant workflows.",
+  "coreLoopDIY": "Import Xero/QuickBooks CSV/API data, calculate KPIs, build dashboards, and export PDF reports.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "accounting exports/API",
+    "data model",
+    "chart/report builder",
+    "PDF export",
+    "hosted app",
+    "permissions"
+  ],
+  "whatYouLose": [
+    "accounting integrations",
+    "consolidation",
+    "templates",
+    "forecasting",
+    "report builder",
+    "advisor workflows",
+    "reliability"
+  ],
+  "moatType": "financial integrations/reporting templates",
+  "whyPeopleStillPay": "They pay because board/advisor reporting needs accuracy, comparability, and presentable output.",
+  "priorArt": [
+    {
+      "name": "Metabase",
+      "url": "https://github.com/metabase/metabase",
+      "desc": "Open-source BI/dashboard platform that can power custom KPI dashboards.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "ahrefs",
+    "semrush",
+    "surfer-seo"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Interesting finance ops case: charting is easy, accounting semantics are harder.",
+  "prompt": "Build me a personal replacement for Fathom HQ (Financial reporting, KPI dashboards, consolidations, and forecasting for businesses). Requirements:\n\n- Core loop: Import Xero/QuickBooks CSV/API data, calculate KPIs, build dashboards, and export PDF reports.\n- Needs: accounting exports/API.\n- Needs: data model.\n- Needs: chart/report builder.\n- Needs: PDF export.\n- Needs: hosted app.\n- Needs: permissions.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: accounting integrations; consolidation; templates.",
+  "promptCurated": false
+}

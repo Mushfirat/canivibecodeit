@@ -1,0 +1,58 @@
+{
+  "slug": "feedly",
+  "name": "Feedly",
+  "domain": "feedly.com",
+  "category": "rss-research",
+  "subcategory": "RSS reader",
+  "tagline": "RSS reader and research feed for websites, newsletters, and alerts",
+  "priceMonthly": 7,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "7 USD",
+    "source": "https://docs.feedly.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official docs checked 2026-07-30; Feedly Pro listed at $7/month or $65/year."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "Core RSS reading, folders, search, and saved articles are very buildable; Feedly's paid moat is polished feed discovery, mobile, AI features, and reliability.",
+  "coreLoopDIY": "Parse RSS feeds on a schedule, store items, mark read/saved, expose folders and search, and optionally summarize articles.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "hosted cron or local daemon",
+    "RSS parser",
+    "database",
+    "web UI",
+    "optional LLM API"
+  ],
+  "whatYouLose": [
+    "mobile apps",
+    "feed discovery",
+    "integrations",
+    "Leo/AI filtering",
+    "uptime",
+    "polished reading UX"
+  ],
+  "moatType": "data ingestion/polish",
+  "whyPeopleStillPay": "They pay to avoid maintaining hundreds of feeds and reader apps across devices.",
+  "priorArt": [
+    {
+      "name": "FreshRSS",
+      "url": "https://github.com/FreshRSS/FreshRSS",
+      "desc": "Mature self-hosted RSS aggregator and reader.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "inoreader",
+    "todoist",
+    "sunsama"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A textbook yes: open protocol, many mature open-source alternatives.",
+  "prompt": "Build me a personal replacement for Feedly (RSS reader and research feed for websites, newsletters, and alerts). Requirements:\n\n- Core loop: Parse RSS feeds on a schedule, store items, mark read/saved, expose folders and search, and optionally summarize articles.\n- Needs: hosted cron or local daemon.\n- Needs: RSS parser.\n- Needs: database.\n- Needs: web UI.\n- Needs: optional LLM API.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: mobile apps; feed discovery; integrations.",
+  "promptCurated": false
+}

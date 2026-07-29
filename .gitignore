@@ -23,3 +23,6 @@ Thumbs.db
 *.swp
 .idea/
 .vscode/
+
+# heavy AI direction boards live outside the repo (brand/prompts.md documents them)
+brand/direction-board*.png

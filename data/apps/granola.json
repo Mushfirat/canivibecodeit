@@ -1,0 +1,58 @@
+{
+  "slug": "granola",
+  "name": "Granola",
+  "domain": "granola.ai",
+  "category": "meeting-notes",
+  "subcategory": "meeting transcription + AI notes",
+  "tagline": "AI meeting notepad that turns transcripts into structured notes",
+  "priceMonthly": 14,
+  "pricing": {
+    "plan": "Business",
+    "basis": "monthly per user",
+    "native": "14 USD",
+    "source": "https://www.granola.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official page checked 2026-07-30 showed Business at $14/user/month and Enterprise from $35/user/month; older Individual $18 references may be stale."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A local recorder plus Whisper transcription plus an LLM note template covers the core personal loop in one sitting. The paid product is mainly polish, meeting context, sync, and team workflow.",
+  "coreLoopDIY": "Record system/mic audio, transcribe with Whisper or a hosted speech API, send transcript plus your rough notes to an LLM, save Markdown notes by date and meeting title.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS or Windows audio capture library",
+    "OpenAI/Anthropic API key or local Whisper model",
+    "local folder or SQLite database"
+  ],
+  "whatYouLose": [
+    "sync across devices",
+    "the mobile app",
+    "automatic calendar joins",
+    "someone else's servers & support"
+  ],
+  "moatType": "polish/sync/collaboration",
+  "whyPeopleStillPay": "They pay because it is always on, nicely integrated with calendar/work calls, and trustworthy enough not to lose meeting history.",
+  "priorArt": [
+    {
+      "name": "quill",
+      "url": "https://github.com/dremnik/quill",
+      "desc": "open-source Granola alternative"
+    },
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "local transcription engine"
+    }
+  ],
+  "relatedSlugs": [
+    "otter-ai",
+    "fireflies-ai",
+    "fathom-ai"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "The trend's poster child. Local audio capture, Whisper transcription, an LLM summary into a markdown folder — the core loop is one prompt.",
+  "prompt": "Build me a local meeting-notes app like Granola for macOS. Requirements:\n\n- A menu bar app (Swift or an Electron tray app — pick the simpler to ship) with\n  Start/Stop Recording. Record system audio + mic (use whatever screen-audio capture\n  permission approach is standard).\n- On stop: transcribe the audio locally with whisper.cpp (medium model), or via\n  OpenAI/Groq Whisper API if a key is present in .env.\n- Send the transcript to an LLM (key from .env) with a prompt that produces: a\n  5-bullet summary, decisions made, and action items with owners.\n- Save to ~/MeetingNotes/YYYY-MM-DD-HHMM.md: summary at top, full transcript below\n  a divider. Keep the audio file next to it.\n- No accounts, no cloud storage, no telemetry. Everything stays on my machine except\n  the API calls, and work fully offline if whisper.cpp + a local model are available.\n- Include a README with the permissions I need to grant and how to install deps.",
+  "promptCurated": true
+}

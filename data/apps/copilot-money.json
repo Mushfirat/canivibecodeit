@@ -1,0 +1,58 @@
+{
+  "slug": "copilot-money",
+  "name": "Copilot Money",
+  "domain": "copilot.money",
+  "category": "personal-finance",
+  "subcategory": "budgeting + spending tracker",
+  "tagline": "Personal finance app for spending, budgets, investments, and net worth",
+  "priceMonthly": 13,
+  "pricing": {
+    "plan": "Monthly subscription",
+    "basis": "monthly",
+    "native": "13 USD",
+    "source": "https://apps.apple.com/us/app/copilot-track-budget-money/id1447330651",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Apple App Store pricing checked 2026-07-30; monthly subscription listed at $13 and yearly at $95."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A beautiful spending dashboard can be vibecoded, but Copilot's bank/investment sync, categorization, native Apple apps, and data-security posture are the product.",
+  "coreLoopDIY": "Import bank/CSV data, categorize transactions with rules/LLM, show budgets, investments, and net-worth charts.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Plaid/bank API or CSV import",
+    "secure storage",
+    "macOS/iOS/web app",
+    "categorization rules",
+    "charts"
+  ],
+  "whatYouLose": [
+    "bank sync",
+    "iOS/Mac polish",
+    "transaction enrichment",
+    "investment tracking",
+    "mobile notifications",
+    "security posture"
+  ],
+  "moatType": "bank data/native app/security",
+  "whyPeopleStillPay": "They pay because the app feels native and current financial data appears automatically.",
+  "priorArt": [
+    {
+      "name": "Actual Budget",
+      "url": "https://github.com/actualbudget/actual",
+      "desc": "Open-source budgeting app; good starting point for a DIY personal finance workflow.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "fathom-hq",
+    "ahrefs",
+    "semrush"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good Apple-native example; core is easy, polish/data sync is sticky.",
+  "prompt": "Build me a personal replacement for Copilot Money (Personal finance app for spending, budgets, investments, and net worth). Requirements:\n\n- Core loop: Import bank/CSV data, categorize transactions with rules/LLM, show budgets, investments, and net-worth charts.\n- Needs: Plaid/bank API or CSV import.\n- Needs: secure storage.\n- Needs: macOS/iOS/web app.\n- Needs: categorization rules.\n- Needs: charts.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: bank sync; iOS/Mac polish; transaction enrichment.",
+  "promptCurated": false
+}

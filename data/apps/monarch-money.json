@@ -1,0 +1,59 @@
+{
+  "slug": "monarch-money",
+  "name": "Monarch Money",
+  "domain": "monarch.com",
+  "category": "personal-finance",
+  "subcategory": "budgeting + net worth",
+  "tagline": "Personal finance dashboard for budgeting, transactions, goals, and net worth",
+  "priceMonthly": 14.99,
+  "pricing": {
+    "plan": "Core",
+    "basis": "monthly",
+    "native": "14.99 USD",
+    "source": "https://www.monarch.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page checked; 2026 public references list $14.99/month or $99.99/year for Core."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A manual finance dashboard is buildable, but high-quality bank aggregation, transaction cleaning, investment data, household collaboration, and mobile sync make it real work.",
+  "coreLoopDIY": "Import transactions from CSV or Plaid, categorize spending, track accounts/goals/net worth, and show monthly reports.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "bank aggregation API or CSV import",
+    "secure database",
+    "categorization rules",
+    "charts",
+    "mobile/web app",
+    "backups"
+  ],
+  "whatYouLose": [
+    "bank/investment sync",
+    "transaction categorization",
+    "household collaboration",
+    "mobile apps",
+    "support",
+    "data security posture"
+  ],
+  "moatType": "bank data/security/convenience",
+  "whyPeopleStillPay": "They pay because personal finance apps are only valuable when data arrives automatically and safely.",
+  "priorArt": [
+    {
+      "name": "Firefly III",
+      "url": "https://github.com/firefly-iii/firefly-iii",
+      "desc": "Open-source personal finance manager for budgets, transactions, and reports.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "copilot-money",
+    "fathom-hq",
+    "ahrefs"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good kinda: spreadsheet replacement is yes, bank-sync product is harder.",
+  "prompt": "Build me a personal replacement for Monarch Money (Personal finance dashboard for budgeting, transactions, goals, and net worth). Requirements:\n\n- Core loop: Import transactions from CSV or Plaid, categorize spending, track accounts/goals/net worth, and show monthly reports.\n- Needs: bank aggregation API or CSV import.\n- Needs: secure database.\n- Needs: categorization rules.\n- Needs: charts.\n- Needs: mobile/web app.\n- Needs: backups.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: bank/investment sync; transaction categorization; household collaboration.",
+  "promptCurated": false
+}

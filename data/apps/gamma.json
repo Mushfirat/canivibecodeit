@@ -1,0 +1,60 @@
+{
+  "slug": "gamma",
+  "name": "Gamma",
+  "domain": "gamma.app",
+  "category": "presentations",
+  "subcategory": "AI decks/docs/webpages",
+  "tagline": "AI presentation and document builder for decks, docs, and sites",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Plus",
+    "basis": "monthly per seat",
+    "native": "12 USD",
+    "source": "https://gamma.app/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page checked; public 2026 coverage lists Plus at $12/month, while official crawler exposed annual-effective $9/seat/month."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "An AI slide generator is buildable, but Gamma's strength is layouts, editing model, exports, hosting, analytics, and shareable deck/site UX.",
+  "coreLoopDIY": "Prompt an LLM for outline, generate slide/cards JSON, render with templates, export PDF/PPTX, and host a share page.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "LLM API",
+    "slide renderer",
+    "template system",
+    "export pipeline",
+    "hosted app",
+    "optional image API"
+  ],
+  "whatYouLose": [
+    "polished editor",
+    "responsive card model",
+    "exports",
+    "analytics",
+    "custom domains",
+    "template quality",
+    "collaboration"
+  ],
+  "moatType": "editor/templates/hosting",
+  "whyPeopleStillPay": "They pay because the output looks acceptable without wrestling with PowerPoint.",
+  "priorArt": [
+    {
+      "name": "Slidev",
+      "url": "https://github.com/slidevjs/slidev",
+      "desc": "Open-source Markdown/HTML slide deck generator; good foundation for a developer-oriented c",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "beautiful-ai",
+    "jasper",
+    "quillbot"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A strong modern yes/kinda: a viral category with open-source and API primitives.",
+  "prompt": "Build me a personal replacement for Gamma (AI presentation and document builder for decks, docs, and sites). Requirements:\n\n- Core loop: Prompt an LLM for outline, generate slide/cards JSON, render with templates, export PDF/PPTX, and host a share page.\n- Needs: LLM API.\n- Needs: slide renderer.\n- Needs: template system.\n- Needs: export pipeline.\n- Needs: hosted app.\n- Needs: optional image API.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: polished editor; responsive card model; exports.",
+  "promptCurated": false
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "zapier",
+  "name": "Zapier",
+  "domain": "zapier.com",
+  "category": "automation",
+  "subcategory": "workflow automation",
+  "tagline": "No-code automation platform connecting thousands of SaaS apps",
+  "priceMonthly": 29.99,
+  "pricing": {
+    "plan": "Professional/Starter",
+    "basis": "monthly",
+    "native": "29.99 USD",
+    "source": "https://zapier.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page URL checked; crawler did not expose a clean current price in this pass, so $29.99/month is marked medium-confidence from public plan references."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A few personal automations are easy; Zapier's moat is the 9,000+ app integration catalog, auth handling, retries, task history, UI, and reliability.",
+  "coreLoopDIY": "Write scripts or an n8n/Activepieces flow to call the handful of APIs you actually need.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "API keys/OAuth for each service",
+    "hosted runner",
+    "queue/retry system",
+    "logs",
+    "secrets storage"
+  ],
+  "whatYouLose": [
+    "integration catalog",
+    "OAuth maintenance",
+    "retries/history",
+    "nontechnical builder",
+    "app triggers/actions",
+    "uptime"
+  ],
+  "moatType": "integration network/reliability",
+  "whyPeopleStillPay": "They pay because every new app connection is already packaged and maintained.",
+  "priorArt": [
+    {
+      "name": "n8n",
+      "url": "https://github.com/n8n-io/n8n",
+      "desc": "Open-source workflow automation platform and a real Zapier alternative for technical users",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "make",
+    "ifttt",
+    "n8n-cloud"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A structural kinda: one automation yes, Zapier the integration network no.",
+  "prompt": "Build me a personal replacement for Zapier (No-code automation platform connecting thousands of SaaS apps). Requirements:\n\n- Core loop: Write scripts or an n8n/Activepieces flow to call the handful of APIs you actually need.\n- Needs: API keys/OAuth for each service.\n- Needs: hosted runner.\n- Needs: queue/retry system.\n- Needs: logs.\n- Needs: secrets storage.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: integration catalog; OAuth maintenance; retries/history.",
+  "promptCurated": false
+}

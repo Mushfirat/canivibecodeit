@@ -1,0 +1,57 @@
+{
+  "slug": "fireflies-ai",
+  "name": "Fireflies.ai",
+  "domain": "fireflies.ai",
+  "category": "meeting-notes",
+  "subcategory": "meeting bot + notes",
+  "tagline": "AI meeting bot that records, transcribes, summarizes, and searches calls",
+  "priceMonthly": 18,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per seat",
+    "native": "18 USD",
+    "source": "https://fireflies.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro is listed at $18/seat/month monthly and $10/seat/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "The summarizer is easy; the meeting bot, calendar routing, integrations, team search, and admin layer make it more than a one-prompt clone.",
+  "coreLoopDIY": "Create a recorder/bot, capture call audio, transcribe, generate summaries/action items, store transcripts, and add keyword search.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "speech API",
+    "calendar API",
+    "Zoom/Meet/Teams capture route",
+    "hosted backend",
+    "database/search"
+  ],
+  "whatYouLose": [
+    "native meeting bot reliability",
+    "integrations with CRM/project tools",
+    "team permissions",
+    "shared topic tracking",
+    "compliance controls"
+  ],
+  "moatType": "integrations/collaboration",
+  "whyPeopleStillPay": "They pay because the bot reliably appears, captures, files, and shares notes across the whole team.",
+  "priorArt": [
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "Provides the commodity transcription layer; the SaaS moat is the meeting/integration layer",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "fathom-ai",
+    "tldv",
+    "krisp"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful contrast with Granola: same AI primitive, harder product surface.",
+  "prompt": "Build me a personal replacement for Fireflies.ai (AI meeting bot that records, transcribes, summarizes, and searches calls). Requirements:\n\n- Core loop: Create a recorder/bot, capture call audio, transcribe, generate summaries/action items, store transcripts, and add keyword search.\n- Needs: speech API.\n- Needs: calendar API.\n- Needs: Zoom/Meet/Teams capture route.\n- Needs: hosted backend.\n- Needs: database/search.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: native meeting bot reliability; integrations with CRM/project tools; team permissions.",
+  "promptCurated": false
+}

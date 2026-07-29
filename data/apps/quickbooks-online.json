@@ -1,0 +1,60 @@
+{
+  "slug": "quickbooks-online",
+  "name": "QuickBooks Online",
+  "domain": "quickbooks.intuit.com",
+  "category": "finance-accounting",
+  "subcategory": "small-business accounting",
+  "tagline": "Small-business accounting, invoicing, expenses, payroll add-ons, and tax workflows",
+  "priceMonthly": 38,
+  "pricing": {
+    "plan": "Simple Start",
+    "basis": "monthly",
+    "native": "38 USD",
+    "source": "https://quickbooks.intuit.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official Intuit pricing checked 2026-07-30; Simple Start standard monthly price shown around $38/month, excluding time-limited promos."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build invoicing and expense tables, but QuickBooks' value is accounting correctness, bank feeds, payroll/tax ecosystem, accountant workflows, compliance, and support.",
+  "coreLoopDIY": "For simple needs, build invoice creation, payment tracking, expenses, CSV bank import, and basic P&L reports.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "payment processor",
+    "accounting schema",
+    "bank import/API",
+    "tax/accounting knowledge",
+    "backups",
+    "security"
+  ],
+  "whatYouLose": [
+    "bank feeds",
+    "accountant ecosystem",
+    "payroll/tax workflows",
+    "reconciliations",
+    "audit trails",
+    "support",
+    "compliance expectations"
+  ],
+  "moatType": "banking/compliance/accounting ecosystem",
+  "whyPeopleStillPay": "They pay because accounting mistakes and tax messes cost more than the subscription.",
+  "priorArt": [
+    {
+      "name": "Akaunting",
+      "url": "https://github.com/akaunting/akaunting",
+      "desc": "Open-source accounting software for invoicing, expenses, and small-business books.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "xero",
+    "freshbooks",
+    "invoice-ninja"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Essential no/kinda: the UI is cloneable, financial trust is not.",
+  "prompt": null,
+  "promptCurated": false
+}

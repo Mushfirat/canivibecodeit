@@ -1,0 +1,39 @@
+{
+  "subcategory": null,
+  "tagline": "A form, an embed widget, and a wall page",
+  "pricing": {
+    "plan": null,
+    "basis": "monthly",
+    "native": null,
+    "source": null,
+    "checkedOn": "2026-07-29",
+    "confidence": "medium",
+    "notes": null
+  },
+  "verdictConfidence": "high",
+  "verdictSummary": "A form, an embed widget, and a wall page. $300/yr for what is essentially a guestbook.",
+  "coreLoopDIY": null,
+  "diyTimeEstimate": "one sitting",
+  "requirements": [],
+  "moatType": null,
+  "whyPeopleStillPay": null,
+  "relatedSlugs": [],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "promptCurated": true,
+  "slug": "testimonial-to",
+  "name": "Senja / Testimonial.to",
+  "domain": "senja.io",
+  "category": "testimonials",
+  "priceMonthly": 25,
+  "verdict": "yes",
+  "notes": "A form, an embed widget, and a wall page. $300/yr for what is essentially a guestbook.",
+  "whatYouLose": [
+    "video testimonial recording in-browser",
+    "imported reviews from other platforms",
+    "their widget templates gallery",
+    "a hosted collection URL that isn't yours"
+  ],
+  "priorArt": [],
+  "prompt": "Build me a testimonial collection and display tool like Senja. Requirements:\n\n- A public /submit page: name, role/company, avatar upload (or auto-fetch from a\n  provided URL), star rating, and the testimonial text. Store submissions in SQLite\n  with an approved flag defaulting to false.\n- An /admin page (basic-auth from .env) listing submissions with approve/delete\n  buttons — nothing shows publicly until approved.\n- A public /wall page: masonry grid of approved testimonials, clean cards with\n  avatar, name, stars, and text. Mobile-friendly, dark mode support.\n- An embeddable widget: /embed.js renders the wall into any page via one script\n  tag + a div, iframe-free, styled to inherit the host page's font.\n- Image uploads resized server-side to 128px avatars, stored on disk.\n- Node or Python, single small server, deploy instructions for a VPS."
+}

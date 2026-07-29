@@ -1,0 +1,60 @@
+{
+  "slug": "airtable",
+  "name": "Airtable",
+  "domain": "airtable.com",
+  "category": "databases",
+  "subcategory": "spreadsheet database",
+  "tagline": "Spreadsheet-like database for teams, forms, automations, and interfaces",
+  "priceMonthly": 24,
+  "pricing": {
+    "plan": "Team",
+    "basis": "monthly per collaborator",
+    "native": "24 USD",
+    "source": "https://airtable.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing/support checked 2026-07-30; Team listed at $24/collaborator/month monthly and $20 annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A spreadsheet database CRUD app is buildable, but Airtable's views, permissions, automations, interfaces, forms, sync, and integrations are broad.",
+  "coreLoopDIY": "Create tables/fields/views, forms, simple automations, filters, and a REST API over Postgres/SQLite.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "database",
+    "schema builder",
+    "grid UI",
+    "auth/permissions",
+    "automation worker",
+    "hosted backend"
+  ],
+  "whatYouLose": [
+    "rich field types",
+    "interfaces",
+    "automations",
+    "sync/integrations",
+    "mobile",
+    "permissions",
+    "scalability"
+  ],
+  "moatType": "database/editor/integrations",
+  "whyPeopleStillPay": "They pay because non-engineers can turn data into workflows without asking for a custom app.",
+  "priorArt": [
+    {
+      "name": "NocoDB",
+      "url": "https://github.com/nocodb/nocodb",
+      "desc": "Open-source Airtable-like no-code database built on existing SQL databases.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "coda",
+    "tally",
+    "typeform"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Foundational page: a lot of subscriptions are secretly Airtable-shaped.",
+  "prompt": "Build me a personal replacement for Airtable (Spreadsheet-like database for teams, forms, automations, and interfaces). Requirements:\n\n- Core loop: Create tables/fields/views, forms, simple automations, filters, and a REST API over Postgres/SQLite.\n- Needs: database.\n- Needs: schema builder.\n- Needs: grid UI.\n- Needs: auth/permissions.\n- Needs: automation worker.\n- Needs: hosted backend.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: rich field types; interfaces; automations.",
+  "promptCurated": false
+}

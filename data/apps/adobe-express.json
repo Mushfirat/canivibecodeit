@@ -1,0 +1,58 @@
+{
+  "slug": "adobe-express",
+  "name": "Adobe Express",
+  "domain": "adobe.com",
+  "category": "design",
+  "subcategory": "quick creative editor",
+  "tagline": "Template-based quick editor for social graphics, videos, PDFs, and assets",
+  "priceMonthly": 9.99,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "monthly",
+    "native": "9.99 USD",
+    "source": "https://www.adobe.com/express/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; 2026 public coverage lists Premium at $9.99/month or $99.99/year."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build a quick image editor and template exporter, but Adobe's stock/licensing, PDF/media tooling, brand assets, and Creative Cloud tie-ins are the product.",
+  "coreLoopDIY": "Build a small template editor for images/videos with text overlays, background removal via API, and export.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "canvas/video editor",
+    "media processing",
+    "image AI API",
+    "template assets",
+    "storage"
+  ],
+  "whatYouLose": [
+    "Adobe Stock/assets",
+    "PDF/video tooling",
+    "brand kits",
+    "Creative Cloud integration",
+    "mobile apps",
+    "licensing coverage"
+  ],
+  "moatType": "licensed assets/ecosystem",
+  "whyPeopleStillPay": "They pay because the content and export ecosystem is already there.",
+  "priorArt": [
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source visual builder useful for layout/template-editor concepts, though not a full E",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "midjourney",
+    "runway",
+    "elevenlabs"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful contrast with Canva: same template moat, different ecosystem.",
+  "prompt": "Build me a personal replacement for Adobe Express (Template-based quick editor for social graphics, videos, PDFs, and assets). Requirements:\n\n- Core loop: Build a small template editor for images/videos with text overlays, background removal via API, and export.\n- Needs: canvas/video editor.\n- Needs: media processing.\n- Needs: image AI API.\n- Needs: template assets.\n- Needs: storage.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: Adobe Stock/assets; PDF/video tooling; brand kits.",
+  "promptCurated": false
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "raindrop-io",
+  "name": "Raindrop.io",
+  "domain": "raindrop.io",
+  "category": "bookmarks",
+  "subcategory": "bookmark manager",
+  "tagline": "Visual bookmark manager for saving, tagging, and searching links",
+  "priceMonthly": 3,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "3 USD",
+    "source": "https://raindrop.io/pro",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official Pro URLs checked; public references list Pro at about $3/month depending on billing/currency."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "A personal bookmark saver with tags, full-text search, and screenshots is a very tractable small app.",
+  "coreLoopDIY": "Build a browser extension/bookmarklet, save URL metadata to SQLite/Postgres, tag it, optionally archive page text, and provide search.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "browser extension or bookmarklet",
+    "small hosted backend or local database",
+    "page metadata/extraction library"
+  ],
+  "whatYouLose": [
+    "mobile apps",
+    "browser-extension polish",
+    "permanent archiving",
+    "visual previews",
+    "team collections",
+    "import/export polish"
+  ],
+  "moatType": "polish/cross-platform",
+  "whyPeopleStillPay": "They pay because bookmarks are boring until import/export, search, mobile, and extension reliability matter.",
+  "priorArt": [
+    {
+      "name": "linkwarden",
+      "url": "https://github.com/linkwarden/linkwarden",
+      "desc": "Open-source bookmark manager with archiving, collections, and collaborative saving.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "feedly",
+    "inoreader",
+    "todoist"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Great cheap-subscription target; a strong yes with real prior art.",
+  "prompt": "Build me a personal replacement for Raindrop.io (Visual bookmark manager for saving, tagging, and searching links). Requirements:\n\n- Core loop: Build a browser extension/bookmarklet, save URL metadata to SQLite/Postgres, tag it, optionally archive page text, and provide search.\n- Needs: browser extension or bookmarklet.\n- Needs: small hosted backend or local database.\n- Needs: page metadata/extraction library.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: mobile apps; browser-extension polish; permanent archiving.",
+  "promptCurated": false
+}

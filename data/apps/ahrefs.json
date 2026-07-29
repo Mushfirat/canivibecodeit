@@ -1,0 +1,60 @@
+{
+  "slug": "ahrefs",
+  "name": "Ahrefs",
+  "domain": "ahrefs.com",
+  "category": "seo-marketing",
+  "subcategory": "SEO/backlink data",
+  "tagline": "SEO and AI-search platform built on large web, keyword, and backlink datasets",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "29 USD",
+    "source": "https://ahrefs.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; 2026 public coverage lists a Starter tier around $29/month, with larger tiers much higher."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build a keyword tracker or site audit script, but Ahrefs' value is its proprietary web crawl, backlink index, keyword data, SERP data, and historical datasets.",
+  "coreLoopDIY": "For one site, crawl pages, check technical SEO, track a small keyword list, and call search APIs where available.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "crawler",
+    "search/SEO APIs",
+    "storage",
+    "rank tracking jobs",
+    "dashboard",
+    "substantial data budget"
+  ],
+  "whatYouLose": [
+    "backlink index",
+    "keyword/SERP databases",
+    "historical data",
+    "scale",
+    "data freshness",
+    "competitive research",
+    "AI-search data"
+  ],
+  "moatType": "proprietary data/crawler scale",
+  "whyPeopleStillPay": "They pay for the dataset, not the dashboard.",
+  "priorArt": [
+    {
+      "name": "Screaming Frog alternatives: SEO Macroscope",
+      "url": "https://github.com/smac89/SEO-Macroscope",
+      "desc": "Open-source website crawler for technical SEO; does not replace Ahrefs' external data moat",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "semrush",
+    "surfer-seo",
+    "frase"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "One of the best no examples: data moat is obvious once stated.",
+  "prompt": null,
+  "promptCurated": false
+}

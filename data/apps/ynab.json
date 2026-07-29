@@ -1,0 +1,59 @@
+{
+  "slug": "ynab",
+  "name": "YNAB",
+  "domain": "ynab.com",
+  "category": "personal-finance",
+  "subcategory": "budgeting",
+  "tagline": "Personal budgeting app built around zero-based budgeting and habit formation",
+  "priceMonthly": 14.99,
+  "pricing": {
+    "plan": "Monthly Plan",
+    "basis": "monthly",
+    "native": "14.99 USD",
+    "source": "https://www.ynab.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; monthly plan listed at $14.99/month and annual at $109/year."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "A zero-based budget app with accounts, categories, envelopes, and reports is very buildable; bank sync and habit coaching are the main paid value.",
+  "coreLoopDIY": "Build account/category tables, assign dollars to categories, import transactions, reconcile balances, and show budget reports.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "local or hosted database",
+    "CSV import",
+    "optional bank aggregation API",
+    "reporting charts",
+    "backups"
+  ],
+  "whatYouLose": [
+    "bank sync",
+    "mobile apps",
+    "educational method/content",
+    "family sharing",
+    "polished reports",
+    "support",
+    "habit design"
+  ],
+  "moatType": "bank data/convenience/habit system",
+  "whyPeopleStillPay": "They pay because the method and mobile/bank-sync habit are easier to follow than a spreadsheet.",
+  "priorArt": [
+    {
+      "name": "Actual Budget",
+      "url": "https://github.com/actualbudget/actual",
+      "desc": "Open-source local-first budgeting app and one of the strongest YNAB alternatives.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "monarch-money",
+    "copilot-money",
+    "fathom-hq"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "One of the best consumer-subscription yes pages due strong prior art.",
+  "prompt": "Build me a personal replacement for YNAB (Personal budgeting app built around zero-based budgeting and habit formation). Requirements:\n\n- Core loop: Build account/category tables, assign dollars to categories, import transactions, reconcile balances, and show budget reports.\n- Needs: local or hosted database.\n- Needs: CSV import.\n- Needs: optional bank aggregation API.\n- Needs: reporting charts.\n- Needs: backups.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: bank sync; mobile apps; educational method/content.",
+  "promptCurated": false
+}

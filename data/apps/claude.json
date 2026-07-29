@@ -1,0 +1,58 @@
+{
+  "slug": "claude",
+  "name": "Claude",
+  "domain": "claude.ai",
+  "category": "ai-assistant",
+  "subcategory": "AI assistant",
+  "tagline": "AI assistant for writing, reasoning, coding, and document work",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "20 USD",
+    "source": "https://claude.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official Anthropic pricing/support checked 2026-07-30; Pro listed at $20/month and $200/year."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A Claude-like UI is trivial; the model, safety/reliability layer, long-context performance, artifacts/projects, and platform distribution are not.",
+  "coreLoopDIY": "Build a chat app using Anthropic API, with document upload, conversation storage, and optional project contexts.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "Anthropic API key",
+    "hosted app",
+    "file parsing",
+    "storage",
+    "optional vector search"
+  ],
+  "whatYouLose": [
+    "frontier model",
+    "long-context quality",
+    "product surface",
+    "mobile apps",
+    "reliability",
+    "continuous model upgrades"
+  ],
+  "moatType": "frontier model/platform",
+  "whyPeopleStillPay": "They pay because the quality sits in the model and product platform, not the wrapper.",
+  "priorArt": [
+    {
+      "name": "LibreChat",
+      "url": "https://github.com/danny-avila/LibreChat",
+      "desc": "Open-source multi-model AI chat platform for self-hosting API-based assistants.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "perplexity",
+    "gemini",
+    "gamma"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Good no that still points technical readers to usable wrappers.",
+  "prompt": null,
+  "promptCurated": false
+}

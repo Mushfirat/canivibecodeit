@@ -1,0 +1,44 @@
+---
+import { allApps } from '../lib/apps.js';
+import { mrrDestroyed } from '../lib/db.js';
+
+const apps = allApps();
+const total = mrrDestroyed(apps);
+const chars = [...('$' + total.toLocaleString('en-US'))];
+const tapeItems = apps
+  .filter((a) => a.priceMonthly != null)
+  .sort((a, b) => (b.pagePriority ?? 3) - (a.pagePriority ?? 3) || b.priceMonthly - a.priceMonthly)
+  .slice(0, 14)
+  .map((a) => `${a.name.toUpperCase()} −$${a.priceMonthly}/mo`)
+  .join(' · ');
+const reel = [...Array(10).keys()];
+---
+
+<div class="ticker" id="ticker" data-total={total}>
+  <div class="tape" aria-hidden="true">
+    <span>{tapeItems} · </span>
+    <span>{tapeItems} · </span>
+  </div>
+  <div class="main">
+    <span class="label">collective mrr<br />destroyed</span>
+    <span class="odometer" aria-label={`$${total.toLocaleString('en-US')} per month`}>
+      {
+        chars.map((ch) =>
+          /\d/.test(ch) ? (
+            <span class="digit" data-digit={ch}>
+              <span class="reel" style={`transform: translateY(calc(${-ch} * clamp(36px, 5.6vw, 56px)))`}>
+                {reel.map((n) => (
+                  <span>{n}</span>
+                ))}
+              </span>
+            </span>
+          ) : (
+            <span class="sym">{ch}</span>
+          )
+        )
+      }
+    </span>
+    <span class="permo">/mo</span>
+    <span class="live-pill"><i></i>live</span>
+  </div>
+</div>

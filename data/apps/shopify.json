@@ -1,0 +1,61 @@
+{
+  "slug": "shopify",
+  "name": "Shopify",
+  "domain": "shopify.com",
+  "category": "commerce",
+  "subcategory": "online store platform",
+  "tagline": "Hosted ecommerce platform for stores, payments, checkout, and operations",
+  "priceMonthly": 39,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "native": "39 USD",
+    "source": "https://www.shopify.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked; regional page showed US$25 annual-effective while US public references commonly list Basic $39/month monthly and $29/month annually."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build a small store, but Shopify's product is hosted checkout, payments, tax/shipping integrations, app marketplace, fraud/risk tooling, and merchant operations.",
+  "coreLoopDIY": "For a tiny shop, build catalog/cart/checkout via Stripe, order emails, and simple admin; do not expect Shopify parity.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "payment processor",
+    "tax/shipping logic",
+    "database",
+    "hosting",
+    "emails",
+    "inventory/order admin"
+  ],
+  "whatYouLose": [
+    "trusted checkout",
+    "payment risk",
+    "app marketplace",
+    "themes",
+    "shipping/tax integrations",
+    "POS",
+    "support",
+    "scale"
+  ],
+  "moatType": "payments/marketplace/compliance",
+  "whyPeopleStillPay": "They pay because ecommerce failures cost real revenue and trust.",
+  "priorArt": [
+    {
+      "name": "Medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "desc": "Open-source commerce platform for custom stores; substantial prior art but not Shopify's h",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "podia",
+    "teachable",
+    "kajabi"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A valuable no: the app is not just product pages and a cart.",
+  "prompt": null,
+  "promptCurated": false
+}

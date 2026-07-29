@@ -1,0 +1,59 @@
+{
+  "slug": "canva",
+  "name": "Canva",
+  "domain": "canva.com",
+  "category": "design",
+  "subcategory": "graphic design suite",
+  "tagline": "Template-based design suite for social posts, docs, decks, and brand assets",
+  "priceMonthly": 18,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "18 USD",
+    "source": "https://www.canva.com/en_in/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing varies by region; 2026 public pricing coverage lists Canva Pro around $18/month in USD markets, while local pages may show regional currency."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A prompt-to-template design generator is buildable, but Canva's value is templates, stock assets, collaboration, brand kits, print/export workflows, and distribution.",
+  "coreLoopDIY": "Generate simple social graphics from templates, edit text/images on a canvas, export PNG/PDF, and save brand colors.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "canvas editor library",
+    "image generation/editing API",
+    "template assets",
+    "file export pipeline",
+    "hosted app"
+  ],
+  "whatYouLose": [
+    "template library",
+    "stock/licensed assets",
+    "Magic Studio depth",
+    "collaboration",
+    "brand kits",
+    "print/social integrations",
+    "mobile apps"
+  ],
+  "moatType": "licensed assets/templates/collaboration",
+  "whyPeopleStillPay": "They pay because design work is mostly choosing from a huge polished library and collaborating without breaking layouts.",
+  "priorArt": [
+    {
+      "name": "Penpot",
+      "url": "https://github.com/penpot/penpot",
+      "desc": "Open-source design/prototyping platform; not a Canva clone, but real prior art for browser",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "figma",
+    "whimsical",
+    "adobe-express"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "An honest kinda: easy to demo, hard to match asset library and workflows.",
+  "prompt": "Build me a personal replacement for Canva (Template-based design suite for social posts, docs, decks, and brand assets). Requirements:\n\n- Core loop: Generate simple social graphics from templates, edit text/images on a canvas, export PNG/PDF, and save brand colors.\n- Needs: canvas editor library.\n- Needs: image generation/editing API.\n- Needs: template assets.\n- Needs: file export pipeline.\n- Needs: hosted app.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: template library; stock/licensed assets; Magic Studio depth.",
+  "promptCurated": false
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "circle",
+  "name": "Circle",
+  "domain": "circle.so",
+  "category": "community",
+  "subcategory": "community + courses",
+  "tagline": "Community platform for memberships, courses, live events, and payments",
+  "priceMonthly": 99,
+  "pricing": {
+    "plan": "Professional/Pro",
+    "basis": "monthly",
+    "native": "99 USD",
+    "source": "https://circle.so/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked and says plans start as low as $89/month annual; 2026 public reviews cite about $99/month monthly or $89/month annual for Professional."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A private forum/community is buildable, but Circle's value is member management, courses, events, payments, mobile apps, automations, AI, and migrations.",
+  "coreLoopDIY": "Self-host or build a private community with posts, spaces, members, access roles, payments, and notifications.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "auth",
+    "database",
+    "forum/community app",
+    "payments",
+    "email/push notifications",
+    "hosting"
+  ],
+  "whatYouLose": [
+    "polished member UX",
+    "mobile apps",
+    "payments",
+    "course/events integration",
+    "automations",
+    "migrations",
+    "community admin"
+  ],
+  "moatType": "community/network/payments",
+  "whyPeopleStillPay": "They pay because communities need engagement mechanics and member operations, not just threads.",
+  "priorArt": [
+    {
+      "name": "Discourse",
+      "url": "https://github.com/discourse/discourse",
+      "desc": "Mature open-source community/forum software suitable for many Circle-like communities.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "mighty-networks",
+    "buffer",
+    "later"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good page because forums are easy to underestimate and mobile/community ops matter.",
+  "prompt": "Build me a personal replacement for Circle (Community platform for memberships, courses, live events, and payments). Requirements:\n\n- Core loop: Self-host or build a private community with posts, spaces, members, access roles, payments, and notifications.\n- Needs: auth.\n- Needs: database.\n- Needs: forum/community app.\n- Needs: payments.\n- Needs: email/push notifications.\n- Needs: hosting.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: polished member UX; mobile apps; payments.",
+  "promptCurated": false
+}

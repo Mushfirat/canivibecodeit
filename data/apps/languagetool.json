@@ -1,0 +1,56 @@
+{
+  "slug": "languagetool",
+  "name": "LanguageTool",
+  "domain": "languagetool.org",
+  "category": "ai-writing",
+  "subcategory": "grammar checker",
+  "tagline": "Grammar and style checker with browser extensions and premium suggestions",
+  "priceMonthly": 19.9,
+  "pricing": {
+    "plan": "Premium Monthly",
+    "basis": "monthly EUR list",
+    "native": "19.9 EUR",
+    "source": "https://languagetool.org/premium",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official help checked 2026-07-30; monthly subscription listed at €19.90/month; annual options are much lower effective monthly cost."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "Because the core engine is open source, a technical user can run the grammar checker locally or self-host the server for many use cases.",
+  "coreLoopDIY": "Run LanguageTool locally/self-hosted, connect it to an editor/browser workflow, and optionally add LLM rewrites.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "Java runtime or Docker",
+    "local/server install",
+    "browser/editor integration",
+    "optional LLM API"
+  ],
+  "whatYouLose": [
+    "premium rule set",
+    "hosted server convenience",
+    "browser extension premium flows",
+    "team/admin options",
+    "support"
+  ],
+  "moatType": "open-source core/hosted convenience",
+  "whyPeopleStillPay": "They pay for hosted convenience, premium rules, and cross-device setup.",
+  "priorArt": [
+    {
+      "name": "LanguageTool",
+      "url": "https://github.com/languagetool-org/languagetool",
+      "desc": "The product's own open-source core engine.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "canva",
+    "figma",
+    "whimsical"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A rare clean yes where prior art is the product's own open core.",
+  "prompt": "Build me a personal replacement for LanguageTool (Grammar and style checker with browser extensions and premium suggestions). Requirements:\n\n- Core loop: Run LanguageTool locally/self-hosted, connect it to an editor/browser workflow, and optionally add LLM rewrites.\n- Needs: Java runtime or Docker.\n- Needs: local/server install.\n- Needs: browser/editor integration.\n- Needs: optional LLM API.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: premium rule set; hosted server convenience; browser extension premium flows.",
+  "promptCurated": false
+}

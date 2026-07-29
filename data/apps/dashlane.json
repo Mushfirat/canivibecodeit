@@ -1,0 +1,59 @@
+{
+  "slug": "dashlane",
+  "name": "Dashlane",
+  "domain": "dashlane.com",
+  "category": "security",
+  "subcategory": "password manager",
+  "tagline": "Password manager with autofill, passkeys, sharing, and security alerts",
+  "priceMonthly": 4.99,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "annual effective per month",
+    "native": "4.99 USD",
+    "source": "https://www.dashlane.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Dashlane no longer emphasizes monthly consumer billing in all regions; public 2026 pricing references list Premium around $4.99/month billed annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A simple vault is buildable, but matching Dashlane's extension/mobile autofill, passkey support, breach monitoring, sharing, and trust posture is not a casual clone.",
+  "coreLoopDIY": "Build or adopt an encrypted vault, generate passwords, and sync encrypted data across devices.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "encrypted storage",
+    "browser extension",
+    "mobile autofill support",
+    "secure backup",
+    "optional breach data source"
+  ],
+  "whatYouLose": [
+    "autofill polish",
+    "passkeys",
+    "security alerts",
+    "account recovery",
+    "audited security",
+    "sharing",
+    "support"
+  ],
+  "moatType": "security/trust/cross-platform",
+  "whyPeopleStillPay": "They pay for low-friction secure autofill and confidence that the vault will not be lost.",
+  "priorArt": [
+    {
+      "name": "KeePassXC",
+      "url": "https://github.com/KeePassXreboot/keepassxc",
+      "desc": "Open-source local password manager prior art; not a Dashlane clone but covers the core vau",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "hey-email",
+    "1password",
+    "bitwarden"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Another high-trust category where 'can build' must not become reckless advice.",
+  "prompt": "Build me a personal replacement for Dashlane (Password manager with autofill, passkeys, sharing, and security alerts). Requirements:\n\n- Core loop: Build or adopt an encrypted vault, generate passwords, and sync encrypted data across devices.\n- Needs: encrypted storage.\n- Needs: browser extension.\n- Needs: mobile autofill support.\n- Needs: secure backup.\n- Needs: optional breach data source.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: autofill polish; passkeys; security alerts.",
+  "promptCurated": false
+}

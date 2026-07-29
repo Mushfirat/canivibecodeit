@@ -1,0 +1,59 @@
+{
+  "slug": "simple-analytics",
+  "name": "Simple Analytics",
+  "domain": "simpleanalytics.com",
+  "category": "analytics",
+  "subcategory": "privacy web analytics",
+  "tagline": "Privacy-first website analytics without cookies or personal tracking",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "20 USD",
+    "source": "https://www.simpleanalytics.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Starter listed at $20/month."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "Pageview analytics, events, dashboards, and exports are very buildable; paid value is hosted privacy posture, reports, reliability, and support.",
+  "coreLoopDIY": "Add JS tracker, record anonymous pageviews/events, aggregate by dimensions, and expose dashboard/API.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "server",
+    "database",
+    "tracker script",
+    "domain/SSL",
+    "backups",
+    "optional email reports"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "privacy/legal positioning",
+    "bot filtering",
+    "reports",
+    "uptime",
+    "support"
+  ],
+  "moatType": "hosting/compliance positioning",
+  "whyPeopleStillPay": "They pay for low-maintenance analytics they can put in a privacy policy with confidence.",
+  "priorArt": [
+    {
+      "name": "Umami",
+      "url": "https://github.com/umami-software/umami",
+      "desc": "Open-source web analytics platform for privacy-friendly tracking.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "umami-cloud",
+    "squarespace",
+    "wix"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Another strong yes; helps cluster analytics apps on the site.",
+  "prompt": "Build me a personal replacement for Simple Analytics (Privacy-first website analytics without cookies or personal tracking). Requirements:\n\n- Core loop: Add JS tracker, record anonymous pageviews/events, aggregate by dimensions, and expose dashboard/API.\n- Needs: server.\n- Needs: database.\n- Needs: tracker script.\n- Needs: domain/SSL.\n- Needs: backups.\n- Needs: optional email reports.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: managed hosting; privacy/legal positioning; bot filtering.",
+  "promptCurated": false
+}

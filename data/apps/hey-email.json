@@ -1,0 +1,57 @@
+{
+  "slug": "hey-email",
+  "name": "HEY",
+  "domain": "hey.com",
+  "category": "email",
+  "subcategory": "consumer email service",
+  "tagline": "Opinionated paid email service with screening, bundles, and privacy defaults",
+  "priceMonthly": 8.25,
+  "pricing": {
+    "plan": "Personal address",
+    "basis": "annual effective per month",
+    "native": "8.25 USD",
+    "source": "https://www.hey.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; 4+ character personal address is $99/year, equivalent to $8.25/month."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build an email client, but replacing HEY means running a trustworthy email service: deliverability, spam filtering, abuse handling, storage, mobile apps, and reputation.",
+  "coreLoopDIY": "Build a personal mail client on top of IMAP/SMTP or a hosted mailbox; do not try to replace the global email service layer casually.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "existing email provider or mailbox",
+    "IMAP/SMTP APIs",
+    "spam filtering if hosting",
+    "domain/DNS if custom email"
+  ],
+  "whatYouLose": [
+    "email deliverability",
+    "spam/abuse systems",
+    "storage reliability",
+    "mobile apps",
+    "identity/reputation",
+    "support"
+  ],
+  "moatType": "deliverability/compliance/infrastructure",
+  "whyPeopleStillPay": "They pay because email is infrastructure; deliverability and trust are the product.",
+  "priorArt": [
+    {
+      "name": "Mail-in-a-Box",
+      "url": "https://github.com/mail-in-a-box/mailinabox",
+      "desc": "Open-source personal mail server stack; useful prior art but deliverability remains the mo",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "1password",
+    "bitwarden",
+    "dashlane"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Valuable no: the UI is cloneable, but email infrastructure is not an afternoon project.",
+  "prompt": null,
+  "promptCurated": false
+}

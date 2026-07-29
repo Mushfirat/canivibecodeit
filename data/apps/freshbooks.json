@@ -1,0 +1,60 @@
+{
+  "slug": "freshbooks",
+  "name": "FreshBooks",
+  "domain": "freshbooks.com",
+  "category": "finance-accounting",
+  "subcategory": "invoicing + accounting",
+  "tagline": "Invoicing, expenses, time tracking, payments, and accounting for small businesses",
+  "priceMonthly": 23,
+  "pricing": {
+    "plan": "Lite",
+    "basis": "monthly",
+    "native": "23 USD",
+    "source": "https://www.freshbooks.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; public 2026 pricing references list Lite around $23/month monthly, with promos and annual discounts."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "For freelancers, invoices, time tracking, and expense logs are buildable; payments, tax/accounting reports, bank feeds, client portal, and reliability make it more than trivial.",
+  "coreLoopDIY": "Generate invoices, track clients/projects/time, record payments/expenses, export reports, and email PDFs.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "database",
+    "invoice PDF generation",
+    "email service",
+    "Stripe/PayPal optional",
+    "backups",
+    "simple reporting"
+  ],
+  "whatYouLose": [
+    "payment collection",
+    "bank imports",
+    "accounting reports",
+    "client portal",
+    "mobile apps",
+    "tax workflows",
+    "support"
+  ],
+  "moatType": "payments/accounting workflow",
+  "whyPeopleStillPay": "They pay because client billing needs to look professional and survive audit/accountant handoff.",
+  "priorArt": [
+    {
+      "name": "Invoice Ninja",
+      "url": "https://github.com/invoiceninja/invoiceninja",
+      "desc": "Open-source invoicing platform with payments, clients, and quotes.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "invoice-ninja",
+    "ynab",
+    "monarch-money"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good kinda because freelancers can often DIY most of the core loop.",
+  "prompt": "Build me a personal replacement for FreshBooks (Invoicing, expenses, time tracking, payments, and accounting for small businesses). Requirements:\n\n- Core loop: Generate invoices, track clients/projects/time, record payments/expenses, export reports, and email PDFs.\n- Needs: database.\n- Needs: invoice PDF generation.\n- Needs: email service.\n- Needs: Stripe/PayPal optional.\n- Needs: backups.\n- Needs: simple reporting.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: payment collection; bank imports; accounting reports.",
+  "promptCurated": false
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "jotform",
+  "name": "Jotform",
+  "domain": "jotform.com",
+  "category": "forms",
+  "subcategory": "forms + workflows",
+  "tagline": "Form builder with payments, approvals, apps, tables, and workflow tools",
+  "priceMonthly": 39,
+  "pricing": {
+    "plan": "Bronze",
+    "basis": "monthly",
+    "native": "39 USD",
+    "source": "https://www.jotform.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Bronze listed at $39/month monthly and $34/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "Basic forms are easy, but Jotform's broad widget library, payments, approvals, PDF generation, tables, apps, and compliance options create a large surface.",
+  "coreLoopDIY": "Build form creation, public forms, response storage, notifications, CSV export, and optional payment widgets.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "database",
+    "form renderer/editor",
+    "storage",
+    "email",
+    "payment API",
+    "PDF generation if needed"
+  ],
+  "whatYouLose": [
+    "widget catalog",
+    "PDF/approval workflows",
+    "payments",
+    "app builder",
+    "integrations",
+    "compliance options",
+    "templates"
+  ],
+  "moatType": "workflow breadth/integrations",
+  "whyPeopleStillPay": "They pay because forms become mini business processes without custom coding.",
+  "priorArt": [
+    {
+      "name": "OhMyForm",
+      "url": "https://github.com/ohmyform/ohmyform",
+      "desc": "Open-source form builder prior art; useful for a simpler Jotform alternative.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "softr",
+    "glide",
+    "bubble"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Good kinda: forms are easy, business-form sprawl is not.",
+  "prompt": "Build me a personal replacement for Jotform (Form builder with payments, approvals, apps, tables, and workflow tools). Requirements:\n\n- Core loop: Build form creation, public forms, response storage, notifications, CSV export, and optional payment widgets.\n- Needs: database.\n- Needs: form renderer/editor.\n- Needs: storage.\n- Needs: email.\n- Needs: payment API.\n- Needs: PDF generation if needed.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: widget catalog; PDF/approval workflows; payments.",
+  "promptCurated": false
+}

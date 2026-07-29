@@ -1,0 +1,59 @@
+{
+  "slug": "frase",
+  "name": "Frase",
+  "domain": "frase.io",
+  "category": "seo-marketing",
+  "subcategory": "content brief + optimization",
+  "tagline": "SEO/GEO content platform for research, briefs, optimization, and AI writing",
+  "priceMonthly": 49,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "49 USD",
+    "source": "https://www.frase.io/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Starter listed at $49/month month-to-month or $39/month billed yearly."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A content-brief generator over SERP pages and an LLM is reachable, but Frase's workflow combines SERP retrieval, scoring, editor UX, AI-search tracking, and reporting.",
+  "coreLoopDIY": "Retrieve top pages, summarize topics/questions/headings, generate a brief, score a draft against terms, and export to a doc.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "SERP/search API",
+    "web parser",
+    "LLM API",
+    "document/editor UI",
+    "scoring logic",
+    "hosted backend"
+  ],
+  "whatYouLose": [
+    "SERP data pipeline",
+    "optimization scoring",
+    "team workflows",
+    "AI-search tracking",
+    "editor polish",
+    "reporting"
+  ],
+  "moatType": "data access/workflow/model wrapper",
+  "whyPeopleStillPay": "They pay because writers need a repeatable research/editor workflow, not a pile of scraped pages.",
+  "priorArt": [
+    {
+      "name": "Danswer/Onyx",
+      "url": "https://github.com/onyx-dot-app/onyx",
+      "desc": "Open-source enterprise search/answering app; not a Frase clone, but prior art for retrieva",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "quickbooks-online",
+    "xero",
+    "freshbooks"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good final row because it is exactly the sort of buildable-but-work SaaS this site should unpack.",
+  "prompt": "Build me a personal replacement for Frase (SEO/GEO content platform for research, briefs, optimization, and AI writing). Requirements:\n\n- Core loop: Retrieve top pages, summarize topics/questions/headings, generate a brief, score a draft against terms, and export to a doc.\n- Needs: SERP/search API.\n- Needs: web parser.\n- Needs: LLM API.\n- Needs: document/editor UI.\n- Needs: scoring logic.\n- Needs: hosted backend.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: SERP data pipeline; optimization scoring; team workflows.",
+  "promptCurated": false
+}

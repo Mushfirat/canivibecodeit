@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { categoriesInUse, allApps } from '../lib/apps.js';
+
+const cats = categoriesInUse().sort((a, b) => b.count - a.count);
+const total = allApps().length;
+
+const title = 'All categories — Can I Vibecode It?';
+const description = `Every category on the death list: ${total} subscription apps sorted by how replaceable they are with one AI prompt.`;
+---
+
+<Base {title} {description}>
+  <main class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">the death list</a> / <span class="here">categories</span>
+    </nav>
+
+    <div class="list-head" style="padding-top: 20px;">
+      <h2>All categories</h2>
+      <span class="note">{total} apps · {cats.length} categories</span>
+    </div>
+
+    <div class="related-grid" style="padding-top: 24px; grid-template-columns: repeat(3, 1fr);">
+      {
+        cats.map((c) => (
+          <a class="mini-card" href={`/category/${c.slug}`}>
+            <span style="font-size: 22px;">{c.emoji}</span>
+            <span>
+              <span class="m-name">{c.label}</span>
+              <br />
+              <span class="m-meta">{c.count} {c.count === 1 ? 'app' : 'apps'}</span>
+            </span>
+            <span class="arrow" style="margin-left: auto; color: var(--muted);">→</span>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+</Base>

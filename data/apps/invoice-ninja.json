@@ -1,0 +1,59 @@
+{
+  "slug": "invoice-ninja",
+  "name": "Invoice Ninja",
+  "domain": "invoiceninja.com",
+  "category": "finance-accounting",
+  "subcategory": "invoicing",
+  "tagline": "Invoicing, quotes, payments, expenses, and client portal software",
+  "priceMonthly": 14,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "14 USD",
+    "source": "https://invoiceninja.com/pricing-plans/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $14/month or $140/year."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "Invoice Ninja is open source, so the hosted subscription can be replaced by self-hosting if you can handle ops, updates, payment config, and backups.",
+  "coreLoopDIY": "Self-host Invoice Ninja or build a simpler invoice generator with clients, line items, PDF export, and payment links.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "VPS/Docker",
+    "domain/HTTPS",
+    "database",
+    "email service",
+    "Stripe/PayPal credentials",
+    "backups"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "upgrades",
+    "backups",
+    "support",
+    "payment setup convenience",
+    "reduced ops risk"
+  ],
+  "moatType": "open-source core/hosting/payments",
+  "whyPeopleStillPay": "They pay because billing software is boring and should not break on invoice day.",
+  "priorArt": [
+    {
+      "name": "Invoice Ninja",
+      "url": "https://github.com/invoiceninja/invoiceninja",
+      "desc": "The product's own open-source invoicing platform.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "ynab",
+    "monarch-money",
+    "copilot-money"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Clean hosted-open-source yes, with a realistic ops caveat.",
+  "prompt": "Build me a personal replacement for Invoice Ninja (Invoicing, quotes, payments, expenses, and client portal software). Requirements:\n\n- Core loop: Self-host Invoice Ninja or build a simpler invoice generator with clients, line items, PDF export, and payment links.\n- Needs: VPS/Docker.\n- Needs: domain/HTTPS.\n- Needs: database.\n- Needs: email service.\n- Needs: Stripe/PayPal credentials.\n- Needs: backups.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: managed hosting; upgrades; backups.",
+  "promptCurated": false
+}

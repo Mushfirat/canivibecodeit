@@ -1,0 +1,58 @@
+{
+  "slug": "codesandbox",
+  "name": "CodeSandbox",
+  "domain": "codesandbox.io",
+  "category": "dev-tools",
+  "subcategory": "cloud dev environments",
+  "tagline": "Cloud development environments and browser-based coding sandboxes",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "12 USD",
+    "source": "https://codesandbox.io/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; public pricing references list Pro around $12/month with annual options lower."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can self-host a browser IDE, but fast templates, previews, cloud VMs, collaboration, and workflow integrations are the product.",
+  "coreLoopDIY": "Run code-server or dev containers, expose preview URLs, sync git repos, and add templates.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "container host",
+    "code-server/devcontainer tooling",
+    "reverse proxy",
+    "git integration",
+    "auth"
+  ],
+  "whatYouLose": [
+    "instant templates",
+    "cloud sandboxes",
+    "preview URLs",
+    "collaboration",
+    "managed infrastructure",
+    "integration polish"
+  ],
+  "moatType": "cloud platform/collaboration",
+  "whyPeopleStillPay": "They pay to avoid managing dev machines for experiments and previews.",
+  "priorArt": [
+    {
+      "name": "code-server",
+      "url": "https://github.com/coder/code-server",
+      "desc": "Open-source VS Code in browser; building block for a self-hosted sandbox.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "vercel",
+    "netlify",
+    "webflow"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful for builders deciding whether to roll a cloud IDE stack.",
+  "prompt": "Build me a personal replacement for CodeSandbox (Cloud development environments and browser-based coding sandboxes). Requirements:\n\n- Core loop: Run code-server or dev containers, expose preview URLs, sync git repos, and add templates.\n- Needs: container host.\n- Needs: code-server/devcontainer tooling.\n- Needs: reverse proxy.\n- Needs: git integration.\n- Needs: auth.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: instant templates; cloud sandboxes; preview URLs.",
+  "promptCurated": false
+}

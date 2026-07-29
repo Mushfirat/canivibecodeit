@@ -1,0 +1,58 @@
+{
+  "slug": "jasper",
+  "name": "Jasper",
+  "domain": "jasper.ai",
+  "category": "ai-writing",
+  "subcategory": "marketing AI platform",
+  "tagline": "AI platform for branded marketing content and campaign workflows",
+  "priceMonthly": 69,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "69 USD",
+    "source": "https://www.jasper.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $69/month monthly or $59/month billed yearly."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A branded prompt library over an LLM is buildable, but Jasper's paid value is brand memory, workflow templates, governance, collaboration, and marketing-specific agents.",
+  "coreLoopDIY": "Store brand voice/docs, provide marketing templates/agents, call an LLM, and organize outputs by campaign.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "LLM API",
+    "brand/document store",
+    "prompt templates",
+    "auth/teams",
+    "hosted app"
+  ],
+  "whatYouLose": [
+    "brand governance",
+    "campaign workflows",
+    "team collaboration",
+    "compliance/security posture",
+    "integrations",
+    "tuned UX for marketers"
+  ],
+  "moatType": "workflow/governance/model wrapper",
+  "whyPeopleStillPay": "They pay to scale marketing output while keeping brand consistency and approval workflows.",
+  "priorArt": [
+    {
+      "name": "LibreChat",
+      "url": "https://github.com/danny-avila/LibreChat",
+      "desc": "Open-source AI chat/workspace UI that can be extended with prompt presets and model routin",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "quillbot",
+    "grammarly",
+    "languagetool"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good paid-wrapper debate: buildable core, but organizational workflow can justify paying.",
+  "prompt": "Build me a personal replacement for Jasper (AI platform for branded marketing content and campaign workflows). Requirements:\n\n- Core loop: Store brand voice/docs, provide marketing templates/agents, call an LLM, and organize outputs by campaign.\n- Needs: LLM API.\n- Needs: brand/document store.\n- Needs: prompt templates.\n- Needs: auth/teams.\n- Needs: hosted app.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: brand governance; campaign workflows; team collaboration.",
+  "promptCurated": false
+}

@@ -1,0 +1,49 @@
+/* Fetch favicons for every app that doesn't have public/icons/<slug>.png yet.
+   Sources tried in order: Google s2 favicon service (64px), then the site's
+   /favicon.ico. Flags tiny/placeholder results so they can be hunted manually. */
+import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from 'node:fs';
+import path from 'node:path';
+
+const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const appsDir = path.join(root, 'data/apps');
+const iconsDir = path.join(root, 'public/icons');
+const force = process.argv.includes('--force');
+
+const apps = readdirSync(appsDir)
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => JSON.parse(readFileSync(path.join(appsDir, f), 'utf8')));
+
+const fetchBuf = async (url) => {
+  const res = await fetch(url, {
+    redirect: 'follow',
+    signal: AbortSignal.timeout(15000),
+    headers: { 'User-Agent': 'Mozilla/5.0 (compatible; canivibecodeit-icons)' },
+  });
+  if (!res.ok) return null;
+  return Buffer.from(await res.arrayBuffer());
+};
+
+const suspicious = [];
+let fetched = 0;
+
+for (const app of apps) {
+  const out = path.join(iconsDir, `${app.slug}.png`);
+  if (!force && existsSync(out) && statSync(out).size > 300) continue;
+  let buf = await fetchBuf(
+    `https://www.google.com/s2/favicons?domain=${app.domain}&sz=64`
+  ).catch(() => null);
+  if (!buf || buf.length < 200) {
+    buf = (await fetchBuf(`https://${app.domain}/favicon.ico`).catch(() => null)) || buf;
+  }
+  if (buf) {
+    writeFileSync(out, buf);
+    fetched++;
+    if (buf.length < 300) suspicious.push(app.slug);
+    console.log('icon:', app.slug, buf.length);
+  } else {
+    suspicious.push(app.slug);
+    console.log('FAILED:', app.slug, app.domain);
+  }
+}
+
+console.log(`\nfetched ${fetched}; needs manual attention: ${suspicious.join(', ') || 'none'}`);

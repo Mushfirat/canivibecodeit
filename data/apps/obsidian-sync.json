@@ -1,0 +1,55 @@
+{
+  "slug": "obsidian-sync",
+  "name": "Obsidian Sync",
+  "domain": "obsidian.md",
+  "category": "notes-knowledge",
+  "subcategory": "local markdown sync",
+  "tagline": "Paid sync service for a local-first Markdown knowledge base",
+  "priceMonthly": 5,
+  "pricing": {
+    "plan": "Sync",
+    "basis": "monthly per user",
+    "native": "5 USD",
+    "source": "https://obsidian.md/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Sync listed at $5/user/month monthly and $4/user/month annually."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "If you already accept local Markdown files, syncing folders across devices is a solved problem; the hard part is not the app, it is conflict-free convenience.",
+  "coreLoopDIY": "Use a local Markdown folder, git/Syncthing/iCloud/Drive for sync, and optional scripts for backlinks/search.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "local Markdown folder",
+    "Syncthing, Git, iCloud, Dropbox, or similar",
+    "optional mobile file access"
+  ],
+  "whatYouLose": [
+    "official mobile sync polish",
+    "conflict handling",
+    "version history UI",
+    "encrypted vault workflow",
+    "Obsidian support"
+  ],
+  "moatType": "sync/polish",
+  "whyPeopleStillPay": "They pay for no-drama sync across devices while keeping Obsidian's local-first model.",
+  "priorArt": [
+    {
+      "name": "Syncthing",
+      "url": "https://github.com/syncthing/syncthing",
+      "desc": "Open-source continuous file synchronization that can replace much of Obsidian Sync for tec",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "readwise-reader",
+    "raindrop-io",
+    "feedly"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Very clean yes; lets the site distinguish app value from convenience subscription.",
+  "prompt": "Build me a personal replacement for Obsidian Sync (Paid sync service for a local-first Markdown knowledge base). Requirements:\n\n- Core loop: Use a local Markdown folder, git/Syncthing/iCloud/Drive for sync, and optional scripts for backlinks/search.\n- Needs: local Markdown folder.\n- Needs: Syncthing, Git, iCloud, Dropbox, or similar.\n- Needs: optional mobile file access.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: official mobile sync polish; conflict handling; version history UI.",
+  "promptCurated": false
+}

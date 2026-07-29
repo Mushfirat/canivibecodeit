@@ -1,0 +1,6 @@
+#!/bin/sh
+# Block obvious secrets from ever being committed.
+if git diff --cached -U0 | grep -E '^\+' | grep -qE 'sk-or-v1-[a-f0-9]{16,}|phc_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY'; then
+  echo "pre-commit: possible secret in staged changes — commit blocked." >&2
+  exit 1
+fi

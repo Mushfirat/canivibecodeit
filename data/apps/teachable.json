@@ -1,0 +1,60 @@
+{
+  "slug": "teachable",
+  "name": "Teachable",
+  "domain": "teachable.com",
+  "category": "creator-commerce",
+  "subcategory": "online courses",
+  "tagline": "Online course platform for creators to sell lessons, coaching, and digital products",
+  "priceMonthly": 39,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "39 USD",
+    "source": "https://www.teachable.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Starter listed at $39/month monthly and $29/month annually, with 7.5% transaction fee."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A basic course site with Stripe can be built, but student apps, tax/payments, course compliance, certificates, upsells, affiliates, and support make full parity hard.",
+  "coreLoopDIY": "Build lessons/modules, student login, progress tracking, Stripe checkout, and gated course pages.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "auth",
+    "payment processor",
+    "course CMS",
+    "video/file hosting",
+    "email receipts",
+    "hosting"
+  ],
+  "whatYouLose": [
+    "student apps",
+    "payments/tax workflows",
+    "certificates",
+    "upsells",
+    "affiliates",
+    "support",
+    "course compliance features"
+  ],
+  "moatType": "payments/content hosting/mobile distribution",
+  "whyPeopleStillPay": "They pay because course businesses need checkout, access, progress, and support to just work.",
+  "priorArt": [
+    {
+      "name": "Moodle",
+      "url": "https://github.com/moodle/moodle",
+      "desc": "Mature open-source learning management system; powerful but heavier than Teachable.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "kajabi",
+    "circle",
+    "mighty-networks"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Important because course platforms are very tempting to DIY but full business flows are deep.",
+  "prompt": "Build me a personal replacement for Teachable (Online course platform for creators to sell lessons, coaching, and digital products). Requirements:\n\n- Core loop: Build lessons/modules, student login, progress tracking, Stripe checkout, and gated course pages.\n- Needs: auth.\n- Needs: payment processor.\n- Needs: course CMS.\n- Needs: video/file hosting.\n- Needs: email receipts.\n- Needs: hosting.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: student apps; payments/tax workflows; certificates.",
+  "promptCurated": false
+}

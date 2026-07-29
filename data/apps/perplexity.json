@@ -1,0 +1,58 @@
+{
+  "slug": "perplexity",
+  "name": "Perplexity",
+  "domain": "perplexity.ai",
+  "category": "ai-search",
+  "subcategory": "answer engine",
+  "tagline": "AI answer engine with web search, citations, and research modes",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "20 USD",
+    "source": "https://www.perplexity.ai/pro",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pages checked 2026-07-30; Pro listed at $20/month or $200/year."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A retrieval-plus-LLM answer engine is buildable, but Perplexity's search stack, source ranking, UX, mobile/browser surfaces, and model access make full parity hard.",
+  "coreLoopDIY": "Search the web/API, fetch pages, rank passages, ask an LLM to answer with citations, and store threads.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "search API",
+    "web fetcher/parser",
+    "LLM API",
+    "citation renderer",
+    "hosted backend"
+  ],
+  "whatYouLose": [
+    "search quality",
+    "source ranking",
+    "model routing",
+    "mobile/browser apps",
+    "publisher integrations",
+    "speed"
+  ],
+  "moatType": "search/data/model routing",
+  "whyPeopleStillPay": "They pay because answers arrive fast with sources and fewer query-building chores.",
+  "priorArt": [
+    {
+      "name": "Perplexica",
+      "url": "https://github.com/ItzCrazyKns/Perplexica",
+      "desc": "Open-source AI search engine inspired by Perplexity.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "gemini",
+    "gamma",
+    "beautiful-ai"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A nuanced kinda: there is real open-source prior art, but source quality and scale matter.",
+  "prompt": "Build me a personal replacement for Perplexity (AI answer engine with web search, citations, and research modes). Requirements:\n\n- Core loop: Search the web/API, fetch pages, rank passages, ask an LLM to answer with citations, and store threads.\n- Needs: search API.\n- Needs: web fetcher/parser.\n- Needs: LLM API.\n- Needs: citation renderer.\n- Needs: hosted backend.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: search quality; source ranking; model routing.",
+  "promptCurated": false
+}

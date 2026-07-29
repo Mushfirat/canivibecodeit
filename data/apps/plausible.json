@@ -1,0 +1,61 @@
+{
+  "slug": "plausible",
+  "name": "Plausible",
+  "domain": "plausible.io",
+  "category": "analytics",
+  "subcategory": "privacy web analytics",
+  "tagline": "Simple privacy-friendly website analytics",
+  "priceMonthly": 9,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "9 USD",
+    "source": "https://plausible.io/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pages checked 2026-07-30; Starter listed at $9/month and Business at $19/month in public plan references."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "Basic pageview/event analytics are easy, and Plausible's own code is open source; the paid value is hosted reliability, maintenance, and support.",
+  "coreLoopDIY": "Add a small JS tracker, collect pageviews/events, aggregate by path/referrer/country/device, and show a dashboard.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "hosted server",
+    "database",
+    "tracker script",
+    "domain/SSL",
+    "bot filtering",
+    "backups"
+  ],
+  "whatYouLose": [
+    "battle-tested bot filtering",
+    "fast queries at millions of pageviews",
+    "email reports, funnels, goal tracking",
+    "GDPR homework done for you"
+  ],
+  "moatType": "open-source core/hosting",
+  "whyPeopleStillPay": "They pay because analytics must be boring, fast, and legally safer without ops.",
+  "priorArt": [
+    {
+      "name": "plausible/analytics",
+      "url": "https://github.com/plausible/analytics",
+      "desc": "Plausible itself is open source — self-host it"
+    },
+    {
+      "name": "umami",
+      "url": "https://github.com/umami-software/umami",
+      "desc": "lightweight self-hosted analytics"
+    }
+  ],
+  "relatedSlugs": [
+    "fathom-analytics",
+    "simple-analytics",
+    "umami-cloud"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Script + ingest + dashboard is a weekend. The data pipeline polish — bot filtering, sessionization at scale — is the real product. Both are open source: self-hosting is the honest move here.",
+  "prompt": "Build me a privacy-first web analytics tool like Plausible (personal scale).\nRequirements:\n\n- A <2KB tracking snippet (vanilla JS, no cookies): sends pageview beacons with\n  path, referrer, screen class, and a daily-rotating visitor hash computed\n  server-side from IP + user-agent + a salt (never store raw IPs).\n- An ingest endpoint that filters obvious bots by user-agent and writes to\n  SQLite. One row per event; index on (site, date).\n- A /dashboard (basic-auth from .env): unique visitors, pageviews, top pages,\n  top referrers, and countries for today/7d/30d, with a visitors-per-day bar\n  chart as inline SVG. Fast and clean, dark mode.\n- Sessionization: a visit ends after 30 idle minutes; compute bounce rate.\n- Multi-site support via a site id in the snippet.\n- Node or Python, one process. Honest note in the README: at serious traffic,\n  self-host the real Plausible instead — this is for personal sites.",
+  "promptCurated": true
+}

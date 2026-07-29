@@ -1,0 +1,45 @@
+{
+  "subcategory": null,
+  "tagline": "A cron loop, a fetch, an alert webhook, and a status page",
+  "pricing": {
+    "plan": null,
+    "basis": "monthly",
+    "native": null,
+    "source": null,
+    "checkedOn": "2026-07-29",
+    "confidence": "medium",
+    "notes": null
+  },
+  "verdictConfidence": "high",
+  "verdictSummary": "A cron loop, a fetch, an alert webhook, and a status page. The $30/mo is for the dashboard gloss.",
+  "coreLoopDIY": null,
+  "diyTimeEstimate": "one sitting",
+  "requirements": [],
+  "moatType": null,
+  "whyPeopleStillPay": null,
+  "relatedSlugs": [],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "promptCurated": true,
+  "slug": "uptime",
+  "name": "Better Stack / UptimeRobot paid",
+  "domain": "betterstack.com",
+  "category": "uptime",
+  "priceMonthly": 30,
+  "verdict": "yes",
+  "notes": "A cron loop, a fetch, an alert webhook, and a status page. The $30/mo is for the dashboard gloss.",
+  "whatYouLose": [
+    "global multi-region probes",
+    "on-call scheduling & escalation policies",
+    "incident timelines and postmortem tooling",
+    "phone-call alerts"
+  ],
+  "priorArt": [
+    {
+      "name": "Uptime Kuma",
+      "url": "https://github.com/louislam/uptime-kuma",
+      "desc": "beloved self-hosted uptime monitor"
+    }
+  ],
+  "prompt": "Build me an uptime monitor like UptimeRobot. Requirements:\n\n- A config file (monitors.json) listing URLs with: name, interval seconds,\n  timeout, expected status code, and an optional keyword the body must contain.\n- A single long-running Node or Python process that checks each monitor on its\n  interval, records results (SQLite: timestamp, status, latency ms), and tracks\n  state transitions.\n- On DOWN or RECOVERED transitions (after 2 consecutive fails to avoid flaps):\n  send a webhook (Discord/Slack/Telegram format, URL from .env) with the monitor\n  name, error, and duration of the outage.\n- A public /status page: green/red per monitor, uptime % over 24h/7d/30d, and a\n  latency sparkline drawn as inline SVG. Auto-refresh every 30s.\n- Keep 90 days of history, prune older rows daily.\n- One process, no queue, no Docker required; systemd unit file included."
+}

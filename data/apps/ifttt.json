@@ -1,0 +1,56 @@
+{
+  "slug": "ifttt",
+  "name": "IFTTT",
+  "domain": "ifttt.com",
+  "category": "automation",
+  "subcategory": "consumer automations",
+  "tagline": "Consumer automation applets across smart home, apps, and services",
+  "priceMonthly": 2.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "2.99 USD",
+    "source": "https://ifttt.com/plans",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $2.99/month and Pro+ at higher monthly price."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "For a few personal applets, a script or simple webhook worker is enough; the full consumer integration catalog and smart-home breadth are what you lose.",
+  "coreLoopDIY": "Create small trigger-action scripts, poll APIs or receive webhooks, and call target APIs.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "API keys/OAuth",
+    "webhook endpoint or scheduler",
+    "small hosted function",
+    "secrets storage"
+  ],
+  "whatYouLose": [
+    "consumer integration catalog",
+    "smart-home integrations",
+    "mobile applets",
+    "easy UI",
+    "maintenance when APIs change"
+  ],
+  "moatType": "integration network/convenience",
+  "whyPeopleStillPay": "They pay because the applet is easier to click together than to maintain.",
+  "priorArt": [
+    {
+      "name": "Huginn",
+      "url": "https://github.com/huginn/huginn",
+      "desc": "Open-source system for building agents that monitor and act on events; useful IFTTT-style ",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "n8n-cloud",
+    "plausible",
+    "fathom-analytics"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "A cheap yes; helpful for readers deciding when not to overbuild.",
+  "prompt": "Build me a personal replacement for IFTTT (Consumer automation applets across smart home, apps, and services). Requirements:\n\n- Core loop: Create small trigger-action scripts, poll APIs or receive webhooks, and call target APIs.\n- Needs: API keys/OAuth.\n- Needs: webhook endpoint or scheduler.\n- Needs: small hosted function.\n- Needs: secrets storage.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: consumer integration catalog; smart-home integrations; mobile applets.",
+  "promptCurated": false
+}

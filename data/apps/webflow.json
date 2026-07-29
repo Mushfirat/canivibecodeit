@@ -1,0 +1,61 @@
+{
+  "slug": "webflow",
+  "name": "Webflow",
+  "domain": "webflow.com",
+  "category": "website-builder",
+  "subcategory": "visual website builder",
+  "tagline": "Visual website builder and CMS for marketing sites",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Basic site",
+    "basis": "monthly",
+    "native": "25 USD",
+    "source": "https://webflow.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked; 2026 public plan references list Basic monthly around $25/month, with lower annual pricing."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A personal visual website builder is possible with existing editors, but Webflow's CMS, designer, hosting, animations, components, SEO, and client workflows are deep.",
+  "coreLoopDIY": "Use a visual editor or generate static pages from blocks, publish to hosting, and add a small CMS.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "visual builder/editor",
+    "CMS database",
+    "static export/build",
+    "hosting",
+    "asset manager",
+    "auth"
+  ],
+  "whatYouLose": [
+    "designer fidelity",
+    "CMS",
+    "hosting",
+    "animations",
+    "client handoff",
+    "marketplace/templates",
+    "forms",
+    "SEO tooling"
+  ],
+  "moatType": "editor/CMS/hosting",
+  "whyPeopleStillPay": "They pay because a designer can ship and maintain a production site without engineering every component.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder and serious Webflow-like prior art.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "framer",
+    "carrd",
+    "airtable"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Strong kinda; plenty of prior art, but polish/client workflow is the moat.",
+  "prompt": "Build me a personal replacement for Webflow (Visual website builder and CMS for marketing sites). Requirements:\n\n- Core loop: Use a visual editor or generate static pages from blocks, publish to hosting, and add a small CMS.\n- Needs: visual builder/editor.\n- Needs: CMS database.\n- Needs: static export/build.\n- Needs: hosting.\n- Needs: asset manager.\n- Needs: auth.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: designer fidelity; CMS; hosting.",
+  "promptCurated": false
+}

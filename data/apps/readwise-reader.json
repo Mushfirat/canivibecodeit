@@ -1,0 +1,59 @@
+{
+  "slug": "readwise-reader",
+  "name": "Readwise Reader",
+  "domain": "readwise.io",
+  "category": "read-it-later",
+  "subcategory": "reader + highlights",
+  "tagline": "Read-it-later app with highlights, RSS, PDFs, and spaced review",
+  "priceMonthly": 12.99,
+  "pricing": {
+    "plan": "Readwise Full",
+    "basis": "monthly",
+    "native": "12.99 USD",
+    "source": "https://readwise.io/pricing/reader",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Full/Readwise including Reader listed at $12.99/month monthly and $9.99/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "Saving articles and highlighting is easy; reliable extraction, mobile/offline reading, sync, Kindle/import integrations, RSS/PDF support, and review loops are real work.",
+  "coreLoopDIY": "Build a browser save endpoint, article extractor, reader view, highlights table, export to Markdown, and review emails.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "hosted app",
+    "browser extension or share sheet",
+    "parser/extractor",
+    "database",
+    "email or notification service",
+    "optional OCR/PDF tools"
+  ],
+  "whatYouLose": [
+    "excellent parsing",
+    "mobile/offline apps",
+    "Kindle integrations",
+    "RSS/PDF workflows",
+    "spaced repetition",
+    "exports"
+  ],
+  "moatType": "capture/sync/integrations",
+  "whyPeopleStillPay": "They pay because all reading inputs flow into one durable highlight system.",
+  "priorArt": [
+    {
+      "name": "wallabag",
+      "url": "https://github.com/wallabag/wallabag",
+      "desc": "Open-source read-it-later app with article extraction and self-hosted reading workflows.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "raindrop-io",
+    "feedly",
+    "inoreader"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful because DIY covers 60% quickly but power users pay for the ingestion web.",
+  "prompt": "Build me a personal replacement for Readwise Reader (Read-it-later app with highlights, RSS, PDFs, and spaced review). Requirements:\n\n- Core loop: Build a browser save endpoint, article extractor, reader view, highlights table, export to Markdown, and review emails.\n- Needs: hosted app.\n- Needs: browser extension or share sheet.\n- Needs: parser/extractor.\n- Needs: database.\n- Needs: email or notification service.\n- Needs: optional OCR/PDF tools.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: excellent parsing; mobile/offline apps; Kindle integrations.",
+  "promptCurated": false
+}

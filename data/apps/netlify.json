@@ -1,0 +1,59 @@
+{
+  "slug": "netlify",
+  "name": "Netlify",
+  "domain": "netlify.com",
+  "category": "hosting",
+  "subcategory": "web hosting + deploy pipeline",
+  "tagline": "Web hosting platform for static sites, functions, forms, and deploy previews",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "20 USD",
+    "source": "https://www.netlify.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $20/month with credit-based usage and unlimited member changes announced in 2026."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "Static hosting and functions are easy to assemble, but Netlify's value is Git-based deploys, previews, forms, redirects, edge functions, and managed platform reliability.",
+  "coreLoopDIY": "Deploy static builds from git, serve via CDN/reverse proxy, add forms/functions, and create preview URLs.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "VPS or cloud static hosting",
+    "CI/CD",
+    "domain/DNS",
+    "SSL",
+    "serverless or container functions",
+    "monitoring"
+  ],
+  "whatYouLose": [
+    "deploy previews",
+    "CDN/edge functions",
+    "forms",
+    "rollbacks",
+    "team workflows",
+    "uptime/support"
+  ],
+  "moatType": "hosting/infrastructure",
+  "whyPeopleStillPay": "They pay because simple sites still need dependable CI/CD, routing, and previews.",
+  "priorArt": [
+    {
+      "name": "Coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "desc": "Open-source self-hosted deployment platform for apps, databases, and static sites.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "webflow",
+    "framer",
+    "carrd"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good to pair with Vercel; users can compare platform lock-in vs self-hosting.",
+  "prompt": "Build me a personal replacement for Netlify (Web hosting platform for static sites, functions, forms, and deploy previews). Requirements:\n\n- Core loop: Deploy static builds from git, serve via CDN/reverse proxy, add forms/functions, and create preview URLs.\n- Needs: VPS or cloud static hosting.\n- Needs: CI/CD.\n- Needs: domain/DNS.\n- Needs: SSL.\n- Needs: serverless or container functions.\n- Needs: monitoring.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: deploy previews; CDN/edge functions; forms.",
+  "promptCurated": false
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "squarespace",
+  "name": "Squarespace",
+  "domain": "squarespace.com",
+  "category": "website-builder",
+  "subcategory": "hosted websites",
+  "tagline": "Hosted website builder for portfolios, businesses, blogs, and stores",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "native": "25 USD",
+    "source": "https://www.squarespace.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked; 2026 public coverage lists Basic around $25/month monthly and lower annual pricing."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A portfolio or marketing site is easy to build, but Squarespace's paid value is templates, editor, hosting, commerce/forms, domains, and support.",
+  "coreLoopDIY": "Generate a static site from templates, add a small CMS, host it, and configure domain/forms.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "static hosting",
+    "domain/DNS",
+    "CMS or Markdown",
+    "form/email service",
+    "template system"
+  ],
+  "whatYouLose": [
+    "template quality",
+    "editor",
+    "hosting",
+    "ecommerce/forms",
+    "domains/email workflows",
+    "mobile-responsive polish",
+    "support"
+  ],
+  "moatType": "templates/hosting/editor",
+  "whyPeopleStillPay": "They pay because it removes design, hosting, and maintenance from the website project.",
+  "priorArt": [
+    {
+      "name": "WordPress",
+      "url": "https://github.com/WordPress/wordpress-develop",
+      "desc": "Open-source CMS/site platform; a practical alternative for many Squarespace use cases.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "wix",
+    "github-copilot",
+    "cursor"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Mainstream and useful; verdict depends on site complexity.",
+  "prompt": "Build me a personal replacement for Squarespace (Hosted website builder for portfolios, businesses, blogs, and stores). Requirements:\n\n- Core loop: Generate a static site from templates, add a small CMS, host it, and configure domain/forms.\n- Needs: static hosting.\n- Needs: domain/DNS.\n- Needs: CMS or Markdown.\n- Needs: form/email service.\n- Needs: template system.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: template quality; editor; hosting.",
+  "promptCurated": false
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "n8n-cloud",
+  "name": "n8n Cloud",
+  "domain": "n8n.io",
+  "category": "automation",
+  "subcategory": "workflow automation",
+  "tagline": "Workflow automation platform with self-hosted and cloud options",
+  "priceMonthly": 24,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "24 USD estimate / EUR source",
+    "source": "https://n8n.io/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked; public 2026 references list Starter around €20 annual-effective / about $24 monthly depending billing and currency."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "Because n8n itself is open source, the core cloud subscription can be replaced by self-hosting if you can own hosting, updates, and backups.",
+  "coreLoopDIY": "Self-host n8n, connect credentials, create workflows, and run a small VPS with backups.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "VPS or Docker host",
+    "domain/HTTPS",
+    "database/storage",
+    "backups",
+    "API credentials",
+    "update routine"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "backups",
+    "scaling",
+    "email support",
+    "reduced ops burden",
+    "team/admin features"
+  ],
+  "moatType": "open-source core/hosting",
+  "whyPeopleStillPay": "They pay to avoid maintaining an automation server that their business workflows depend on.",
+  "priorArt": [
+    {
+      "name": "n8n",
+      "url": "https://github.com/n8n-io/n8n",
+      "desc": "The product's open-source workflow automation core.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "plausible",
+    "fathom-analytics",
+    "simple-analytics"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A perfect page for 'yes, but hosting/ops becomes your job'.",
+  "prompt": "Build me a personal replacement for n8n Cloud (Workflow automation platform with self-hosted and cloud options). Requirements:\n\n- Core loop: Self-host n8n, connect credentials, create workflows, and run a small VPS with backups.\n- Needs: VPS or Docker host.\n- Needs: domain/HTTPS.\n- Needs: database/storage.\n- Needs: backups.\n- Needs: API credentials.\n- Needs: update routine.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: managed hosting; backups; scaling.",
+  "promptCurated": false
+}

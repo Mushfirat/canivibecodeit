@@ -1,0 +1,58 @@
+{
+  "slug": "inoreader",
+  "name": "Inoreader",
+  "domain": "inoreader.com",
+  "category": "rss-research",
+  "subcategory": "RSS reader + monitoring",
+  "tagline": "Power RSS reader with rules, monitoring, search, and automations",
+  "priceMonthly": 9.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "9.99 USD",
+    "source": "https://www.inoreader.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $9.99/month monthly and $7.50/month annually."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "A single-user RSS reader with rules and alerts can be built quickly on top of existing parsers, though not with Inoreader's scale and polish.",
+  "coreLoopDIY": "Fetch feeds, dedupe items, apply keyword rules, tag/folder articles, and send alerts or exports.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "RSS parser",
+    "database",
+    "background jobs",
+    "email/webhook notifications",
+    "hosted app or local service"
+  ],
+  "whatYouLose": [
+    "enterprise-scale feed handling",
+    "mobile apps",
+    "integrations",
+    "article translation",
+    "polished search",
+    "support"
+  ],
+  "moatType": "data ingestion/integrations",
+  "whyPeopleStillPay": "They pay for reliability and a power-user rules engine that keeps working while feeds break.",
+  "priorArt": [
+    {
+      "name": "Miniflux",
+      "url": "https://github.com/miniflux/v2",
+      "desc": "Minimalist open-source RSS reader with self-hosting support.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "todoist",
+    "sunsama",
+    "akiflow"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful power-user yes; the page can point to RSS as an open-protocol unlock.",
+  "prompt": "Build me a personal replacement for Inoreader (Power RSS reader with rules, monitoring, search, and automations). Requirements:\n\n- Core loop: Fetch feeds, dedupe items, apply keyword rules, tag/folder articles, and send alerts or exports.\n- Needs: RSS parser.\n- Needs: database.\n- Needs: background jobs.\n- Needs: email/webhook notifications.\n- Needs: hosted app or local service.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: enterprise-scale feed handling; mobile apps; integrations.",
+  "promptCurated": false
+}

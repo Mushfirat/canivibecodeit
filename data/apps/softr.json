@@ -1,0 +1,59 @@
+{
+  "slug": "softr",
+  "name": "Softr",
+  "domain": "softr.io",
+  "category": "no-code-apps",
+  "subcategory": "portal/app builder",
+  "tagline": "No-code portals and internal apps on Airtable/Google Sheets and databases",
+  "priceMonthly": 59,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "native": "59 USD",
+    "source": "https://www.softr.io/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing/docs checked 2026-07-30; Basic listed at $59/month monthly and $49/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A client portal over Airtable can be built, but Softr's block library, auth, roles, data sources, payments, and publishing workflow are the product.",
+  "coreLoopDIY": "Build a CRUD portal with auth, role-gated pages, list/detail views, forms, and Airtable/Postgres backing data.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "frontend framework",
+    "auth",
+    "database or Airtable API",
+    "hosting",
+    "payment/email integrations"
+  ],
+  "whatYouLose": [
+    "visual builder",
+    "templates",
+    "role permissions",
+    "data-source integrations",
+    "payments",
+    "memberships",
+    "hosting"
+  ],
+  "moatType": "no-code builder/auth/integrations",
+  "whyPeopleStillPay": "They pay so non-engineers can launch portals without hiring a developer.",
+  "priorArt": [
+    {
+      "name": "Budibase",
+      "url": "https://github.com/Budibase/budibase",
+      "desc": "Open-source low-code platform for internal tools and portals.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "glide",
+    "bubble",
+    "zapier"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful for the no-code replacement category: yes for a custom portal, kinda for the platform.",
+  "prompt": "Build me a personal replacement for Softr (No-code portals and internal apps on Airtable/Google Sheets and databases). Requirements:\n\n- Core loop: Build a CRUD portal with auth, role-gated pages, list/detail views, forms, and Airtable/Postgres backing data.\n- Needs: frontend framework.\n- Needs: auth.\n- Needs: database or Airtable API.\n- Needs: hosting.\n- Needs: payment/email integrations.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: visual builder; templates; role permissions.",
+  "promptCurated": false
+}

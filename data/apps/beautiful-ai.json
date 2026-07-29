@@ -1,0 +1,58 @@
+{
+  "slug": "beautiful-ai",
+  "name": "Beautiful.ai",
+  "domain": "beautiful.ai",
+  "category": "presentations",
+  "subcategory": "smart slide design",
+  "tagline": "Presentation builder with smart templates and auto-formatting",
+  "priceMonthly": 45,
+  "pricing": {
+    "plan": "Pro monthly",
+    "basis": "monthly",
+    "native": "45 USD",
+    "source": "https://www.beautiful.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked; 2026 public sources list Pro at $12/month billed annually and a monthly/ad-hoc option around $45/month."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build a template deck generator, but auto-layout slide behavior, template polish, brand controls, PowerPoint import/export, and collaboration are real work.",
+  "coreLoopDIY": "Generate slides from structured content, apply smart templates, auto-fit text/images, export to PDF/PPTX.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "LLM API",
+    "slide layout engine",
+    "PPTX/PDF export library",
+    "template library",
+    "hosted app"
+  ],
+  "whatYouLose": [
+    "smart templates",
+    "brand controls",
+    "shared libraries",
+    "PowerPoint compatibility",
+    "collaboration",
+    "viewer analytics"
+  ],
+  "moatType": "templates/editor depth/collaboration",
+  "whyPeopleStillPay": "They pay for slides that stay designed as content changes.",
+  "priorArt": [
+    {
+      "name": "reveal.js",
+      "url": "https://github.com/hakimel/reveal.js",
+      "desc": "Open-source HTML presentation framework; useful rendering layer but not the smart-template",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "jasper",
+    "quillbot",
+    "grammarly"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful because slide-generation demos are easy but slide-editing polish is sticky.",
+  "prompt": "Build me a personal replacement for Beautiful.ai (Presentation builder with smart templates and auto-formatting). Requirements:\n\n- Core loop: Generate slides from structured content, apply smart templates, auto-fit text/images, export to PDF/PPTX.\n- Needs: LLM API.\n- Needs: slide layout engine.\n- Needs: PPTX/PDF export library.\n- Needs: template library.\n- Needs: hosted app.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: smart templates; brand controls; shared libraries.",
+  "promptCurated": false
+}

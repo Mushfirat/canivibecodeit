@@ -1,0 +1,59 @@
+{
+  "slug": "capcut",
+  "name": "CapCut",
+  "domain": "capcut.com",
+  "category": "audio-video",
+  "subcategory": "short-form video editor",
+  "tagline": "Consumer video editor with templates, captions, effects, and AI tools",
+  "priceMonthly": 19.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "19.99 USD",
+    "source": "https://www.capcut.com/resource/capcut-standard-vs-pro",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official resource checked 2026-07-30 lists Pro at $19.99/month and $179.99/year; pricing can vary by region/app store."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A captioner/trimmer/exporter is buildable, but CapCut's value is mobile editing polish, effects/templates, asset library, TikTok workflow, and real-time rendering.",
+  "coreLoopDIY": "Upload video, auto-caption, cut/trim, add simple templates/effects, and export social aspect ratios.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "ffmpeg",
+    "speech-to-text",
+    "video rendering queue",
+    "client editor",
+    "storage",
+    "optional image/video AI APIs"
+  ],
+  "whatYouLose": [
+    "mobile app quality",
+    "effects/templates",
+    "asset library",
+    "timeline editor",
+    "platform integrations",
+    "rendering performance"
+  ],
+  "moatType": "media pipeline/templates/platform ecosystem",
+  "whyPeopleStillPay": "They pay because short-form editing is fast on a phone and full of reusable trends/effects.",
+  "priorArt": [
+    {
+      "name": "Shotcut",
+      "url": "https://github.com/mltframework/shotcut",
+      "desc": "Open-source video editor; powerful prior art but not mobile/template-first like CapCut.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "granola",
+    "otter-ai",
+    "fireflies-ai"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good category because 'AI captions' are trivial, but editor/template depth is not.",
+  "prompt": "Build me a personal replacement for CapCut (Consumer video editor with templates, captions, effects, and AI tools). Requirements:\n\n- Core loop: Upload video, auto-caption, cut/trim, add simple templates/effects, and export social aspect ratios.\n- Needs: ffmpeg.\n- Needs: speech-to-text.\n- Needs: video rendering queue.\n- Needs: client editor.\n- Needs: storage.\n- Needs: optional image/video AI APIs.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: mobile app quality; effects/templates; asset library.",
+  "promptCurated": false
+}

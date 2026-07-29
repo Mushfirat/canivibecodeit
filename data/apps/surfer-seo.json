@@ -1,0 +1,60 @@
+{
+  "slug": "surfer-seo",
+  "name": "Surfer SEO",
+  "domain": "surferseo.com",
+  "category": "seo-marketing",
+  "subcategory": "content optimization",
+  "tagline": "SEO content optimization and AI writing based on SERP analysis",
+  "priceMonthly": 99,
+  "pricing": {
+    "plan": "Essential/Standard",
+    "basis": "monthly",
+    "native": "99 USD",
+    "source": "https://surferseo.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked; 2026 public sources list Standard/Essential around $99/month monthly, while Discovery annual-effective starts lower."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A SERP-scrape-to-content-brief tool is buildable, but reliable SERP data, NLP scoring, editor workflow, AI articles, audits, and integrations create ongoing work.",
+  "coreLoopDIY": "Fetch top SERP pages via API, extract headings/entities/terms, score a draft, and produce brief/editor suggestions.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "search/SERP API",
+    "web scraper/parser",
+    "LLM API",
+    "content editor",
+    "scoring logic",
+    "hosted backend"
+  ],
+  "whatYouLose": [
+    "SERP data reliability",
+    "scoring model",
+    "editor UX",
+    "AI article workflows",
+    "integrations",
+    "audits",
+    "support"
+  ],
+  "moatType": "data access/workflow/model wrapper",
+  "whyPeopleStillPay": "They pay because content optimization needs repeatable data and an editor that writers will use.",
+  "priorArt": [
+    {
+      "name": "OpenSearch + custom scripts",
+      "url": "not found",
+      "desc": "No single maintained open-source Surfer clone found; DIY usually combines SERP APIs, NLP l",
+      "status": "not found"
+    }
+  ],
+  "relatedSlugs": [
+    "frase",
+    "quickbooks-online",
+    "xero"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Great kinda: not impossible, but the core data and scoring need upkeep.",
+  "prompt": "Build me a personal replacement for Surfer SEO (SEO content optimization and AI writing based on SERP analysis). Requirements:\n\n- Core loop: Fetch top SERP pages via API, extract headings/entities/terms, score a draft, and produce brief/editor suggestions.\n- Needs: search/SERP API.\n- Needs: web scraper/parser.\n- Needs: LLM API.\n- Needs: content editor.\n- Needs: scoring logic.\n- Needs: hosted backend.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: SERP data reliability; scoring model; editor UX.",
+  "promptCurated": false
+}

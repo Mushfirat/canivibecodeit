@@ -1,0 +1,57 @@
+{
+  "slug": "midjourney",
+  "name": "Midjourney",
+  "domain": "midjourney.com",
+  "category": "ai-image",
+  "subcategory": "image generation",
+  "tagline": "Text-to-image generation service known for high-quality aesthetic output",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "native": "10 USD",
+    "source": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official docs checked 2026-07-30; Basic is $10/month, Standard $30, Pro $60, Mega $120."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build a wrapper around open models, but you cannot solo-recreate Midjourney's proprietary model quality, style tuning, infrastructure, and community distribution.",
+  "coreLoopDIY": "Use Stable Diffusion/Flux-style local or hosted models with a prompt UI and gallery.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "GPU or hosted image API",
+    "model weights/license",
+    "storage/gallery",
+    "prompt UI"
+  ],
+  "whatYouLose": [
+    "frontier/proprietary model quality",
+    "style consistency",
+    "moderation",
+    "compute scale",
+    "community/distribution",
+    "model updates"
+  ],
+  "moatType": "frontier model/compute/community",
+  "whyPeopleStillPay": "They pay for the model and taste layer, not the chat box around it.",
+  "priorArt": [
+    {
+      "name": "ComfyUI",
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "desc": "Open-source node-based UI for running image-generation workflows locally or on a GPU serve",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "runway",
+    "elevenlabs",
+    "chatgpt"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Must-have no: one of the clearest frontier-model moat cases.",
+  "prompt": null,
+  "promptCurated": false
+}

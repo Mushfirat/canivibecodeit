@@ -1,0 +1,59 @@
+{
+  "slug": "later",
+  "name": "Later",
+  "domain": "later.com",
+  "category": "social-media",
+  "subcategory": "visual social scheduling",
+  "tagline": "Visual social scheduling, link-in-bio, and creator marketing tools",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "25 USD",
+    "source": "https://later.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Starter listed around $25/month in public plan table with annual discounts."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A post calendar and queue are buildable, but Later's value is social API access, visual planning, link-in-bio, analytics, media library, and platform compliance.",
+  "coreLoopDIY": "Build a content calendar, schedule posts through social APIs, store media, and track publish status.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "OAuth/API access",
+    "hosted scheduler",
+    "media storage",
+    "database",
+    "retry and logging"
+  ],
+  "whatYouLose": [
+    "visual planner",
+    "social API maintenance",
+    "link-in-bio",
+    "analytics",
+    "media library",
+    "approvals",
+    "mobile app"
+  ],
+  "moatType": "social API/integration upkeep",
+  "whyPeopleStillPay": "They pay because publishing workflows and API permissions are a moving target.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Open-source social media scheduler that can cover much of the DIY core.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "typefully",
+    "beehiiv",
+    "kit"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful because it shows why social schedulers are not just cron jobs.",
+  "prompt": "Build me a personal replacement for Later (Visual social scheduling, link-in-bio, and creator marketing tools). Requirements:\n\n- Core loop: Build a content calendar, schedule posts through social APIs, store media, and track publish status.\n- Needs: OAuth/API access.\n- Needs: hosted scheduler.\n- Needs: media storage.\n- Needs: database.\n- Needs: retry and logging.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: visual planner; social API maintenance; link-in-bio.",
+  "promptCurated": false
+}

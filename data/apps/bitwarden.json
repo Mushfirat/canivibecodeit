@@ -1,0 +1,56 @@
+{
+  "slug": "bitwarden",
+  "name": "Bitwarden",
+  "domain": "bitwarden.com",
+  "category": "security",
+  "subcategory": "password manager",
+  "tagline": "Open-source password manager with hosted and self-hosted options",
+  "priceMonthly": 1.65,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "annual effective per month",
+    "native": "1.65 USD",
+    "source": "https://bitwarden.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Premium listed at $1.65/month billed annually ($19.80/year)."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "If your goal is to stop paying hosted Bitwarden Premium, the core vault can be self-hosted or replaced with KeePass-style local storage; the caveat is security responsibility.",
+  "coreLoopDIY": "Use KeePassXC locally or self-host a Bitwarden-compatible server, keep encrypted backups, and use browser/mobile clients.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "server or local vault",
+    "domain/HTTPS if self-hosting",
+    "secure backup",
+    "browser/mobile clients"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "premium support",
+    "emergency access",
+    "polished admin",
+    "reduced security maintenance risk"
+  ],
+  "moatType": "security/trust/hosting",
+  "whyPeopleStillPay": "They pay because a professionally maintained security service is cheap relative to the downside of mistakes.",
+  "priorArt": [
+    {
+      "name": "vaultwarden",
+      "url": "https://github.com/dani-garcia/vaultwarden",
+      "desc": "Unofficial Bitwarden-compatible self-hosted server used by many technical users.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "dashlane",
+    "hey-email",
+    "1password"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Interesting because the paid app itself has strong open-source/self-host lineage.",
+  "prompt": "Build me a personal replacement for Bitwarden (Open-source password manager with hosted and self-hosted options). Requirements:\n\n- Core loop: Use KeePassXC locally or self-host a Bitwarden-compatible server, keep encrypted backups, and use browser/mobile clients.\n- Needs: server or local vault.\n- Needs: domain/HTTPS if self-hosting.\n- Needs: secure backup.\n- Needs: browser/mobile clients.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: managed hosting; premium support; emergency access.",
+  "promptCurated": false
+}

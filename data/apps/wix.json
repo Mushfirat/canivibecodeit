@@ -1,0 +1,59 @@
+{
+  "slug": "wix",
+  "name": "Wix",
+  "domain": "wix.com",
+  "category": "website-builder",
+  "subcategory": "hosted websites",
+  "tagline": "Website builder with templates, AI tools, ecommerce, bookings, and apps",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Core",
+    "basis": "annual effective per month",
+    "native": "29 USD",
+    "source": "https://www.wix.com/plans",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official plan URL checked; 2026 public coverage lists Core around $29/month annual-effective, with monthly pricing/promos varying."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A custom site is buildable; Wix as a platform includes editor, templates, apps, ecommerce/bookings, hosting, domains, and a huge long-tail feature surface.",
+  "coreLoopDIY": "Build the specific site directly with a framework or static generator and deploy it with forms/bookings/payments as needed.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "hosting",
+    "domain/DNS",
+    "template/theme",
+    "CMS",
+    "form/payment/booking APIs if required"
+  ],
+  "whatYouLose": [
+    "drag-and-drop editor",
+    "app marketplace",
+    "ecommerce/bookings",
+    "templates",
+    "hosting/domains",
+    "support",
+    "mobile apps"
+  ],
+  "moatType": "templates/platform/hosting",
+  "whyPeopleStillPay": "They pay because one website project tends to become ten maintenance requests.",
+  "priorArt": [
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web builder library for visual page editing.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "github-copilot",
+    "cursor",
+    "replit"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good to compare with Webflow/Framer and show the DIY site-vs-builder distinction.",
+  "prompt": "Build me a personal replacement for Wix (Website builder with templates, AI tools, ecommerce, bookings, and apps). Requirements:\n\n- Core loop: Build the specific site directly with a framework or static generator and deploy it with forms/bookings/payments as needed.\n- Needs: hosting.\n- Needs: domain/DNS.\n- Needs: template/theme.\n- Needs: CMS.\n- Needs: form/payment/booking APIs if required.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: drag-and-drop editor; app marketplace; ecommerce/bookings.",
+  "promptCurated": false
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "whimsical",
+  "name": "Whimsical",
+  "domain": "whimsical.com",
+  "category": "diagrams",
+  "subcategory": "flowcharts + wireframes",
+  "tagline": "Fast collaborative flowcharts, wireframes, mind maps, and docs",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per editor",
+    "native": "12 USD",
+    "source": "https://whimsical.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing/help checked 2026-07-30; Pro listed at $12/editor/month monthly and $10/editor/month annually."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A constrained diagramming tool with nodes, connectors, sticky notes, and export is a very vibecodable core loop; polish and collaboration are what you lose.",
+  "coreLoopDIY": "Create a canvas with node shapes, connectors, auto-layout hints, text editing, and PNG/SVG export.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "React canvas/SVG library",
+    "local storage or backend",
+    "optional real-time sync",
+    "export library"
+  ],
+  "whatYouLose": [
+    "templates",
+    "multiplayer polish",
+    "docs integration",
+    "wireframe components",
+    "comments",
+    "sharing permissions"
+  ],
+  "moatType": "polish/collaboration",
+  "whyPeopleStillPay": "They pay for speed and tidy diagrams that teammates can edit without setup.",
+  "priorArt": [
+    {
+      "name": "Excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "desc": "Open-source virtual whiteboard with diagramming, shapes, collaboration options, and export",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "adobe-express",
+    "midjourney",
+    "runway"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "A good yes/kinda boundary; I marked yes because the constrained core is reachable.",
+  "prompt": "Build me a personal replacement for Whimsical (Fast collaborative flowcharts, wireframes, mind maps, and docs). Requirements:\n\n- Core loop: Create a canvas with node shapes, connectors, auto-layout hints, text editing, and PNG/SVG export.\n- Needs: React canvas/SVG library.\n- Needs: local storage or backend.\n- Needs: optional real-time sync.\n- Needs: export library.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: templates; multiplayer polish; docs integration.",
+  "promptCurated": false
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "framer",
+  "name": "Framer",
+  "domain": "framer.com",
+  "category": "website-builder",
+  "subcategory": "visual website builder",
+  "tagline": "Design-forward website builder with CMS, animations, and hosting",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "annual effective per month",
+    "native": "10 USD",
+    "source": "https://www.framer.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Basic listed at $10/month billed yearly, with higher tiers and monthly billing options."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build a simple AI/site generator and host static pages, but Framer's animation/design editor, CMS, hosting, templates, and publishing polish are real product depth.",
+  "coreLoopDIY": "Generate site sections, edit them visually, save JSON/page data, and deploy static output to a host.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "React/site builder",
+    "CMS/storage",
+    "static exporter",
+    "hosting",
+    "domain/DNS",
+    "optional LLM API"
+  ],
+  "whatYouLose": [
+    "visual design polish",
+    "animations",
+    "templates",
+    "CMS",
+    "hosting",
+    "preview/publish flow",
+    "forms"
+  ],
+  "moatType": "editor/templates/hosting",
+  "whyPeopleStillPay": "They pay because polished landing pages ship quickly with minimal design-engineering friction.",
+  "priorArt": [
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web builder framework useful for a DIY site editor.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "carrd",
+    "airtable",
+    "coda"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good modern website-builder target with a plausible DIY core.",
+  "prompt": "Build me a personal replacement for Framer (Design-forward website builder with CMS, animations, and hosting). Requirements:\n\n- Core loop: Generate site sections, edit them visually, save JSON/page data, and deploy static output to a host.\n- Needs: React/site builder.\n- Needs: CMS/storage.\n- Needs: static exporter.\n- Needs: hosting.\n- Needs: domain/DNS.\n- Needs: optional LLM API.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: visual design polish; animations; templates.",
+  "promptCurated": false
+}

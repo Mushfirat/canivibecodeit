@@ -1,0 +1,58 @@
+{
+  "slug": "cursor",
+  "name": "Cursor",
+  "domain": "cursor.com",
+  "category": "dev-tools",
+  "subcategory": "AI code editor",
+  "tagline": "AI-first code editor with agents, composer, and model routing",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "20 USD",
+    "source": "https://cursor.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $20/month, with India-only Start plan also reported separately."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can assemble VS Code plus open-source agents, but Cursor's moat is editor-native agent UX, model routing, cloud agents, context handling, and rapid product iteration.",
+  "coreLoopDIY": "Use VS Code/VSCodium plus an open-source agent extension, configure model APIs, index repos, and add workflows for edits/tests.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "VS Code-compatible editor",
+    "LLM API",
+    "repo indexer",
+    "terminal/tool permissions",
+    "optional remote agent runtime"
+  ],
+  "whatYouLose": [
+    "native composer/agent UX",
+    "model routing/credits",
+    "cloud agents",
+    "editor polish",
+    "extensions compatibility",
+    "team features"
+  ],
+  "moatType": "editor integration/model routing",
+  "whyPeopleStillPay": "They pay for speed: the agent is already in the editor with defaults that work.",
+  "priorArt": [
+    {
+      "name": "Continue",
+      "url": "https://github.com/continuedev/continue",
+      "desc": "Open-source AI code assistant; closest practical DIY substitute when paired with VS Code o",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "replit",
+    "codesandbox",
+    "vercel"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A core page for a vibecoding site; the answer should not be a lazy no or yes.",
+  "prompt": "Build me a personal replacement for Cursor (AI-first code editor with agents, composer, and model routing). Requirements:\n\n- Core loop: Use VS Code/VSCodium plus an open-source agent extension, configure model APIs, index repos, and add workflows for edits/tests.\n- Needs: VS Code-compatible editor.\n- Needs: LLM API.\n- Needs: repo indexer.\n- Needs: terminal/tool permissions.\n- Needs: optional remote agent runtime.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: native composer/agent UX; model routing/credits; cloud agents.",
+  "promptCurated": false
+}

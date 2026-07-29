@@ -1,0 +1,58 @@
+{
+  "slug": "descript",
+  "name": "Descript",
+  "domain": "descript.com",
+  "category": "audio-video",
+  "subcategory": "podcast/video editing",
+  "tagline": "Text-based audio and video editor with transcription and AI tools",
+  "priceMonthly": 24,
+  "pricing": {
+    "plan": "Hobbyist",
+    "basis": "monthly",
+    "native": "24 USD",
+    "source": "https://www.descript.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Hobbyist is listed at $24/month monthly and $16/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build transcript-based cutting for simple clips, but Descript's editor, media pipeline, AI voice/video tooling, publishing, and collaboration are a serious product.",
+  "coreLoopDIY": "Transcribe media, map words to timestamps, allow text deletion to cut audio/video, then render via ffmpeg.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "ffmpeg",
+    "speech-to-text/alignment",
+    "desktop or web editor",
+    "video rendering pipeline",
+    "optional hosted storage"
+  ],
+  "whatYouLose": [
+    "polished nonlinear editor",
+    "overdub/voice tools",
+    "filler-word workflows",
+    "templates",
+    "cloud collaboration",
+    "rendering reliability"
+  ],
+  "moatType": "media pipeline/collaboration",
+  "whyPeopleStillPay": "They pay to avoid building and babysitting a media editor, not just for transcription.",
+  "priorArt": [
+    {
+      "name": "Kdenlive",
+      "url": "https://github.com/KDE/kdenlive",
+      "desc": "Mature open-source video editor; useful alternative but not text-first SaaS clone.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "loom",
+    "tella",
+    "capcut"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Great boundary case where a toy clone is easy but the product depth is obvious.",
+  "prompt": "Build me a personal replacement for Descript (Text-based audio and video editor with transcription and AI tools). Requirements:\n\n- Core loop: Transcribe media, map words to timestamps, allow text deletion to cut audio/video, then render via ffmpeg.\n- Needs: ffmpeg.\n- Needs: speech-to-text/alignment.\n- Needs: desktop or web editor.\n- Needs: video rendering pipeline.\n- Needs: optional hosted storage.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: polished nonlinear editor; overdub/voice tools; filler-word workflows.",
+  "promptCurated": false
+}

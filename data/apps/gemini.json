@@ -1,0 +1,57 @@
+{
+  "slug": "gemini",
+  "name": "Google Gemini",
+  "domain": "gemini.google.com",
+  "category": "ai-assistant",
+  "subcategory": "Google AI subscription",
+  "tagline": "Google AI assistant bundled with Gemini Advanced and Google AI Pro",
+  "priceMonthly": 19.99,
+  "pricing": {
+    "plan": "Google AI Pro",
+    "basis": "monthly",
+    "native": "19.99 USD",
+    "source": "https://gemini.google/subscriptions/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official Google subscriptions page checked 2026-07-30; Google AI Pro listed at $19.99/month."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A chat UI is easy, but Gemini's model access, Google ecosystem integration, multimodality, storage tie-ins, and platform distribution are not solo-buildable.",
+  "coreLoopDIY": "Build a multi-model chat app with document upload and optional Google API integrations.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "LLM API",
+    "hosted app",
+    "optional Google OAuth/API access",
+    "storage",
+    "file parsing"
+  ],
+  "whatYouLose": [
+    "frontier models",
+    "Google app integrations",
+    "mobile/native distribution",
+    "multimodal stack",
+    "reliability"
+  ],
+  "moatType": "frontier model/platform ecosystem",
+  "whyPeopleStillPay": "They pay for model access and Google-native placement, not because chat UIs are hard.",
+  "priorArt": [
+    {
+      "name": "Open WebUI",
+      "url": "https://github.com/open-webui/open-webui",
+      "desc": "Open-source self-hosted chat UI for model APIs and local models.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "gamma",
+    "beautiful-ai",
+    "jasper"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Completes the model-platform set; useful comparison for structural no verdicts.",
+  "prompt": null,
+  "promptCurated": false
+}

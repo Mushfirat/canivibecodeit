@@ -1,0 +1,60 @@
+{
+  "slug": "glide",
+  "name": "Glide",
+  "domain": "glideapps.com",
+  "category": "no-code-apps",
+  "subcategory": "app builder",
+  "tagline": "No-code app builder for portals, dashboards, and mobile-style apps",
+  "priceMonthly": 60,
+  "pricing": {
+    "plan": "Maker",
+    "basis": "monthly",
+    "native": "60 USD",
+    "source": "https://www.glideapps.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; public 2026 references list Maker around $49/month annual-effective and roughly $60/month monthly."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build one specific Glide app; you are not rebuilding the no-code app builder, data editor, permissions, and deployment platform in one sitting.",
+  "coreLoopDIY": "Build the specific portal/dashboard needed using a normal web framework and database rather than rebuilding Glide itself.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "web framework",
+    "database",
+    "auth",
+    "hosting",
+    "mobile-responsive UI",
+    "optional app wrapper"
+  ],
+  "whatYouLose": [
+    "visual builder",
+    "templates",
+    "data sync",
+    "permissions",
+    "mobile-like UI",
+    "publishing",
+    "integrations"
+  ],
+  "moatType": "no-code builder/platform",
+  "whyPeopleStillPay": "They pay because building one app is easier than becoming the developer for every future app change.",
+  "priorArt": [
+    {
+      "name": "NocoDB",
+      "url": "https://github.com/nocodb/nocodb",
+      "desc": "Open-source no-code database; combine with a frontend for many Glide-like apps.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "bubble",
+    "zapier",
+    "make"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Important distinction: vibecode the app, not the app builder.",
+  "prompt": "Build me a personal replacement for Glide (No-code app builder for portals, dashboards, and mobile-style apps). Requirements:\n\n- Core loop: Build the specific portal/dashboard needed using a normal web framework and database rather than rebuilding Glide itself.\n- Needs: web framework.\n- Needs: database.\n- Needs: auth.\n- Needs: hosting.\n- Needs: mobile-responsive UI.\n- Needs: optional app wrapper.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: visual builder; templates; data sync.",
+  "promptCurated": false
+}

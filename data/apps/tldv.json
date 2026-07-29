@@ -1,0 +1,57 @@
+{
+  "slug": "tldv",
+  "name": "tl;dv",
+  "domain": "tldv.io",
+  "category": "meeting-notes",
+  "subcategory": "meeting recorder + clips",
+  "tagline": "AI meeting recorder with transcripts, summaries, clips, and CRM sync",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per seat",
+    "native": "29 USD",
+    "source": "https://tldv.io/app/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; secondary 2026 pricing pages list Pro around $29/month and lower annual price."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A DIY app can record, transcribe, summarize, and generate clips, but tl;dv's team library, CRM integrations, and meeting-bot reliability are real work.",
+  "coreLoopDIY": "Join/record meetings, generate transcript and summary, tag highlights, clip segments, and export notes.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "meeting platform integration",
+    "speech-to-text",
+    "video storage",
+    "LLM API",
+    "hosted backend"
+  ],
+  "whatYouLose": [
+    "meeting bot upkeep",
+    "team/shared library",
+    "CRM integrations",
+    "admin controls",
+    "polished clip sharing"
+  ],
+  "moatType": "integrations/media/collaboration",
+  "whyPeopleStillPay": "They pay for repeatable team-wide capture and distribution, not because summaries are hard.",
+  "priorArt": [
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "Can power the transcription layer for a simpler local clone.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "krisp",
+    "superwhisper",
+    "descript"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Good page because it forces the reader to separate summarization from meeting operations.",
+  "prompt": "Build me a personal replacement for tl;dv (AI meeting recorder with transcripts, summaries, clips, and CRM sync). Requirements:\n\n- Core loop: Join/record meetings, generate transcript and summary, tag highlights, clip segments, and export notes.\n- Needs: meeting platform integration.\n- Needs: speech-to-text.\n- Needs: video storage.\n- Needs: LLM API.\n- Needs: hosted backend.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: meeting bot upkeep; team/shared library; CRM integrations.",
+  "promptCurated": false
+}

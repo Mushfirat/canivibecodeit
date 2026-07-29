@@ -1,0 +1,57 @@
+{
+  "slug": "todoist",
+  "name": "Todoist",
+  "domain": "todoist.com",
+  "category": "tasks",
+  "subcategory": "task manager",
+  "tagline": "Cross-platform task manager for projects, reminders, and recurring tasks",
+  "priceMonthly": 7,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "7 USD",
+    "source": "https://todoist.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing/help checked 2026-07-30; Pro monthly changed to $7/month and $5/month annually from Dec 10, 2025."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "A personal task app with projects, recurring due dates, filters, and reminders is a one-sitting/weekend build; collaboration and sync polish are the product moat.",
+  "coreLoopDIY": "Create task/project tables, natural-language due date parsing, recurring rules, reminders, filters, and local notifications.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "local or hosted database",
+    "date parser",
+    "notification channel",
+    "optional mobile/desktop wrappers"
+  ],
+  "whatYouLose": [
+    "native apps",
+    "offline sync",
+    "collaboration",
+    "reminders reliability",
+    "integrations",
+    "years of UX polish"
+  ],
+  "moatType": "sync/polish",
+  "whyPeopleStillPay": "They pay because task capture must be fast everywhere and reminders cannot miss.",
+  "priorArt": [
+    {
+      "name": "Vikunja",
+      "url": "https://github.com/go-vikunja/vikunja",
+      "desc": "Open-source task/project management app suitable as a Todoist-style alternative.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "sunsama",
+    "akiflow",
+    "motion"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Strong yes; familiar product where feature creep is the real limit.",
+  "prompt": "Build me a personal replacement for Todoist (Cross-platform task manager for projects, reminders, and recurring tasks). Requirements:\n\n- Core loop: Create task/project tables, natural-language due date parsing, recurring rules, reminders, filters, and local notifications.\n- Needs: local or hosted database.\n- Needs: date parser.\n- Needs: notification channel.\n- Needs: optional mobile/desktop wrappers.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: native apps; offline sync; collaboration.",
+  "promptCurated": false
+}

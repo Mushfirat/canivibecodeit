@@ -1,0 +1,60 @@
+{
+  "slug": "beehiiv",
+  "name": "beehiiv",
+  "domain": "beehiiv.com",
+  "category": "newsletter",
+  "subcategory": "newsletter platform",
+  "tagline": "Newsletter publishing, growth, monetization, and email platform",
+  "priceMonthly": 49,
+  "pricing": {
+    "plan": "Scale",
+    "basis": "monthly",
+    "native": "49 USD",
+    "source": "https://www.beehiiv.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Scale listed at $49/month monthly and around $43/month annually in public coverage."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build a newsletter CMS and send emails, but beehiiv's moat is deliverability, growth network, recommendations, ad marketplace, automations, analytics, and migrations.",
+  "coreLoopDIY": "Create posts, maintain subscribers, send campaigns through an email provider, publish web archive, and show basic analytics.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "email service provider",
+    "domain/DNS auth",
+    "database",
+    "CMS/editor",
+    "unsubscribe/compliance",
+    "hosting"
+  ],
+  "whatYouLose": [
+    "email deliverability",
+    "referral/recommendation network",
+    "ad network",
+    "automations",
+    "analytics",
+    "paid newsletter tooling",
+    "migrations"
+  ],
+  "moatType": "deliverability/network/monetization",
+  "whyPeopleStillPay": "They pay because audience growth and email reliability are harder than writing and sending HTML.",
+  "priorArt": [
+    {
+      "name": "Ghost",
+      "url": "https://github.com/TryGhost/Ghost",
+      "desc": "Open-source publishing/newsletter platform with memberships and email support.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "kit",
+    "mailchimp",
+    "ghost-pro"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Valuable 'kinda' because the network/monetization layer is the real reason to pay.",
+  "prompt": "Build me a personal replacement for beehiiv (Newsletter publishing, growth, monetization, and email platform). Requirements:\n\n- Core loop: Create posts, maintain subscribers, send campaigns through an email provider, publish web archive, and show basic analytics.\n- Needs: email service provider.\n- Needs: domain/DNS auth.\n- Needs: database.\n- Needs: CMS/editor.\n- Needs: unsubscribe/compliance.\n- Needs: hosting.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: email deliverability; referral/recommendation network; ad network.",
+  "promptCurated": false
+}

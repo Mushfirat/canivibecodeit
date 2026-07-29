@@ -1,0 +1,170 @@
+/* Build-time OG image generation: satori (JSX-object → SVG) + resvg (SVG → PNG).
+   One background template + programmatic text = pixel-accurate, $0 per new app. */
+import satori from 'satori';
+import { Resvg } from '@resvg/resvg-js';
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import path from 'node:path';
+
+const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const outDir = path.join(root, 'public/og');
+mkdirSync(outDir, { recursive: true });
+
+const fonts = [
+  { name: 'Space Grotesk', weight: 700, data: readFileSync(path.join(root, 'scripts/fonts/SpaceGrotesk-Bold.ttf')) },
+  { name: 'JetBrains Mono', weight: 400, data: readFileSync(path.join(root, 'scripts/fonts/JetBrainsMono-Regular.ttf')) },
+  { name: 'JetBrains Mono', weight: 700, data: readFileSync(path.join(root, 'scripts/fonts/JetBrainsMono-Bold.ttf')) },
+];
+
+const bg = `data:image/png;base64,${readFileSync(path.join(root, 'scripts/og-background.png')).toString('base64')}`;
+const icon = (slug) => {
+  const p = path.join(root, 'public/icons', `${slug}.png`);
+  return existsSync(p) ? `data:image/png;base64,${readFileSync(p).toString('base64')}` : null;
+};
+
+const COLORS = {
+  fg: '#e8e6e0',
+  muted: '#9aa29a',
+  green: '#33e667',
+  onGreen: '#06170b',
+  amber: '#ffb000',
+  onAmber: '#1a1200',
+  red: '#ff4444',
+  ticker: '#ff5c33',
+};
+
+const VERDICT = {
+  yes: { label: 'YES · one-shottable', bg: COLORS.green, fg: COLORS.onGreen },
+  kinda: { label: 'KINDA · weekend project', bg: COLORS.amber, fg: COLORS.onAmber },
+  no: { label: "NOT REALLY · don't bother", bg: COLORS.red, fg: '#fff' },
+};
+
+const el = (type, style, children) => ({ type, props: { style, ...(children !== undefined && { children }) } });
+const img = (src, style) => ({ type: 'img', props: { src, style } });
+
+const mono = (size, color, weight = 400) => ({
+  fontFamily: 'JetBrains Mono',
+  fontSize: size,
+  fontWeight: weight,
+  color,
+});
+
+const logoRow = el(
+  'div',
+  { display: 'flex', alignItems: 'center', gap: 16 },
+  [
+    el('div', {
+      width: 44, height: 44, border: `4px solid ${COLORS.green}`, borderRadius: 10,
+      display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 3,
+    }, [
+      el('div', { ...mono(22, COLORS.green, 700), lineHeight: 1 }, '?'),
+      el('div', { width: 7, height: 18, backgroundColor: COLORS.green }),
+    ]),
+    el('div', { display: 'flex', ...mono(26, COLORS.fg) }, [
+      el('span', { color: COLORS.fg }, 'can'),
+      el('span', { color: COLORS.green }, 'i'),
+      el('span', { color: COLORS.fg }, 'vibecode'),
+      el('span', { color: COLORS.green }, 'it'),
+    ]),
+  ]
+);
+
+function page(children) {
+  return el('div', {
+    width: 1200, height: 630, display: 'flex', flexDirection: 'column',
+    backgroundImage: `url(${bg})`, backgroundSize: '1200px 630px',
+    padding: 64,
+  }, children);
+}
+
+function appCard(app) {
+  const v = VERDICT[app.verdict];
+  const ic = icon(app.slug);
+  const shortName = app.name.split(' / ')[0];
+  return page([
+    logoRow,
+    el('div', { display: 'flex', flexDirection: 'column', gap: 28, marginTop: 66 }, [
+      el('div', { display: 'flex', alignItems: 'center', gap: 24 }, [
+        ...(ic ? [img(ic, { width: 72, height: 72, borderRadius: 16 })] : []),
+        el('div', {
+          fontFamily: 'Space Grotesk', fontSize: 74, fontWeight: 700,
+          color: COLORS.fg, letterSpacing: '-0.02em',
+        }, `Can I vibecode ${shortName}?`),
+      ]),
+      el('div', { display: 'flex', alignItems: 'center', gap: 22 }, [
+        el('div', {
+          ...mono(30, v.fg, 700), backgroundColor: v.bg,
+          padding: '14px 28px', borderRadius: 10,
+        }, v.label),
+        el(
+          'div',
+          mono(28, COLORS.muted),
+          app.priceMonthly != null
+            ? `$${app.priceMonthly}/mo · save $${(app.priceMonthly * 12).toLocaleString('en-US')}/yr`
+            : 'pricing varies'
+        ),
+      ]),
+    ]),
+    el('div', { display: 'flex', marginTop: 'auto', justifyContent: 'space-between' }, [
+      el('div', mono(22, COLORS.muted), `canivibecodeit.com/${app.slug}`),
+      el('div', mono(22, COLORS.muted), 'the exact prompt inside →'),
+    ]),
+  ]);
+}
+
+function homeCard(mrr) {
+  return page([
+    logoRow,
+    el('div', { display: 'flex', flexDirection: 'column', gap: 30, marginTop: 56 }, [
+      el('div', {
+        fontFamily: 'Space Grotesk', fontSize: 84, fontWeight: 700,
+        color: COLORS.fg, letterSpacing: '-0.02em', lineHeight: 1.05,
+      }, 'Can I vibecode ___?'),
+      el('div', mono(30, COLORS.muted), 'Which subscriptions are one prompt away from free.'),
+      el('div', { display: 'flex', alignItems: 'center', gap: 18, marginTop: 18 }, [
+        el('div', { ...mono(26, '#ff8a5c', 700), letterSpacing: '0.08em' }, 'COLLECTIVE MRR DESTROYED'),
+        el('div', {
+          ...mono(40, COLORS.ticker, 700), backgroundColor: '#1f1210',
+          border: '2px solid #43241a', borderRadius: 10, padding: '6px 20px',
+        }, `$${mrr.toLocaleString('en-US')}/mo`),
+      ]),
+    ]),
+    el('div', { display: 'flex', marginTop: 'auto', justifyContent: 'space-between' }, [
+      el('div', mono(22, COLORS.muted), 'canivibecodeit.com'),
+      el('div', mono(22, COLORS.muted), 'the death list →'),
+    ]),
+  ]);
+}
+
+async function render(node, file) {
+  const svg = await satori(node, { width: 1200, height: 630, fonts });
+  const png = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 } }).render().asPng();
+  writeFileSync(path.join(outDir, file), png);
+  console.log('og:', file);
+}
+
+const apps = readdirSync(path.join(root, 'data/apps'))
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => JSON.parse(readFileSync(path.join(root, 'data/apps', f), 'utf8')));
+
+// MRR on the static home OG uses a placeholder sum at build time; the live
+// number lives on the page itself. Rebuild before big screenshot moments.
+let mrr = 0;
+try {
+  const { default: Database } = await import('better-sqlite3');
+  const dbPath = path.join(process.env.DATA_DIR || path.join(root, 'data/private'), 'site.db');
+  if (existsSync(dbPath)) {
+    const db = new Database(dbPath, { readonly: true });
+    const rows = db.prepare('SELECT slug, count FROM votes').all();
+    const bySlug = Object.fromEntries(rows.map((r) => [r.slug, r.count]));
+    mrr = apps.reduce((s, a) => s + (a.priceMonthly ?? 0) * (bySlug[a.slug] ?? 0), 0);
+  }
+} catch {
+  /* no db at build time is fine */
+}
+
+await render(homeCard(mrr), 'home.png');
+for (const app of apps) await render(appCard(app), `${app.slug}.png`);
+
+// vibecode-this-site shares the home card
+await render(homeCard(mrr), 'vibecode-this-site.png');
+console.log('done:', apps.length + 2, 'images');

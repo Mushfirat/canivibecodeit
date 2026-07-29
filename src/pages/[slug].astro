@@ -1,0 +1,260 @@
+---
+import Base from '../layouts/Base.astro';
+import VerdictBadge from '../components/VerdictBadge.astro';
+import Waitlist from '../components/Waitlist.astro';
+import { getApp, relatedApps, yearlySaving, CATEGORIES, VERDICTS } from '../lib/apps.js';
+import { voteCount, voteCounts } from '../lib/db.js';
+
+const { slug } = Astro.params;
+const app = getApp(slug);
+if (!app) return new Response(null, { status: 404 });
+
+const votes = voteCount(app.slug);
+const related = relatedApps(app, voteCounts());
+const cat = CATEGORIES[app.category];
+const v = VERDICTS[app.verdict];
+const saving = yearlySaving(app);
+
+const verdictWord = { yes: 'YES', kinda: 'KINDA', no: 'NOT REALLY' }[app.verdict];
+const priceLine =
+  app.priceMonthly != null ? `costs $${app.priceMonthly}/mo ($${saving}/yr)` : 'has usage-based pricing';
+const title = `Can I vibecode ${app.name}? ${verdictWord} — replace it with one AI prompt`;
+const description = `${verdictWord}: ${app.name} ${priceLine}. ${
+  app.verdict === 'no'
+    ? "Here's why it survives vibecoding."
+    : `Here's the exact prompt to build your own and what you lose.`
+}`;
+
+const faq = [
+  {
+    q: `Can I vibecode ${app.name}?`,
+    a:
+      app.verdict === 'yes'
+        ? `Yes. A competent AI coding agent (Claude Code, Codex, Cursor) can build a usable personal ${app.name} replacement in one session with the prompt on this page. It runs on your own machine or server with no subscription.`
+        : app.verdict === 'kinda'
+          ? `Kinda. The core of ${app.name} is buildable in a weekend with the prompt on this page, but there are real gaps: ${app.whatYouLose.slice(0, 2).join(', ')}. Read the honest list above before committing.`
+          : `Not really. ${app.name}'s value is not the code — ${app.notes.split('.')[1]?.trim() ?? 'the moat survives one prompt'}. See the honest breakdown above.`,
+  },
+  {
+    q: `How much does ${app.name} cost?`,
+    a:
+      app.priceMonthly != null
+        ? `${app.name} costs about $${app.priceMonthly}/month (${app.pricing?.plan || 'paid plan'}${
+            app.pricing?.checkedOn ? `, checked ${app.pricing.checkedOn}` : ''
+          }), which is $${saving} per year. ${
+            app.verdict === 'yes' ? `That's what you save by replacing it with one prompt.` : ''
+          }`
+        : `${app.name}'s pricing is usage-based or varies by plan${
+            app.pricing?.notes ? ` — ${app.pricing.notes}` : ''
+          }.`,
+  },
+  {
+    q: `What do I lose by replacing ${app.name}?`,
+    a: `Honestly: ${app.whatYouLose.join('; ')}. If any of those are load-bearing for you, keep paying.`,
+  },
+  {
+    q: `Is there an open-source alternative to ${app.name}?`,
+    a:
+      app.priorArt.length > 0
+        ? `Yes — ${app.priorArt.map((p) => `${p.name} (${p.desc})`).join(', ')}. Using prior art is also vibecoding; the prompt is for when you want it exactly your way.`
+        : `No mature open-source alternative worth pointing at — which is exactly why the one-shot prompt on this page exists.`,
+  },
+];
+
+const jsonld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'The Death List', item: 'https://canivibecodeit.com/' },
+      { '@type': 'ListItem', position: 2, name: cat.label, item: `https://canivibecodeit.com/category/${app.category}` },
+      { '@type': 'ListItem', position: 3, name: app.name, item: `https://canivibecodeit.com/${app.slug}` },
+    ],
+  },
+];
+
+const priceTag = app.priceMonthly != null ? ` ($${app.priceMonthly}/mo)` : '';
+const tweet = encodeURIComponent(
+  `I just replaced ${app.name}${priceTag} with one prompt → canivibecodeit.com/${app.slug}`
+);
+---
+
+<Base {title} {description} ogImage={`/og/${app.slug}.png`} {jsonld}>
+  <main class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">the death list</a> / <a href={`/category/${app.category}`}>{cat.label.toLowerCase()}</a> /
+      <span class="here">{app.slug}</span>
+    </nav>
+
+    <div class="app-head">
+      <span class="title">
+        <img src={`/icons/${app.slug}.png`} alt="" width="48" height="48" />
+        <h1>Can I vibecode {app.name.split(' / ')[0]}?</h1>
+      </span>
+      <VerdictBadge verdict={app.verdict} big />
+    </div>
+
+    <div class="stats">
+      <span>price <b>{app.priceMonthly != null ? `$${app.priceMonthly}/mo` : 'varies'}</b></span>
+      {saving != null && <span>you'd save <span class="save">${saving.toLocaleString('en-US')}/yr</span></span>}
+      {app.diyTimeEstimate && <span>build time <b>{app.diyTimeEstimate}</b></span>}
+      <span>category <b>{cat.emoji} {cat.label.toLowerCase()}</b></span>
+      <span>replaced by <b data-votes={app.slug}>{votes}</b> people</span>
+    </div>
+
+    {
+      app.verdictSummary && (
+        <p style="padding-top: 22px; font-size: 14.5px; line-height: 1.7; color: var(--muted); max-width: 76ch;">
+          {app.verdictSummary}
+        </p>
+      )
+    }
+
+    {
+      !app.prompt && (
+        <section class="prompt-box">
+          <div class="prompt-head">
+            <span class="microlabel">the honest answer</span>
+          </div>
+          <div class="prompt-body">
+            <pre id="no-prompt">Don't build this one. {app.whyPeopleStillPay || 'The moat is not the code.'}{
+              app.priorArt.length ? `\n\nIf you want off anyway, start from ${app.priorArt[0].name} (prior art below).` : ''
+            }</pre>
+          </div>
+        </section>
+      )
+    }
+
+    <section class="prompt-box" style={!app.prompt ? 'display:none' : undefined}>
+      <div class="prompt-head">
+        <span class="microlabel">the prompt</span>
+        <div class="copy-group" data-slug={app.slug}>
+          <button class="copy-btn" data-agent="claude-code">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#D97757" aria-hidden="true"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1215-.5707-.1214L0 11.7855l.0547-.3521.4796-.3218.686.0608 1.5178.1032 2.2767.1578 1.6514.0972 2.4468.2549h.3886l.0546-.1578-.1335-.0972-.1032-.0971-2.3557-1.5967-2.5501-1.688-1.3356-.9714-.7225-.4917-.3643-.4614-.1578-1.0078.6557-.7225.8804.0607.2246.0607.8926.686 1.9064 1.4753 2.4893 1.8335.3643.3035.1457-.1032.0182-.0728-.1639-.2732-1.3538-2.4467-1.4449-2.4893-.6435-1.0321-.17-.6193a2.9691 2.9691 0 0 1-.1032-.7286l.7468-1.0139L4.4837 0l.9957.1336.4189.3642.6192 1.4145 1.0018 2.2282 1.5542 3.0296.4553.8986.2428.8318.0911.2549h.1578v-.1457l.1275-1.706.2367-2.0946.2306-2.6957.0789-.7589.3764-.9107.7468-.4917.5828.2793.4796.686-.0668.4431-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2428-.2428.9835-1.3052 1.6514-2.0642.7286-.8197.8501-.9047.5464-.4309h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3477-.8804 1.1414-1.2627 1.7-.7893 1.3599.0729.1093.1882-.0182 2.8535-.6071 1.5421-.2793 1.8396-.3157.8319.3886.0911.3946-.3279.8076-1.9672.4857-2.3072.4614-3.436.8137-.0425.0303.0486.0607 1.5482.1457.6618.0364h1.6211l3.0175.2247.7893.5221.4736.6375-.079.4857-1.2141.6193-1.6393-.3886-3.8246-.9107-1.3113-.3278h-.1822v.1093l1.0929 1.0686 2.0034 1.8092 2.5076 2.3314.1275.5768-.3218.4553-.34-.0486-2.2038-1.6575-.8501-.7468-1.9246-1.6211h-.1275v.17l.4432.6496 2.3436 3.5209.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9247-1.4145-2.1674-1.1414-1.9429-.1397.0789-.674 7.2583-.3157.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.5299.2853-1.9004.17-.6314-.0121-.0425-.1396.0182-1.4327 1.9672-2.1795 2.9445-1.724 1.845-.4128.1639-.7164-.3702.0668-.6618.4006-.5889 2.386-3.0357 1.4388-1.8821.929-1.0868-.0061-.1578h-.0546l-6.3383 4.1161-1.129.1457-.4857-.4553.0607-.7468.2307-.2428 1.9064-1.3113Z"/></svg>
+            <span>copy for Claude Code</span>
+          </button>
+          <button class="copy-btn" data-agent="codex">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654 2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>
+            <span>copy for Codex</span>
+          </button>
+          <button class="copy-btn" data-agent="cursor">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55c.308.178.687.178.996 0l9.611-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a.994.994 0 0 0-.994 0Zm.68 1.658 8.599 4.964a.19.19 0 0 1 .046.294l-8.767 9.6a.19.19 0 0 1-.33-.128V1.953a.19.19 0 0 1 .285-.164h.167Zm-1.607.164v14.566a.19.19 0 0 1-.33.128l-8.767-9.6a.19.19 0 0 1 .046-.294l8.6-4.964a.19.19 0 0 1 .284.164h.167Zm-7.591 8.032 7.539 8.255a.19.19 0 0 1-.046.295l-6.428 3.71a.19.19 0 0 1-.285-.164v-11.9a.19.19 0 0 1 .33-.128l-1.11-.068Zm17.14.068a.19.19 0 0 1 .33.128v11.9a.19.19 0 0 1-.285.164l-6.428-3.71a.19.19 0 0 1-.046-.295l6.429-8.187Z"/></svg>
+            <span>copy for Cursor</span>
+          </button>
+        </div>
+      </div>
+      <div class="prompt-body">
+        <pre id="prompt-text">{app.prompt}</pre>
+      </div>
+      <p class="prompt-hint">
+        $ paste into your agent in an empty folder{
+          !app.promptCurated && (
+            <>
+              {' '}· this prompt is generated from the build plan ·{' '}
+              <a href="https://github.com/robj3d3/canivibecodeit/blob/main/CONTRIBUTING.md" style="color: var(--primary);">improve it via PR</a>
+            </>
+          )
+        }
+      </p>
+    </section>
+
+    {
+      app.whyPeopleStillPay && (
+        <section style="padding-top: 44px;">
+          <span class="microlabel">
+            why people still pay{app.moatType ? ` · moat: ${app.moatType}` : ''}
+          </span>
+          <p style="padding-top: 12px; font-size: 14px; line-height: 1.7; color: var(--fg); max-width: 76ch;">
+            {app.whyPeopleStillPay}
+          </p>
+        </section>
+      )
+    }
+
+    <div class="two-col">
+      <section>
+        <span class="microlabel">what you lose</span>
+        {app.whatYouLose.map((l) => (
+          <p class="lose-item"><i>x</i>{l}</p>
+        ))}
+      </section>
+      <section>
+        <span class="microlabel">prior art · use these instead of building, if you'd rather</span>
+        {
+          app.priorArt.length > 0 ? (
+            app.priorArt.map((p) => (
+              <a class="prior-card" href={p.url}>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="var(--muted)" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                <span class="pname">{p.name}</span>
+                <span class="pdesc">{p.desc}</span>
+                <span class="arrow">↗</span>
+              </a>
+            ))
+          ) : (
+            <p class="lose-item" style="color: var(--muted);">
+              Nothing worth pointing at — that's why the prompt exists.
+            </p>
+          )
+        }
+      </section>
+    </div>
+
+    {
+      related.length > 0 && (
+        <section class="related">
+          <span class="microlabel">also one-shottable</span>
+          <div class="related-grid">
+            {related.map((r) => (
+              <a class="mini-card" href={`/${r.slug}`}>
+                <img src={`/icons/${r.slug}.png`} alt="" width="26" height="26" loading="lazy" />
+                <span>
+                  <span class="m-name">{r.name}</span>
+                  <br />
+                  <span class="m-meta">
+                    {r.priceMonthly != null ? `$${r.priceMonthly}/mo` : 'varies'} · {CATEGORIES[r.category].label.toLowerCase()}
+                  </span>
+                </span>
+                <VerdictBadge verdict={r.verdict} />
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <div class="actions">
+      <button class="btn primary" data-vote={app.slug}>
+        I replaced this · <span data-votes={app.slug}>{votes}</span>
+      </button>
+      <a
+        class="btn ghost"
+        href={`https://twitter.com/intent/tweet?text=${tweet}`}
+        data-share={app.slug}
+      >share on X ↗</a>
+      <span class="tweet">"I just replaced {app.name.split(' / ')[0]}{app.priceMonthly != null ? ` ($${app.priceMonthly}/mo)` : ''} with one prompt"</span>
+    </div>
+
+    <section class="faq">
+      <span class="microlabel">questions</span>
+      {
+        faq.map((f, i) => (
+          <details open={i === 0}>
+            <summary>{f.q}</summary>
+            <p class="a">{f.a}</p>
+          </details>
+        ))
+      }
+    </section>
+  </main>
+
+  <Waitlist />
+</Base>

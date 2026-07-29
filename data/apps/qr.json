@@ -1,0 +1,44 @@
+{
+  "subcategory": null,
+  "tagline": "A library call with a UI",
+  "pricing": {
+    "plan": null,
+    "basis": "monthly",
+    "native": null,
+    "source": null,
+    "checkedOn": "2026-07-29",
+    "confidence": "medium",
+    "notes": null
+  },
+  "verdictConfidence": "high",
+  "verdictSummary": "A library call with a UI. Peak \"why is this a subscription.\"",
+  "coreLoopDIY": null,
+  "diyTimeEstimate": "one sitting",
+  "requirements": [],
+  "moatType": null,
+  "whyPeopleStillPay": null,
+  "relatedSlugs": [],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "promptCurated": true,
+  "slug": "qr",
+  "name": "QR Tiger",
+  "domain": "qrtiger.com",
+  "category": "qr-codes",
+  "priceMonthly": 15,
+  "verdict": "yes",
+  "notes": "A library call with a UI. Peak \"why is this a subscription.\"",
+  "whatYouLose": [
+    "hosted dynamic-QR redirects on their domain",
+    "their scan-analytics dashboard",
+    "bulk generation UI"
+  ],
+  "priorArt": [
+    {
+      "name": "qr-code-styling",
+      "url": "https://github.com/kozakdenys/qr-code-styling",
+      "desc": "the styling library that does the heavy lifting"
+    }
+  ],
+  "prompt": "Build me a QR code generator like QR Tiger, self-hosted. Requirements:\n\n- A single page: enter a URL or text, live-preview the QR code, customize\n  foreground/background color, corner style, and an optional center logo upload.\n  Use the qr-code-styling library. Export as PNG or SVG.\n- Dynamic QR codes: /r/:slug 302-redirects to a target URL stored in SQLite,\n  so the destination can be edited later without reprinting the code. CRUD for\n  these behind basic-auth (/admin, credentials from .env).\n- Scan tracking for dynamic codes: log timestamp + user-agent + referer per hit,\n  show per-code totals and a 30-day count in the admin list.\n- Clean minimal UI, mobile-friendly, no accounts, no third-party calls.\n- Node, one process, SQLite file storage, deploy notes for a VPS."
+}

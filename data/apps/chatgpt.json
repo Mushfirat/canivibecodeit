@@ -1,0 +1,59 @@
+{
+  "slug": "chatgpt",
+  "name": "ChatGPT",
+  "domain": "chatgpt.com",
+  "category": "ai-assistant",
+  "subcategory": "general AI assistant",
+  "tagline": "General AI assistant for writing, coding, research, images, and workflows",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Plus",
+    "basis": "monthly",
+    "native": "20 USD",
+    "source": "https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official OpenAI help/pricing checked 2026-07-30; ChatGPT Plus remains listed at $20/month."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build a chat UI over APIs, but you cannot solo-recreate the model, multimodal stack, tools, memory/product layer, safety systems, and scale.",
+  "coreLoopDIY": "Build a chat interface that calls OpenAI/Anthropic/local models, stores conversations, and adds file upload/tools.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "LLM API key or local model",
+    "hosted app",
+    "vector store if retrieval",
+    "auth/storage",
+    "tool integrations"
+  ],
+  "whatYouLose": [
+    "frontier models",
+    "multimodal features",
+    "tool ecosystem",
+    "reliability",
+    "safety",
+    "product updates",
+    "mobile apps"
+  ],
+  "moatType": "frontier model/platform",
+  "whyPeopleStillPay": "They pay for access to a continuously improving platform, not a textarea and send button.",
+  "priorArt": [
+    {
+      "name": "Open WebUI",
+      "url": "https://github.com/open-webui/open-webui",
+      "desc": "Open-source self-hosted AI chat interface for local and hosted models.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "claude",
+    "perplexity",
+    "gemini"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Obvious but necessary no; helps calibrate model-vs-wrapper products.",
+  "prompt": null,
+  "promptCurated": false
+}

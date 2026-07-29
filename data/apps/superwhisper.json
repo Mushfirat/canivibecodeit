@@ -1,0 +1,56 @@
+{
+  "slug": "superwhisper",
+  "name": "Superwhisper",
+  "domain": "superwhisper.com",
+  "category": "voice-dictation",
+  "subcategory": "local dictation",
+  "tagline": "AI dictation for Mac that turns speech into text anywhere",
+  "priceMonthly": 8.49,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "8.49 USD",
+    "source": "https://superwhisper.com/docs/get-started/sw-pro",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official docs/checkout checked 2026-07-30; Pro monthly listed at $8.49, annual $84.99, lifetime $249.99."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "A push-to-talk recorder that transcribes and pastes text into the active app is very buildable for one person, especially on macOS.",
+  "coreLoopDIY": "Bind a hotkey, capture microphone audio, transcribe with Whisper or speech API, optionally rewrite with an LLM, and paste into the active field.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS automation/accessibility permissions",
+    "speech API or local Whisper",
+    "optional LLM API",
+    "hotkey library"
+  ],
+  "whatYouLose": [
+    "beautiful native UX",
+    "presets",
+    "vocabulary/profile tuning",
+    "app-wide polish",
+    "support"
+  ],
+  "moatType": "polish/native integration",
+  "whyPeopleStillPay": "They pay for the low-friction menu-bar experience and dictation profiles.",
+  "priorArt": [
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "Local transcription engine that makes a simple dictation clone realistic.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "descript",
+    "loom",
+    "tella"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Strong yes and very on-brand for vibecoding: small utility, obvious primitives, high subscription annoyance.",
+  "prompt": "Build me a personal replacement for Superwhisper (AI dictation for Mac that turns speech into text anywhere). Requirements:\n\n- Core loop: Bind a hotkey, capture microphone audio, transcribe with Whisper or speech API, optionally rewrite with an LLM, and paste into the active field.\n- Needs: macOS automation/accessibility permissions.\n- Needs: speech API or local Whisper.\n- Needs: optional LLM API.\n- Needs: hotkey library.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: beautiful native UX; presets; vocabulary/profile tuning.",
+  "promptCurated": false
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "semrush",
+  "name": "Semrush",
+  "domain": "semrush.com",
+  "category": "seo-marketing",
+  "subcategory": "SEO/content/competitive intelligence",
+  "tagline": "SEO, PPC, content, competitive research, and AI visibility toolkit",
+  "priceMonthly": 139.95,
+  "pricing": {
+    "plan": "SEO Pro",
+    "basis": "monthly",
+    "native": "139.95 USD",
+    "source": "https://www.semrush.com/pricing/seo-ai-search/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; SEO Pro monthly price shown at $139/month when not annual, and $117.33/month annual-effective."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build small audits and rank trackers, but Semrush's moat is massive keyword, competitor, backlink, PPC, and SERP datasets plus integrations and reports.",
+  "coreLoopDIY": "Crawl a site, track selected keywords with an API, collect Google Search Console data, and generate reports.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "crawler",
+    "search APIs",
+    "GSC/GA integrations",
+    "database",
+    "rank tracking infrastructure",
+    "reporting UI"
+  ],
+  "whatYouLose": [
+    "keyword database",
+    "competitor intelligence",
+    "backlink/PPC data",
+    "AI visibility data",
+    "reports",
+    "integrations",
+    "data freshness"
+  ],
+  "moatType": "proprietary data/crawler scale",
+  "whyPeopleStillPay": "They pay for market data and competitive intelligence that a solo builder cannot cheaply recreate.",
+  "priorArt": [
+    {
+      "name": "SEO Macroscope",
+      "url": "https://github.com/smac89/SEO-Macroscope",
+      "desc": "Open-source technical SEO crawler; useful only for a narrow slice of Semrush.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "surfer-seo",
+    "frase",
+    "quickbooks-online"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Critical no because it prevents the site from overclaiming on data businesses.",
+  "prompt": null,
+  "promptCurated": false
+}

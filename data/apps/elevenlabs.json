@@ -1,0 +1,58 @@
+{
+  "slug": "elevenlabs",
+  "name": "ElevenLabs",
+  "domain": "elevenlabs.io",
+  "category": "ai-audio",
+  "subcategory": "voice generation",
+  "tagline": "AI voice generation, dubbing, speech-to-text, and voice tools",
+  "priceMonthly": 22,
+  "pricing": {
+    "plan": "Creator",
+    "basis": "monthly",
+    "native": "22 USD",
+    "source": "https://elevenlabs.io/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Creator listed at $22/month, with lower Starter and higher Pro tiers."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A TTS wrapper is easy, but high-quality voice models, voice cloning safety, dubbing workflows, licensing, and compute are the product.",
+  "coreLoopDIY": "Build a text-to-speech UI around an open model or API, store generated files, and expose voice presets.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "TTS API or local model",
+    "GPU if local",
+    "storage",
+    "consent/safety checks",
+    "audio export"
+  ],
+  "whatYouLose": [
+    "voice quality",
+    "multilingual dubbing",
+    "voice design",
+    "safety controls",
+    "rights/licensing",
+    "model updates"
+  ],
+  "moatType": "frontier model/safety/licensing",
+  "whyPeopleStillPay": "They pay for convincing voices, controls, and commercial workflow reliability.",
+  "priorArt": [
+    {
+      "name": "OpenVoice",
+      "url": "https://github.com/myshell-ai/OpenVoice",
+      "desc": "Open-source voice cloning/TTS research implementation; useful prior art but not full SaaS ",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "chatgpt",
+    "claude",
+    "perplexity"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Strong no; model and safety moat are structural.",
+  "prompt": null,
+  "promptCurated": false
+}

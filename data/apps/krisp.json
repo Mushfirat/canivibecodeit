@@ -1,0 +1,56 @@
+{
+  "slug": "krisp",
+  "name": "Krisp",
+  "domain": "krisp.ai",
+  "category": "audio-video",
+  "subcategory": "noise cancellation",
+  "tagline": "Real-time AI noise cancellation and meeting voice enhancement",
+  "priceMonthly": 16,
+  "pricing": {
+    "plan": "Pro/Core",
+    "basis": "monthly per user",
+    "native": "16 USD",
+    "source": "https://krisp.ai/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Core/Pro is listed at $16/user/month monthly and $8/user/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build post-processing and maybe route audio through open models, but real-time low-latency virtual-device noise cancellation is not a one-sitting web app.",
+  "coreLoopDIY": "Use an open noise-suppression model as a virtual microphone or post-process recordings before sending them to calls or files.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "audio DSP library",
+    "OS-level virtual audio device",
+    "model/runtime optimized for low latency",
+    "macOS/Windows audio permissions"
+  ],
+  "whatYouLose": [
+    "low-latency virtual microphone",
+    "polished app switching",
+    "model quality",
+    "meeting integrations",
+    "admin controls"
+  ],
+  "moatType": "hardware/OS integration",
+  "whyPeopleStillPay": "They pay because audio cleanup must be instant and invisible during real calls.",
+  "priorArt": [
+    {
+      "name": "RNNoise",
+      "url": "https://github.com/xiph/rnnoise",
+      "desc": "Open-source recurrent noise suppression model; useful but not a full Krisp replacement.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "superwhisper",
+    "descript",
+    "loom"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Interesting because AI model availability does not remove OS/audio-driver product complexity.",
+  "prompt": "Build me a personal replacement for Krisp (Real-time AI noise cancellation and meeting voice enhancement). Requirements:\n\n- Core loop: Use an open noise-suppression model as a virtual microphone or post-process recordings before sending them to calls or files.\n- Needs: audio DSP library.\n- Needs: OS-level virtual audio device.\n- Needs: model/runtime optimized for low latency.\n- Needs: macOS/Windows audio permissions.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: low-latency virtual microphone; polished app switching; model quality.",
+  "promptCurated": false
+}

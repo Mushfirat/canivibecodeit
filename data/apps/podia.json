@@ -1,0 +1,60 @@
+{
+  "slug": "podia",
+  "name": "Podia",
+  "domain": "podia.com",
+  "category": "creator-commerce",
+  "subcategory": "courses/digital products",
+  "tagline": "Creator platform for courses, digital products, email, and memberships",
+  "priceMonthly": 49,
+  "pricing": {
+    "plan": "Mover",
+    "basis": "monthly",
+    "native": "49 USD",
+    "source": "https://www.podia.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked; public 2026 sources list Mover around $49/month monthly or $42/month annually, with transaction fees on lower tier."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "Selling a few digital downloads or a course is buildable, but Podia bundles checkout, file delivery, courses, email, memberships, affiliates, and support.",
+  "coreLoopDIY": "Build product pages, Stripe checkout, gated downloads/course lessons, customer accounts, and email receipts.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Stripe",
+    "file storage",
+    "auth",
+    "hosted site",
+    "email service",
+    "course/content database"
+  ],
+  "whatYouLose": [
+    "checkout/product UX",
+    "course hosting",
+    "email marketing",
+    "memberships",
+    "affiliates",
+    "tax/payment details",
+    "support"
+  ],
+  "moatType": "payments/content hosting/marketing",
+  "whyPeopleStillPay": "They pay because commerce plus content delivery has lots of edge cases.",
+  "priorArt": [
+    {
+      "name": "Ghost",
+      "url": "https://github.com/TryGhost/Ghost",
+      "desc": "Open-source publishing and memberships; combine with Stripe/file hosting for some Podia us",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "teachable",
+    "kajabi",
+    "circle"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good creator monetization entry where 60% DIY value is realistic.",
+  "prompt": "Build me a personal replacement for Podia (Creator platform for courses, digital products, email, and memberships). Requirements:\n\n- Core loop: Build product pages, Stripe checkout, gated downloads/course lessons, customer accounts, and email receipts.\n- Needs: Stripe.\n- Needs: file storage.\n- Needs: auth.\n- Needs: hosted site.\n- Needs: email service.\n- Needs: course/content database.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: checkout/product UX; course hosting; email marketing.",
+  "promptCurated": false
+}

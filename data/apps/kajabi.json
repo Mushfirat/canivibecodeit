@@ -1,0 +1,61 @@
+{
+  "slug": "kajabi",
+  "name": "Kajabi",
+  "domain": "kajabi.com",
+  "category": "creator-commerce",
+  "subcategory": "all-in-one creator business",
+  "tagline": "All-in-one platform for courses, communities, email, funnels, and payments",
+  "priceMonthly": 179,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "native": "179 USD",
+    "source": "https://www.kajabi.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Basic listed at $179/month monthly and $143/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build one course checkout or landing funnel, but Kajabi bundles site, course, community, email, automations, payments, analytics, and support.",
+  "coreLoopDIY": "Build the specific funnel/course/membership needed with Stripe, a CMS, email provider, and gated content.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Stripe",
+    "email provider",
+    "CMS/course content",
+    "auth",
+    "hosting",
+    "analytics",
+    "automations"
+  ],
+  "whatYouLose": [
+    "all-in-one stack",
+    "funnels",
+    "email automations",
+    "communities",
+    "course delivery",
+    "analytics",
+    "customer support"
+  ],
+  "moatType": "all-in-one workflow/payments",
+  "whyPeopleStillPay": "They pay to avoid stitching and maintaining a dozen creator-business tools.",
+  "priorArt": [
+    {
+      "name": "Moodle",
+      "url": "https://github.com/moodle/moodle",
+      "desc": "Open-source LMS prior art; combine with email/commerce tools for partial Kajabi replacemen",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "circle",
+    "mighty-networks",
+    "buffer"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "High price makes DIY attractive; all-in-one breadth makes full replacement hard.",
+  "prompt": "Build me a personal replacement for Kajabi (All-in-one platform for courses, communities, email, funnels, and payments). Requirements:\n\n- Core loop: Build the specific funnel/course/membership needed with Stripe, a CMS, email provider, and gated content.\n- Needs: Stripe.\n- Needs: email provider.\n- Needs: CMS/course content.\n- Needs: auth.\n- Needs: hosting.\n- Needs: analytics.\n- Needs: automations.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: all-in-one stack; funnels; email automations.",
+  "promptCurated": false
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "make",
+  "name": "Make",
+  "domain": "make.com",
+  "category": "automation",
+  "subcategory": "workflow automation",
+  "tagline": "Visual automation platform for scenarios across apps and APIs",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Core",
+    "basis": "monthly",
+    "native": "12 USD",
+    "source": "https://www.make.com/en/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Core listed at $12/month for 10,000 credits."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A handful of workflows can be coded quickly, but Make's paid value is the visual builder, app modules, scheduling, observability, and maintenance.",
+  "coreLoopDIY": "Implement the needed scenarios as scripts or n8n workflows with API calls, retries, and logs.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "API keys/OAuth",
+    "hosted scheduler/worker",
+    "secrets",
+    "logs",
+    "retry handling"
+  ],
+  "whatYouLose": [
+    "visual scenario builder",
+    "app modules",
+    "scheduling",
+    "operations history",
+    "error handling",
+    "team governance"
+  ],
+  "moatType": "integrations/workflow engine",
+  "whyPeopleStillPay": "They pay because workflows evolve and break; a maintained builder reduces the upkeep.",
+  "priorArt": [
+    {
+      "name": "Activepieces",
+      "url": "https://github.com/activepieces/activepieces",
+      "desc": "Open-source automation platform with app pieces, triggers, and actions.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "ifttt",
+    "n8n-cloud",
+    "plausible"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good smaller Zapier comparison; same reasoning but different builder style.",
+  "prompt": "Build me a personal replacement for Make (Visual automation platform for scenarios across apps and APIs). Requirements:\n\n- Core loop: Implement the needed scenarios as scripts or n8n workflows with API calls, retries, and logs.\n- Needs: API keys/OAuth.\n- Needs: hosted scheduler/worker.\n- Needs: secrets.\n- Needs: logs.\n- Needs: retry handling.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: visual scenario builder; app modules; scheduling.",
+  "promptCurated": false
+}

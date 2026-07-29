@@ -1,0 +1,60 @@
+{
+  "slug": "coda",
+  "name": "Coda",
+  "domain": "coda.io",
+  "category": "docs-databases",
+  "subcategory": "docs + tables + apps",
+  "tagline": "Doc platform that combines writing, tables, automations, and small apps",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Pro Doc Maker",
+    "basis": "monthly per Doc Maker",
+    "native": "12 USD",
+    "source": "https://coda.io/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $12/Doc Maker/month monthly, Team at higher tiers."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A doc with tables and buttons is buildable; Coda's editor, formula engine, packs/integrations, permissions, and team workflows make full parity difficult.",
+  "coreLoopDIY": "Build a rich doc editor, embedded tables, formulas, buttons, and simple automations.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "rich text editor",
+    "database tables",
+    "formula engine",
+    "auth",
+    "integrations",
+    "hosted backend"
+  ],
+  "whatYouLose": [
+    "formula language",
+    "packs",
+    "permissions",
+    "automations",
+    "templates",
+    "collaboration",
+    "doc-app UX"
+  ],
+  "moatType": "editor/formula/integrations",
+  "whyPeopleStillPay": "They pay because docs become tools that teammates can understand and maintain.",
+  "priorArt": [
+    {
+      "name": "AFFiNE",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "desc": "Open-source workspace with docs, whiteboard, and knowledge-base features; partial Coda-lik",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "tally",
+    "typeform",
+    "jotform"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful sibling to Notion/Airtable; more formula/workflow oriented.",
+  "prompt": "Build me a personal replacement for Coda (Doc platform that combines writing, tables, automations, and small apps). Requirements:\n\n- Core loop: Build a rich doc editor, embedded tables, formulas, buttons, and simple automations.\n- Needs: rich text editor.\n- Needs: database tables.\n- Needs: formula engine.\n- Needs: auth.\n- Needs: integrations.\n- Needs: hosted backend.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: formula language; packs; permissions.",
+  "promptCurated": false
+}

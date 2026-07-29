@@ -1,0 +1,58 @@
+{
+  "slug": "runway",
+  "name": "Runway",
+  "domain": "runwayml.com",
+  "category": "ai-video",
+  "subcategory": "generative video",
+  "tagline": "Generative video and creative AI tools for images, video, and editing",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "monthly",
+    "native": "15 USD",
+    "source": "https://runwayml.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Standard plan listed at $15/month monthly and $12/month annually in public pricing references."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A UI around video models is buildable; the video-generation model quality, compute, safety, editing stack, and continuous research are not a solo afternoon project.",
+  "coreLoopDIY": "Wrap open-source/video APIs to generate or edit clips, manage credits, and export assets.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "GPU/hosted video API",
+    "storage",
+    "video rendering",
+    "safety filters",
+    "prompt/workflow UI"
+  ],
+  "whatYouLose": [
+    "frontier video models",
+    "compute",
+    "asset history",
+    "model updates",
+    "commercial rights workflows",
+    "editing polish"
+  ],
+  "moatType": "frontier model/compute",
+  "whyPeopleStillPay": "They pay because generative video quality and inference infrastructure are the product.",
+  "priorArt": [
+    {
+      "name": "diffusers",
+      "url": "https://github.com/huggingface/diffusers",
+      "desc": "Open-source library for diffusion models; useful for experimentation, not a Runway replace",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "elevenlabs",
+    "chatgpt",
+    "claude"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Important no for the frontier-model category.",
+  "prompt": null,
+  "promptCurated": false
+}

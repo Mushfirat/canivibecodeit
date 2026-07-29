@@ -1,0 +1,58 @@
+{
+  "slug": "evernote",
+  "name": "Evernote",
+  "domain": "evernote.com",
+  "category": "notes-knowledge",
+  "subcategory": "capture + notes",
+  "tagline": "Long-running note app for capture, search, tasks, and cross-device notes",
+  "priceMonthly": 14.99,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "14.99 USD",
+    "source": "https://evernote.com/compare-plans",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official Evernote plan pages checked 2026-07-30; current plan names have changed, and Starter is listed around $14.99/month in public plan references."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A personal notes app with OCR/search/import is reachable, but the hard parts are migration, sync reliability, clipper UX, OCR quality, and years of user data.",
+  "coreLoopDIY": "Create a Markdown/database notes app with tags, attachments, web clipper, OCR pass, and full-text search.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "desktop/mobile or web app",
+    "file storage",
+    "OCR library/API",
+    "search index",
+    "browser extension if clipping matters"
+  ],
+  "whatYouLose": [
+    "web clipper quality",
+    "mobile apps",
+    "OCR/search maturity",
+    "sync",
+    "import/export edge cases",
+    "long-term reliability"
+  ],
+  "moatType": "sync/capture ecosystem",
+  "whyPeopleStillPay": "They pay because all old notes, attachments, scans, and clipped pages are already there.",
+  "priorArt": [
+    {
+      "name": "Joplin",
+      "url": "https://github.com/laurent22/joplin",
+      "desc": "Mature open-source note app with sync, markdown notes, clipping, and end-to-end encryption",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "obsidian-sync",
+    "readwise-reader",
+    "raindrop-io"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "A good example where core notes are easy but switching costs and capture depth drive retention.",
+  "prompt": "Build me a personal replacement for Evernote (Long-running note app for capture, search, tasks, and cross-device notes). Requirements:\n\n- Core loop: Create a Markdown/database notes app with tags, attachments, web clipper, OCR pass, and full-text search.\n- Needs: desktop/mobile or web app.\n- Needs: file storage.\n- Needs: OCR library/API.\n- Needs: search index.\n- Needs: browser extension if clipping matters.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: web clipper quality; mobile apps; OCR/search maturity.",
+  "promptCurated": false
+}

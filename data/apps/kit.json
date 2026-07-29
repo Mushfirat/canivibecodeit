@@ -1,0 +1,59 @@
+{
+  "slug": "kit",
+  "name": "Kit",
+  "domain": "kit.com",
+  "category": "newsletter",
+  "subcategory": "creator email marketing",
+  "tagline": "Email marketing and automation platform for creators",
+  "priceMonthly": 39,
+  "pricing": {
+    "plan": "Creator",
+    "basis": "monthly at 1k subscribers",
+    "native": "39 USD",
+    "source": "https://kit.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page checked; 2026 public sources list Creator from $39/month at up to 1,000 subscribers, with price scaling by subscriber count."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A simple newsletter sender is buildable, but Kit's value is deliverability, subscriber forms, automations, recommendations, commerce, migrations, and creator-specific flows.",
+  "coreLoopDIY": "Build subscriber forms, a campaign editor, segmentation, simple automations, and send via an email API.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "email service provider",
+    "DNS/SPF/DKIM/DMARC",
+    "database",
+    "unsubscribe/compliance flows",
+    "hosted app"
+  ],
+  "whatYouLose": [
+    "deliverability",
+    "automations",
+    "forms/landing pages",
+    "recommendations",
+    "commerce",
+    "migrations",
+    "support"
+  ],
+  "moatType": "deliverability/growth/integrations",
+  "whyPeopleStillPay": "They pay because email marketing is part deliverability and part business workflow.",
+  "priorArt": [
+    {
+      "name": "Listmonk",
+      "url": "https://github.com/knadh/listmonk",
+      "desc": "Open-source newsletter and mailing-list manager suitable for self-hosted campaigns.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "mailchimp",
+    "ghost-pro",
+    "shopify"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Good creator-economy entry; not a no, but the moat is operational.",
+  "prompt": "Build me a personal replacement for Kit (Email marketing and automation platform for creators). Requirements:\n\n- Core loop: Build subscriber forms, a campaign editor, segmentation, simple automations, and send via an email API.\n- Needs: email service provider.\n- Needs: DNS/SPF/DKIM/DMARC.\n- Needs: database.\n- Needs: unsubscribe/compliance flows.\n- Needs: hosted app.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: deliverability; automations; forms/landing pages.",
+  "promptCurated": false
+}

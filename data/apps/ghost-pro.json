@@ -1,0 +1,59 @@
+{
+  "slug": "ghost-pro",
+  "name": "Ghost Pro",
+  "domain": "ghost.org",
+  "category": "publishing",
+  "subcategory": "blog/newsletter/membership",
+  "tagline": "Managed Ghost hosting for blogs, newsletters, and paid memberships",
+  "priceMonthly": 35,
+  "pricing": {
+    "plan": "Publisher",
+    "basis": "monthly",
+    "native": "35 USD",
+    "source": "https://ghost.org/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; public page shows Starter/Publisher annual-effective amounts and monthly options; Publisher monthly estimated at $35/month from current tiers."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Because Ghost is open source, the core publishing/newsletter/membership product can be self-hosted; the cost is ops, email setup, and maintenance.",
+  "coreLoopDIY": "Self-host Ghost, configure theme/domain/email, enable memberships/newsletters, and maintain backups/upgrades.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "VPS/Docker",
+    "domain/DNS",
+    "transactional/email provider",
+    "backups",
+    "theme/configuration"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "upgrades",
+    "backups",
+    "email delivery setup",
+    "CDN/security",
+    "support",
+    "easy scaling"
+  ],
+  "moatType": "open-source core/hosting/deliverability",
+  "whyPeopleStillPay": "They pay because publishing should not turn into server administration.",
+  "priorArt": [
+    {
+      "name": "Ghost",
+      "url": "https://github.com/TryGhost/Ghost",
+      "desc": "The product's own open-source publishing platform.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "shopify",
+    "podia",
+    "teachable"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Strong yes and important because hosted open-source is exactly what many people can vibecode/self-host.",
+  "prompt": "Build me a personal replacement for Ghost Pro (Managed Ghost hosting for blogs, newsletters, and paid memberships). Requirements:\n\n- Core loop: Self-host Ghost, configure theme/domain/email, enable memberships/newsletters, and maintain backups/upgrades.\n- Needs: VPS/Docker.\n- Needs: domain/DNS.\n- Needs: transactional/email provider.\n- Needs: backups.\n- Needs: theme/configuration.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: managed hosting; upgrades; backups.",
+  "promptCurated": false
+}

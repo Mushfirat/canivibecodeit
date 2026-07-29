@@ -1,0 +1,60 @@
+{
+  "slug": "figma",
+  "name": "Figma",
+  "domain": "figma.com",
+  "category": "design",
+  "subcategory": "collaborative interface design",
+  "tagline": "Collaborative browser-based design and prototyping tool",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Professional Full seat",
+    "basis": "monthly per seat",
+    "native": "20 USD",
+    "source": "https://www.figma.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing/help checked 2026-07-30; Professional Full seat listed at $20/month monthly and $16/month annually."
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can make a small drawing/prototyping tool, but Figma's moat is real-time multiplayer editing, plugin ecosystem, design-system workflows, performance, and enterprise trust.",
+  "coreLoopDIY": "Build a simple canvas editor with rectangles/text/components and export, but expect it to be a toy compared with Figma.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "web canvas/WebGL/SVG expertise",
+    "real-time collaboration backend",
+    "file format",
+    "permissions",
+    "plugin model"
+  ],
+  "whatYouLose": [
+    "real-time multiplayer that just works",
+    "your team, who are all on Figma",
+    "the plugin ecosystem",
+    "ten years of canvas performance engineering"
+  ],
+  "moatType": "collaboration/ecosystem/performance",
+  "whyPeopleStillPay": "They pay because entire product/design teams coordinate inside the file, not because drawing rectangles is hard.",
+  "priorArt": [
+    {
+      "name": "Penpot",
+      "url": "https://github.com/penpot/penpot",
+      "desc": "open-source design tool — the serious alternative"
+    },
+    {
+      "name": "Excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "desc": "collaborative whiteboard, open source"
+    }
+  ],
+  "relatedSlugs": [
+    "whimsical",
+    "adobe-express",
+    "midjourney"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "The credibility entry. Figma's value is multiplayer CRDTs, a decade of canvas engineering, and everyone else being on it. You can't one-shot a moat — and network effects are the strongest moat there is.",
+  "prompt": "Honest answer: don't. Figma's core value is multiplayer editing on a\nhigh-performance canvas plus the fact that your whole team already lives there.\nA one-shot clone gives you a worse Excalidraw and none of the network.\n\nIf what you actually need is single-player vector editing, run Penpot\n(open source, self-hostable) or Excalidraw instead — links in prior art.\n\nIf you still want to scratch the itch, here's the weekend version:\n\n- A canvas editor: rectangles, ellipses, text, and frames; select, move,\n  resize with handles; fill/stroke/corner-radius controls in a right panel.\n- Layers list with drag-reorder, and export of the selection as SVG and PNG.\n- Local-first: documents persist to IndexedDB, import/export as JSON.\n- Vanilla JS or Svelte on a single canvas element; no backend at all.\n\nWhat you will NOT have: multiplayer, comments, components, auto-layout,\nplugins, or anyone to collaborate with. That gap is the product.",
+  "promptCurated": true
+}

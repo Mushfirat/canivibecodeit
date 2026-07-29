@@ -1,0 +1,112 @@
+---
+import '@fontsource-variable/space-grotesk';
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/global.css';
+
+const {
+  title,
+  description,
+  ogImage = '/og/home.png',
+  jsonld = [],
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, 'https://canivibecodeit.com').href;
+const ogUrl = new URL(ogImage, 'https://canivibecodeit.com').href;
+
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Can I Vibecode It?',
+  url: 'https://canivibecodeit.com',
+  logo: 'https://canivibecodeit.com/logo-512.png',
+};
+
+const blocks = [orgLd, ...jsonld];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo-512.png" />
+    <meta name="theme-color" content="#0b0d0b" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Can I Vibecode It?" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogUrl} />
+
+    {blocks.map((b) => <script type="application/ld+json" set:html={JSON.stringify(b)} />)}
+
+    <!-- theme before first paint: stored choice wins, else system preference -->
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const theme =
+          stored || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <script is:inline src="/analytics.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a class="brand" href="/" aria-label="Can I Vibecode It? home">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect x="3" y="3" width="58" height="58" rx="13" fill="none" stroke="var(--primary)" stroke-width="5"></rect>
+            <text x="21" y="45" font-family="JetBrains Mono Variable, monospace" font-size="34" font-weight="700" fill="var(--primary)" text-anchor="middle">?</text>
+            <rect x="34" y="20" width="9" height="25" fill="var(--primary)"></rect>
+          </svg>
+          <span class="word">can<b>i</b>vibecode<b>it</b></span>
+        </a>
+        <nav class="site-nav">
+          <a href="/#death-list">the death list</a>
+          <a href="https://github.com/robj3d3/canivibecodeit/blob/main/CONTRIBUTING.md">submit an app</a>
+          <a href="mailto:hello@canivibecodeit.com?subject=Sponsoring%20canivibecodeit.com">sponsor</a>
+          <button
+            class="theme-toggle"
+            aria-label="Toggle light or dark theme"
+            data-toggle-theme
+          >
+            <svg class="moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+            <svg class="sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"></path></svg>
+          </button>
+          <a class="gh" href="https://github.com/robj3d3/canivibecodeit">github ↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="site-footer">
+      <span>
+        Yes, you can vibecode this site too.
+        <a href="/vibecode-this-site">Here's the prompt</a> ·
+        <a href="https://github.com/robj3d3/canivibecodeit">Source on GitHub</a>
+      </span>
+      <span class="built-by">
+        <img src="/robj3d3.png" alt="" width="20" height="20" loading="lazy" />
+        built by <a href="https://x.com/robj3d3">@robj3d3</a>
+      </span>
+      <span>
+        MIT · no third-party trackers ·
+        <a href="mailto:hello@canivibecodeit.com?subject=Sponsoring%20canivibecodeit.com">sponsor ↗</a>
+      </span>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/js/app.js" defer></script>
+  </body>
+</html>

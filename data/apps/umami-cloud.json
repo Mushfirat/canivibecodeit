@@ -1,0 +1,57 @@
+{
+  "slug": "umami-cloud",
+  "name": "Umami Cloud",
+  "domain": "umami.is",
+  "category": "analytics",
+  "subcategory": "privacy web analytics",
+  "tagline": "Open-source privacy analytics with a hosted cloud option",
+  "priceMonthly": 9,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "native": "9 USD",
+    "source": "https://umami.is/docs/cloud",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official docs/pricing checked; public references list Basic around $9/month and Pro around $20/month."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The software is open source, so the cloud subscription is mostly paying for managed hosting, upgrades, and not touching a server.",
+  "coreLoopDIY": "Self-host Umami, install the tracking script, create websites/events, and maintain database backups.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "VPS/Docker",
+    "database",
+    "domain/SSL",
+    "backups",
+    "update routine"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "upgrades",
+    "reliability",
+    "team/billing convenience",
+    "support"
+  ],
+  "moatType": "open-source core/hosting",
+  "whyPeopleStillPay": "They pay because analytics is not worth waking up to fix.",
+  "priorArt": [
+    {
+      "name": "Umami",
+      "url": "https://github.com/umami-software/umami",
+      "desc": "The product's own open-source analytics platform.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "squarespace",
+    "wix",
+    "github-copilot"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Clean yes; good example of hosted open-source economics.",
+  "prompt": "Build me a personal replacement for Umami Cloud (Open-source privacy analytics with a hosted cloud option). Requirements:\n\n- Core loop: Self-host Umami, install the tracking script, create websites/events, and maintain database backups.\n- Needs: VPS/Docker.\n- Needs: database.\n- Needs: domain/SSL.\n- Needs: backups.\n- Needs: update routine.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: managed hosting; upgrades; reliability.",
+  "promptCurated": false
+}

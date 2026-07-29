@@ -1,0 +1,57 @@
+{
+  "slug": "github-copilot",
+  "name": "GitHub Copilot",
+  "domain": "github.com",
+  "category": "dev-tools",
+  "subcategory": "AI coding assistant",
+  "tagline": "AI coding assistant integrated with GitHub and editors",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "native": "10 USD",
+    "source": "https://docs.github.com/en/copilot/get-started/plans-for-github-copilot",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official GitHub Copilot plan docs checked 2026-07-30; Pro listed at $10/month, with usage-credit changes in 2026."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can use open-source editor agents and local/API models, but Copilot's value is editor integration, model routing, GitHub context, completions, and managed usage.",
+  "coreLoopDIY": "Install an open-source IDE assistant, connect model APIs or a local model, index the repo, and generate code/edit suggestions.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "VS Code/JetBrains extension",
+    "LLM API or local model",
+    "repo indexing",
+    "optional GitHub token"
+  ],
+  "whatYouLose": [
+    "native GitHub/IDE integration",
+    "fast completions",
+    "model routing",
+    "code review/security features",
+    "managed billing",
+    "team controls"
+  ],
+  "moatType": "model/platform/editor integration",
+  "whyPeopleStillPay": "They pay because low-latency completion and repo-aware coding are available in their editor without setup.",
+  "priorArt": [
+    {
+      "name": "Continue",
+      "url": "https://github.com/continuedev/continue",
+      "desc": "Open-source coding assistant extension that connects to local or hosted models.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "cursor",
+    "replit",
+    "codesandbox"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Very relevant to the site's own audience; verdict is nuanced because the app is partly wrapper, partly platform.",
+  "prompt": "Build me a personal replacement for GitHub Copilot (AI coding assistant integrated with GitHub and editors). Requirements:\n\n- Core loop: Install an open-source IDE assistant, connect model APIs or a local model, index the repo, and generate code/edit suggestions.\n- Needs: VS Code/JetBrains extension.\n- Needs: LLM API or local model.\n- Needs: repo indexing.\n- Needs: optional GitHub token.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: native GitHub/IDE integration; fast completions; model routing.",
+  "promptCurated": false
+}

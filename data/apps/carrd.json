@@ -1,0 +1,56 @@
+{
+  "slug": "carrd",
+  "name": "Carrd",
+  "domain": "carrd.co",
+  "category": "website-builder",
+  "subcategory": "one-page sites",
+  "tagline": "Simple one-page website builder for landing pages and profiles",
+  "priceMonthly": 1.58,
+  "pricing": {
+    "plan": "Pro Standard",
+    "basis": "annual effective per month",
+    "native": "1.58 USD",
+    "source": "https://carrd.co/pro",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro Standard listed at $19/year, equivalent to about $1.58/month."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "A one-page static site generator with forms and custom domains is absolutely vibecodable; Carrd's price is so low that DIY only makes sense for control or learning.",
+  "coreLoopDIY": "Generate/edit a single-page HTML site from blocks, host it, attach a domain, and optionally send forms to email/webhook.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "static hosting",
+    "domain/DNS",
+    "form endpoint",
+    "HTML/CSS templates",
+    "optional LLM/API for generation"
+  ],
+  "whatYouLose": [
+    "the visual editor",
+    "hosted forms",
+    "their template gallery",
+    "not having to think about hosting"
+  ],
+  "moatType": "price/polish/hosting",
+  "whyPeopleStillPay": "They pay because the product costs almost nothing and removes all hosting/domain friction.",
+  "priorArt": [
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web builder library; enough to build a simple Carrd-like editor.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "airtable",
+    "coda",
+    "tally"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "To be fair, Carrd is famously cheap. But you have Claude Code — you don't need a site builder at all.",
+  "prompt": "Build me a one-page personal site to replace Carrd. Requirements:\n\n- One elegant single-page site from a content.json file: name, headline, short\n  about paragraph, avatar, social links, and an optional list of projects with\n  title + description + URL. Editing the JSON is the CMS.\n- Design it properly: strong typographic hierarchy, generous whitespace, one\n  accent color set via a CSS variable, dark mode via prefers-color-scheme,\n  tasteful hover states. It should look designed, not templated.\n- A working contact form with no third-party service: POST to a tiny endpoint\n  that appends to messages.log and returns an inline thank-you. Honeypot field\n  for bots.\n- Perfect Lighthouse scores: inline the CSS, no frameworks, no webfonts unless\n  self-hosted, proper OG tags + generated OG image.\n- Static HTML + one small server file for the form. Deploy instructions for\n  any VPS or static host + serverless form alternative.",
+  "promptCurated": true
+}

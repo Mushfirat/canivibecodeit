@@ -1,0 +1,36 @@
+// PostHog loader, served at /analytics.js with the project key injected from
+// the environment — the repo stays generic, the deployment carries the key.
+// Traffic goes to <origin>/ph/*, reverse-proxied to PostHog by the web server,
+// so analytics stays first-party (see README deploy notes).
+export function GET() {
+  const key = process.env.POSTHOG_KEY || '';
+  const uiHost = process.env.POSTHOG_UI_HOST || 'https://eu.posthog.com';
+
+  const body = key
+    ? `(function () {
+  var s = document.createElement('script');
+  s.src = location.origin + '/ph/static/array.js';
+  s.async = true;
+  s.crossOrigin = 'anonymous';
+  s.onload = function () {
+    posthog.init(${JSON.stringify(key)}, {
+      api_host: location.origin + '/ph',
+      ui_host: ${JSON.stringify(uiHost)},
+      person_profiles: 'always',
+      capture_pageview: true,
+      capture_pageleave: true,
+      autocapture: true,
+      disable_session_recording: true
+    });
+  };
+  document.head.appendChild(s);
+})();`
+    : '/* analytics disabled: POSTHOG_KEY not set */';
+
+  return new Response(body, {
+    headers: {
+      'Content-Type': 'application/javascript',
+      'Cache-Control': 'public, max-age=300, must-revalidate',
+    },
+  });
+}

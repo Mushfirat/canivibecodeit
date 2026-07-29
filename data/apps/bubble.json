@@ -1,0 +1,59 @@
+{
+  "slug": "bubble",
+  "name": "Bubble",
+  "domain": "bubble.io",
+  "category": "no-code-apps",
+  "subcategory": "visual web app builder",
+  "tagline": "No-code platform for building custom web apps with workflows and data",
+  "priceMonthly": 32,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "native": "32 USD",
+    "source": "https://bubble.io/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; 2026 public references list Starter around $32/month monthly and $29/month annually."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A specific Bubble app is often vibecodable now; rebuilding Bubble's editor, workflow engine, plugin ecosystem, hosting, and scaling layer is not.",
+  "coreLoopDIY": "Rebuild the target app directly in code with CRUD, auth, workflows, and hosting rather than cloning Bubble as a platform.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "web framework",
+    "database",
+    "auth",
+    "hosting",
+    "payment/email APIs",
+    "product-specific integrations"
+  ],
+  "whatYouLose": [
+    "visual editor",
+    "workflow builder",
+    "plugin marketplace",
+    "hosting/scaling",
+    "nondeveloper maintenance",
+    "templates"
+  ],
+  "moatType": "no-code platform/ecosystem",
+  "whyPeopleStillPay": "They pay because future changes can be made visually without owning a codebase.",
+  "priorArt": [
+    {
+      "name": "Appsmith",
+      "url": "https://github.com/appsmithorg/appsmith",
+      "desc": "Open-source low-code builder for internal tools; partial prior art for visual app building",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "zapier",
+    "make",
+    "ifttt"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "One of the site's most important explanatory pages: build the app, not the platform.",
+  "prompt": "Build me a personal replacement for Bubble (No-code platform for building custom web apps with workflows and data). Requirements:\n\n- Core loop: Rebuild the target app directly in code with CRUD, auth, workflows, and hosting rather than cloning Bubble as a platform.\n- Needs: web framework.\n- Needs: database.\n- Needs: auth.\n- Needs: hosting.\n- Needs: payment/email APIs.\n- Needs: product-specific integrations.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: visual editor; workflow builder; plugin marketplace.",
+  "promptCurated": false
+}

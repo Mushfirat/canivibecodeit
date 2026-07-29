@@ -1,0 +1,59 @@
+{
+  "slug": "loom",
+  "name": "Loom",
+  "domain": "loom.com",
+  "category": "screen-recording",
+  "subcategory": "screen video + sharing",
+  "tagline": "Async screen recording with instant hosting, transcripts, and team sharing",
+  "priceMonthly": 18,
+  "pricing": {
+    "plan": "Business",
+    "basis": "monthly per user",
+    "native": "18 USD",
+    "source": "https://www.loom.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official/Atlassian pricing checked 2026-07-30; Business listed around $18/user/month."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "Local screen recording is easy, but instant hosting, permissions, viewer analytics, comments, trimming, and team libraries push it beyond one sitting.",
+  "coreLoopDIY": "Record screen and camera, encode video, upload to storage, generate transcript/summary, and serve a share page.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "screen capture API",
+    "ffmpeg",
+    "object storage",
+    "hosted app",
+    "auth",
+    "optional transcription API"
+  ],
+  "whatYouLose": [
+    "instant reliable hosting",
+    "permissions",
+    "comments",
+    "analytics",
+    "workspace libraries",
+    "browser extensions"
+  ],
+  "moatType": "hosting/collaboration",
+  "whyPeopleStillPay": "They pay because a Loom link works everywhere and preserves context for the team.",
+  "priorArt": [
+    {
+      "name": "OBS Studio",
+      "url": "https://github.com/obsproject/obs-studio",
+      "desc": "Excellent open-source recording engine; hosting/sharing remains the DIY gap.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "tella",
+    "capcut",
+    "granola"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Classic paid-for-polish case: the local primitive is free, the workflow is subscription.",
+  "prompt": "Build me a personal replacement for Loom (Async screen recording with instant hosting, transcripts, and team sharing). Requirements:\n\n- Core loop: Record screen and camera, encode video, upload to storage, generate transcript/summary, and serve a share page.\n- Needs: screen capture API.\n- Needs: ffmpeg.\n- Needs: object storage.\n- Needs: hosted app.\n- Needs: auth.\n- Needs: optional transcription API.\n- Keep it personal-scale: no accounts, no telemetry, secrets in .env, SQLite or\n  flat files for storage. Local-first wherever possible.\n- Clean minimal UI where one is needed; CLI is fine where one is not.\n- Include a README with setup steps, required keys, and any OS permissions.\n\nHonest scope: this covers the core loop only. You will not get: instant reliable hosting; permissions; comments.",
+  "promptCurated": false
+}

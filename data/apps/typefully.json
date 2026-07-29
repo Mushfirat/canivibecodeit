@@ -1,0 +1,56 @@
+{
+  "slug": "typefully",
+  "name": "Typefully",
+  "domain": "typefully.com",
+  "category": "social-media",
+  "subcategory": "thread writing + scheduling",
+  "tagline": "Writing, scheduling, and analytics for X/LinkedIn threads and posts",
+  "priceMonthly": 12.5,
+  "pricing": {
+    "plan": "Creator",
+    "basis": "annual effective per month",
+    "native": "12.5 USD",
+    "source": "https://typefully.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; public 2026 references list Creator around $12.50/month annual-effective, with monthly pricing varying by plan."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "For personal thread drafting and scheduling, the core loop is vibecodable; the caveat is social API access, analytics, and platform-policy upkeep.",
+  "coreLoopDIY": "Create a text editor for threads, preview character counts, store drafts, schedule via API, and track simple analytics.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "X/LinkedIn API access",
+    "hosted scheduler",
+    "database",
+    "auth",
+    "optional LLM API"
+  ],
+  "whatYouLose": [
+    "posting without paying X for API access",
+    "multi-account and team features",
+    "analytics on published posts",
+    "AI rewrite suggestions"
+  ],
+  "moatType": "social API/polish",
+  "whyPeopleStillPay": "They pay because the editor reduces friction and posting works without API babysitting.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Open-source social scheduling prior art; can be adapted for thread workflows.",
+      "status": "alive"
+    }
+  ],
+  "relatedSlugs": [
+    "beehiiv",
+    "kit",
+    "mailchimp"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "The composer and queue are easy. The catch is X's API pricing — the write tier costs more than Typefully does. That's the moat: not code, a paywall.",
+  "prompt": "Build me a tweet composer and scheduler like Typefully. Requirements:\n\n- A local web app: compose posts and threads with live character count per\n  post, split threads with \"---\", drag to reorder, image attachments, and a\n  clean distraction-free writing view with drafts autosaved to SQLite.\n- A queue: pick a time or \"next free slot\" (slots defined in a config file,\n  e.g. weekdays 9:00 and 16:00). Calendar-style queue view grouped by day.\n- Publishing via the X API v2 (keys in .env) — with an honest README section:\n  the free API tier is read-only; posting needs the paid tier, which costs\n  more than Typefully. Include a fallback \"copy thread to clipboard\" button\n  and a browser-notification reminder at slot time so the tool stays useful\n  without paying X anything.\n- A cron-style loop in the same process publishes due queue items and marks\n  results (posted / failed with error).\n- Single Node process, no accounts, runs on localhost or a VPS.",
+  "promptCurated": true
+}
