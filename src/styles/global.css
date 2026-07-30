@@ -762,6 +762,13 @@ h3 {
   margin-left: auto;
 }
 
+.thead-cols {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
 .thead {
   display: flex;
   align-items: center;
