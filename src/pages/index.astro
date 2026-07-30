@@ -53,16 +53,22 @@ const jsonld = [
   <section class="hero">
     <h1>Can I vibecode <span class="blank">___</span>?</h1>
     <p class="sub">Some subscriptions are businesses. Some are just a prompt.</p>
-    <div class="search">
-      <span class="chevron">&gt;</span>
-      <input
-        type="search"
-        id="search"
-        placeholder="type an app — granola, linktree, figma…"
-        autocomplete="off"
-        aria-label="Search apps"
-      />
-      <span class="cursor" aria-hidden="true"></span>
+    <div class="search-wrap">
+      <div class="search">
+        <span class="chevron">&gt;</span>
+        <input
+          type="search"
+          id="search"
+          placeholder="type an app — granola, linktree, figma…"
+          autocomplete="off"
+          aria-label="Search apps"
+          role="combobox"
+          aria-expanded="false"
+          aria-controls="search-results"
+        />
+        <span class="cursor" aria-hidden="true"></span>
+      </div>
+      <div class="search-results" id="search-results" role="listbox"></div>
     </div>
     <p class="search-miss" id="no-results" role="status">
       <span class="badge kinda" style="font-size: 10px;">NOT LISTED YET</span>

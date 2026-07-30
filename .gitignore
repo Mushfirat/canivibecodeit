@@ -11,6 +11,8 @@ data/private/
 *.sqlite
 *.sqlite3
 *.log
+*.log.*
+logs/
 
 # deps & build output
 node_modules/

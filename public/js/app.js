@@ -64,11 +64,81 @@
     track('verdict_filter', { verdict: activeVerdict || 'all' });
   });
 
-  search?.addEventListener('input', applyFilter);
+  /* Command-palette dropdown: instant results pinned to the search box, so
+     nobody has to scroll past the ticker to see what matched. */
+  const srBox = $('#search-results');
+  const rowData = rows.map((r) => ({
+    href: r.getAttribute('href'),
+    name: $('.name', r)?.textContent ?? '',
+    lower: r.dataset.name,
+    verdict: r.dataset.verdict,
+    icon: $('img', r)?.getAttribute('src'),
+    meta: `${$('.c-cat', r)?.textContent.trim() ?? ''} · ${$('.c-price', r)?.textContent.trim() ?? ''}`,
+  }));
+  const BADGE = { yes: 'YES', kinda: 'KINDA', no: 'NOT REALLY' };
+  let srActive = -1;
+
+  const renderDropdown = (q) => {
+    if (!srBox) return;
+    srActive = -1;
+    if (!q) {
+      srBox.classList.remove('open');
+      search?.setAttribute('aria-expanded', 'false');
+      return;
+    }
+    const hits = rowData.filter((r) => r.lower.includes(q));
+    if (!hits.length) {
+      srBox.classList.remove('open');
+      search?.setAttribute('aria-expanded', 'false');
+      return;
+    }
+    const top = hits.slice(0, 6);
+    srBox.innerHTML =
+      top
+        .map(
+          (r, i) => `<a class="sr-row" role="option" data-i="${i}" href="${r.href}">
+            <img src="${r.icon}" alt="" width="20" height="20">
+            <span class="sr-name">${r.name}</span>
+            <span class="badge ${r.verdict}">${BADGE[r.verdict]}</span>
+            <span class="sr-meta">${r.meta}</span>
+          </a>`
+        )
+        .join('') +
+      (hits.length > top.length
+        ? `<a class="sr-foot" href="#death-list">↓ all ${hits.length} matches in the death list</a>`
+        : '');
+    srBox.classList.add('open');
+    search?.setAttribute('aria-expanded', 'true');
+  };
+
+  const srRows = () => $$('.sr-row', srBox);
+  const setActive = (i) => {
+    const items = srRows();
+    srActive = ((i % items.length) + items.length) % items.length;
+    items.forEach((el, j) => el.classList.toggle('active', j === srActive));
+  };
+
+  search?.addEventListener('input', () => {
+    applyFilter();
+    renderDropdown(search.value.trim().toLowerCase());
+  });
   search?.addEventListener('keydown', (e) => {
-    if (e.key !== 'Enter') return;
-    const visible = rows.filter((r) => r.style.display !== 'none');
-    if (visible.length >= 1) visible[0].click();
+    const items = srRows();
+    if (e.key === 'ArrowDown' && items.length) {
+      e.preventDefault();
+      setActive(srActive + 1);
+    } else if (e.key === 'ArrowUp' && items.length) {
+      e.preventDefault();
+      setActive(srActive - 1);
+    } else if (e.key === 'Escape') {
+      renderDropdown('');
+    } else if (e.key === 'Enter') {
+      const target = items[srActive >= 0 ? srActive : 0];
+      if (target) location.href = target.getAttribute('href');
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (srBox && !e.target.closest('.search-wrap')) renderDropdown('');
   });
 
   // Chips are real links (SEO); on the homepage they filter in place instead.
