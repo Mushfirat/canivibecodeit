@@ -86,5 +86,5 @@ const description =
   </main>
 
   <script type="application/json" id="dash-data" set:html={JSON.stringify(data ?? { unavailable: true })} />
-  <script src="/js/dither.js" defer></script>
+  <script src={`/js/dither.js?v=${__BUILD_ID__}`} defer></script>
 </Base>

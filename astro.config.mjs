@@ -16,4 +16,9 @@ export default defineConfig({
   // browser Origin against the internal listener origin). The POST endpoints
   // carry their own abuse controls: IP rate limits, honeypot, dedupe.
   security: { checkOrigin: false },
+  // Build id baked in at build time: unhashed public/ scripts get ?v=<id> so
+  // long-lived edge/browser caches can never serve stale JS after a deploy.
+  vite: {
+    define: { __BUILD_ID__: JSON.stringify(Date.now().toString(36)) },
+  },
 });
