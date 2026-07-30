@@ -31,11 +31,11 @@
     "managed Google, Microsoft, and Apple calendar sync with conflict protection",
     "round robin, routing forms, collective events, resource booking, and multi-location scheduling",
     "built-in video, payments, coupons, reminders, and multi-step workflows",
-    "shared CRM context, client portals, e-signatures, invoicing, meeting notes, and Mira AI",
+    "shared CRM context, client portals, e-signatures, invoicing, meeting notes, and the built-in AI assistant",
     "EU hosting, support, integration maintenance, and compliance operations"
   ],
   "moatType": "integration reliability/workflow depth/EU compliance operations",
-  "whyPeopleStillPay": "They pay because meetergo replaces a 15-app stack, not one widget. Calendar reliability, routing, reminders, video, payments, CRM context, signed documents, and client follow-up share the same customer and meeting record, while EU hosting and ongoing integration maintenance remove operational risk. A DIY booking page can save a solo user money; a team pays to avoid rebuilding and operating the system around every customer meeting.",
+  "whyPeopleStillPay": "They pay because meetergo bundles what would otherwise be a stack of separate tools. Calendar reliability, routing, reminders, video, payments, CRM context, signed documents, and client follow-up share the same customer and meeting record, while EU hosting and ongoing integration maintenance remove operational risk. A DIY booking page can save a solo user money; a team pays to avoid rebuilding and operating the system around every customer meeting.",
   "priorArt": [
     {
       "name": "Cal.com",

@@ -7,7 +7,7 @@
   "tagline": "WhatsApp API infrastructure for AI agents, automations, Flows, webhooks, and inboxes",
   "priceMonthly": 15,
   "pricing": {
-    "plan": "50K messages",
+    "plan": "125K messages",
     "basis": "monthly capacity",
     "native": "15 USD",
     "source": "https://wabery.com/pricing",
