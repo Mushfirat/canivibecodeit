@@ -1,0 +1,56 @@
+{
+  "slug": "meetergo",
+  "name": "meetergo",
+  "domain": "meetergo.com",
+  "category": "scheduling",
+  "subcategory": "scheduling and customer-interaction suite",
+  "tagline": "EU-hosted scheduling with built-in video, CRM sync, workflows, client portals, and a wider product suite",
+  "priceMonthly": 11,
+  "pricing": {
+    "plan": "Light",
+    "basis": "yearly per user",
+    "native": "9.90 EUR",
+    "source": "https://meetergo.com/en/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Light is \u20ac9.90 per user/month billed yearly, about $11 at the ECB reference rate. It includes unlocked scheduling, unlimited meetergo Connect video calls, HubSpot and Pipedrive sync, up to three workflows, a client portal, REST API, and webhooks."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "The public booking loop is weekend-buildable. The honest replacement, however, stops being a scheduler almost immediately: meetergo combines maintained multi-calendar sync, time-zone and conflict handling, round-robin and conditional routing, resource and multi-location booking, automated reminders, payments, video, CRM, client portals, e-signatures, invoicing, and AI across one EU-hosted system. An agent can reproduce the solo front door; replacing the operating layer behind customer meetings is an ongoing product and compliance job.",
+  "coreLoopDIY": "Publish a booking page, subtract calendar conflicts from configured availability, let a guest reserve a slot, create the calendar event, and send confirmation and rescheduling links.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "Google Calendar OAuth credentials",
+    "hosted app with HTTPS",
+    "SMTP credentials",
+    "database and backups",
+    "timezone test cases"
+  ],
+  "whatYouLose": [
+    "managed Google, Microsoft, and Apple calendar sync with conflict protection",
+    "round robin, routing forms, collective events, resource booking, and multi-location scheduling",
+    "built-in video, payments, coupons, reminders, and multi-step workflows",
+    "shared CRM context, client portals, e-signatures, invoicing, meeting notes, and Mira AI",
+    "EU hosting, support, integration maintenance, and compliance operations"
+  ],
+  "moatType": "integration reliability/workflow depth/EU compliance operations",
+  "whyPeopleStillPay": "They pay because meetergo replaces a 15-app stack, not one widget. Calendar reliability, routing, reminders, video, payments, CRM context, signed documents, and client follow-up share the same customer and meeting record, while EU hosting and ongoing integration maintenance remove operational risk. A DIY booking page can save a solo user money; a team pays to avoid rebuilding and operating the system around every customer meeting.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.com",
+      "desc": "open-source scheduling platform that can be self-hosted"
+    }
+  ],
+  "relatedSlugs": [
+    "calendly",
+    "savvycal",
+    "reclaim-ai"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Submitted by the meetergo team and judged against the same rubric: the booking UI is vibe-codeable; the maintained EU-hosted operating layer around customer meetings is the product.",
+  "prompt": "Build me a personal appointment scheduler to replace meetergo's solo booking loop. Requirements:\n\n- One Node 22 + TypeScript app using Fastify, Nunjucks, Luxon, and\n  better-sqlite3; server-rendered pages with a little vanilla JS.\n- A public /book/:slug page for 30- and 60-minute meeting types. Guests see\n  the next 21 days locally, then submit name, email, and an optional note.\n- An /admin page behind one ADMIN_TOKEN edits weekly availability, date\n  overrides, minimum notice, daily limits, and buffers. Store timestamps in UTC.\n- Google Calendar OAuth credentials stay in .env. Read busy intervals before\n  showing slots, then recheck inside a BEGIN IMMEDIATE transaction and create\n  the calendar event with the guest invited so two people cannot take one slot.\n- Send confirmation, cancellation, rescheduling, and one reminder email through\n  SMTP. Links use signed expiring tokens; node-cron reminders are idempotent.\n- The admin agenda shows upcoming bookings, status, guest details, and manual\n  cancellation, with a CSV export. Keep a nightly 14-day SQLite backup.\n- No public accounts or telemetry. Run as one process behind HTTPS; all OAuth,\n  SMTP, signing, and admin secrets live in .env.\n- Out of scope: Microsoft and Apple sync, team routing, payments, built-in video,\n  CRM, e-signatures, AI, and formal compliance claims. Do not stub fake versions.\n- Add Vitest coverage for DST changes, buffers, concurrent booking, cancellation,\n  and reminder retries. README the Google console setup and warn that OAuth is\n  the fiddly part, plus deployment, backup, and restore commands.",
+  "promptCurated": true
+}
